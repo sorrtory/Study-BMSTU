@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#log {
+    text-decoration: underline;
+}
+.news {
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#newsHeader {
+    margin: 0;
+}
+
+.new {
+    width: 75%;
+    border: 1px solid black;
+}
+
+.header {
+    color: darkblue;
+    margin: 0;
+}
+
+.text {
+    
+}

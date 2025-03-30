@@ -1,0 +1,182 @@
+<html>
+
+<head>
+  <title>DashBoard</title>
+  <!-- <link rel="stylesheet" href="style.css" type="text/css"/> -->
+  <meta charset="utf8">
+  <title>My dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+
+    }
+
+    .container {
+      width: 100%;
+      /* Ensure full width */
+      max-width: 600px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .text-box {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      min-height: 200px;
+      overflow-y: auto;
+    }
+
+    .text-box b {
+      font-size: 3rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .text-box input {
+      width: 100%;
+      /* Ensure input stretches fully */
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .text-box button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .text-box button:hover {
+      background-color: #218838;
+    }
+  </style>
+  <script>
+
+    // 
+    let ips = ["185.104.251.226", "185.102.139.161", "185.102.139.168", "185.102.139.169"]
+    // let ips = ["185.102.139.169"]
+    let msgCounters = [0, 0, 0, 0]
+    let port = 1593
+
+    let sockets = []
+    ips.forEach(ip => {
+      sockets.push(new WebSocket("ws://" + ip + ":" + port))
+    });
+    for (let i = 0; i < sockets.length; i++) {
+      const socket = sockets[i];
+
+      socket.onopen = function (e) {
+        //alert("[open] Соединение установлено");
+        //alert("Отправляем данные на сервер");
+        // socket.send("Тестовая строка в сторону сервера! Прием!");
+        console.log("opened")
+      };
+
+      socket.onmessage = function (event) {
+        console.log("mesage to " + ips[i] + "(" + i + ")")
+        //alert(`[message] Данные получены с сервера: ${event.data}`);
+        // document.getElementById("id" + i).innerHTML = event.data; 
+        if (msgCounters[i] > 5) {
+          document.getElementById(i + " message").remove()
+          msgCounters[i]--;
+        }
+        let message = event.data;
+        let messageDiv = document.createElement("div");
+        messageDiv.id = i + " message"
+        messageDiv.className = "toremove"
+        messageDiv.textContent = message;
+
+        // Display the message in the #messages div
+        document.getElementById("id" + i).append(messageDiv);
+
+        msgCounters[i]++;
+
+      };
+
+      socket.onclose = function (event) {
+        console.log("closed")
+        if (event.wasClean) {
+          //alert(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
+          // socket.send("UPDATE");
+
+        } else {
+          // например, сервер убил процесс или сеть недоступна
+          // обычно в этом случае event.code 1006
+          //alert('[close] Соединение прервано');
+
+        }
+      };
+
+      socket.onerror = function (error) {
+        alert(`[error] ${error.message}`);
+      };
+    }
+
+    function sendToWebForm(index) {
+      var v = document.getElementById("inp" + index).value
+      if (v == "clear") {
+        els = document.getElementsByClassName("toremove")
+        Array.from(els).forEach((el) => {
+          el.remove()
+        });
+        msgCounters = [0, 0, 0, 0]
+        console.clear()
+      } else {
+        sockets[index].send(v)
+        console.log("Command: " + v + " sended to vps " + index)
+
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-box">
+      <h1> aboba </h1>
+    </div>
+    <div id="id0" class="text-box">
+      <b> Vps 0 </b>
+      <input id="inp0" type="text" placeholder="Enter command for Vps 0">
+      <button onclick="sendToWebForm(0)">Submit</button>
+    </div>
+    <div id="id1" class="text-box">
+      <b> Vps 1 </b>
+      <input id="inp1" type="text" placeholder="Enter command for Vps 1">
+      <button onclick="sendToWebForm(1)">Submit</button>
+    </div>
+    <div id="id2" class="text-box">
+      <b> Vps 2 </b>
+      <input id="inp2" type="text" placeholder="Enter command for Vps 2">
+      <button onclick="sendToWebForm(2)">Submit</button>
+    </div>
+    <div id="id3" class="text-box">
+      <b> Vps 3 </b>
+      <input id="inp3" type="text" placeholder="Enter command for Vps 3">
+      <button onclick="sendToWebForm(3)"> Submit</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

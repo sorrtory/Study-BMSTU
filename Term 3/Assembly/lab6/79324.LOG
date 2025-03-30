@@ -1,0 +1,14 @@
+Turbo Assembler  Version 2.02  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   D:\main.asm  to  main.OBJ
+**Error** D:\main.asm(33) Forward reference needs override
+**Error** D:\main.asm(42) Forward reference needs override
+**Error** D:\main.asm(46) Forward reference needs override
+**Error** D:\main.asm(138) Illegal immediate
+Error messages:    4
+Warning messages:  None
+Passes:            1
+Remaining memory:  470k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+d:\main.obj : unable to open file

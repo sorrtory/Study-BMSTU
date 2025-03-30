@@ -1,0 +1,24 @@
+Список актуальных лабораторных работ:
+
+JAVA
+
+1.  «Базовые средства разработки для языка Java»           - https://www.dropbox.com/s/t0t7tvm9o9qvduf/lab1.pdf
+2.  «Разработка простейшего класса на языке Java»          - https://www.dropbox.com/s/muvmcl4g8p0x8z4/lab2.pdf
+3.  «Полиморфизм на основе интерфейсов в языке Java»       - https://www.dropbox.com/s/v6v2bmjn0h818ns/lab3.pdf
+4.  «Реализация итераторов в языке Java»                   - https://www.dropbox.com/s/0qaahmmprlafqu0/lab4.pdf
+5.  «Монады в языке Java»                                  - https://www.dropbox.com/s/qsqaqy8dki7efo8/lab5.pdf
+6.  «Разработка парсеров на языке Java»                    - https://www.dropbox.com/s/gf1e1x8v5n55892/lab6.pdf
+7.  «Программа с графическим пользовательским интерфейсом» - https://www.dropbox.com/s/as1gd9d5kmlp18u/lab7.pdf
+
+
+С++
+
+8.  «Обработка текстовых файлов»                           - https://www.dropbox.com/s/01g2olp51ml4bjv/lab8.pdf
+9.  «Разработка простейшего класса на C++»                 - https://www.dropbox.com/s/e7nostyhmc4adrl/lab9.pdf
+10. «Разработка шаблона класса»                            - https://www.dropbox.com/s/nxyli88b3a0b5pf/lab10.pdf
+11. «Перегрузка операций»                                  - https://www.dropbox.com/s/yizxqa0bwgqys7g/lab11.pdf
+
+
+Божественный парсер С.Ю.Скоробогатова 
+
+https://www.dropbox.com/s/iu48vg2k5w3vwwp/Parser.java

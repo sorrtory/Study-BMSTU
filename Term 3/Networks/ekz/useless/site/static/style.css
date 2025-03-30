@@ -1,0 +1,115 @@
+.main {
+    display: grid;
+    justify-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-form {
+    display: block;
+}
+
+.login-form button {
+    /* width: 100%; */
+    width: 150px;
+}
+
+.login-form__field {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form__field input {
+    margin-left: 10px;
+    min-width: 150px;
+    max-width: 150px;
+    /* max-width: max-content; */
+    /* align-items: right; */
+    /* margin-left: auto; */
+    /* border: 1px solid red; */
+}
+
+#console {
+    visibility: hidden;
+}
+
+hr {
+    width: 100%;
+
+}
+
+.output {
+    border: 3px solid gray;
+    outline: none;
+    padding-top: 10px;
+
+    min-width: calc(1vw * 80);
+    max-width: 50%;
+    min-height: calc(1vh * 24);
+}
+
+.output:focus {
+    border: 3px solid darkblue;
+}
+
+.output__line {
+    margin: 0;
+    margin-left: 5%;
+    margin-top: 5px;
+    text-align: left;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.output__prompt {
+    color: green;
+    text-decoration: none;
+}
+
+.output__prompt::after {
+    content: "$";
+    text-decoration: none;
+}
+
+.output__line:last-of-type .output__prompt::after {
+    text-decoration: underline;
+}
+
+.output__commands {
+    margin-left: 10px;
+}
+
+.output__text {
+    margin-left: 5px;
+    font-size: 15px;
+    color: darkslategray;
+}
+
+.output__text_error {
+    color: darkred;
+}
+
+.cursor {
+    animation-name: blink;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+    animation-direction: alternate;
+    background-color: gray;
+    opacity: 1;
+
+}
+
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

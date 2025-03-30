@@ -1,0 +1,27 @@
+(define (my-abs x)
+  ((if (>= x 0) + -) x))
+
+(define (! n)
+  (if (<= n 0)
+      1
+      (* (! (- n 1)) n)))
+
+;; odd - nechet
+;; even - chet
+
+;; quetient целая часть от деления
+;; remainder остаток
+
+(define (my_even x)
+  (= (remainder x 2) 0))
+
+(define (my_odd x)
+  (not (= (remainder x 2) 0)))
+
+(define (power base exp)
+  (if (<= exp 0)
+      1
+      (* base (power base (- exp 1))) 
+       )
+  )
+

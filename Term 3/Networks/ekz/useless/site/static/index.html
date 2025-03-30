@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <script src="app.js"></script>
+
+    <div class="main" id="login">
+        <h1>Login to FTP</h1>
+        <div class="login-form">
+            <div class="login-form__field">
+                <label for="server">Enter A:</label>
+                <input type="text" id="numA" name="numA" value="" />
+            </div>
+            <div class="login-form__field">
+                <label for="server">Enter B:</label>
+                <input type="text" id="numB" name="numB" value="" />
+            </div>
+            <!-- <div class="login-form__field">
+                <label for="username">Enter your login:</label>
+                <input type="text" id="username" name="username" value="" />
+            </div>
+            <div class="login-form__field">
+                <label for="password">Enter your password:</label>
+                <input type="password" id="password" name="password" value="" />
+            </div> -->
+            <div class="login-form__field">
+                <span>Status:</span>
+                <span id="connectionStatus">Disconnected</span>
+                <button onclick="sendLogin()" id="submitBtn">Count</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

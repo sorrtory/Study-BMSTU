@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+// #include <iostream>
+// #include <vector>
+
+using namespace std;
+
+vector<int> graph[100000];
+char color[100000]; // Цвет будем представлять типом char
+                    // 0 - вершина ещё не покрашена; 1, 2 - различные цвета.
+
+inline char invert(int c)
+{
+    return c == 1 ? 2 : 1;
+}
+
+void dfs(int v, char c)
+{ // c - цвет текущей вершины
+    color[v] = c;
+
+    for (int u : graph[v])
+    {
+        if (color[u] == 0)
+        { // непосещённая вершина
+            dfs(u, invert(c));
+        }
+        else if (color[u] == c)
+        {
+            cout << "Graph is not bipartite." << endl;
+            exit(0);
+        }
+    }
+}
+
+int main()
+{
+    // Ввод графа...
+    int n;
+    cin >> n;
+
+    char c;
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < n; j++)
+        {
+            cin >> c;
+            if (c == '+')
+            {
+                // graph[i].push_back(0);
+            }
+            else
+            {
+                graph[i].push_back(j);
+            }
+        }
+    }
+    
+    // Двудольный граф может быть несвязным (тогда существуют несколько способов покраски).
+    for (int i = 0; i < n; i++)
+    {
+        if (color[i] == 0)
+        {
+            dfs(i, 1);
+        }
+    }
+
+    cout << "Graph is bipartite." << endl;
+}
+
+// int main(){
+//     cout << "hello";
+// }
+

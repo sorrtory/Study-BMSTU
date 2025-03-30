@@ -1,0 +1,221 @@
+
+
+
+
+
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+type set struct {
+	values []int
+	size   int
+	len    int
+}
+
+func (s *set) smol() {
+	s.values = s.values[:s.size-1]
+	s.len = 0
+	s.size -= 1
+
+	for i := range s.values {
+		s.values[i] = 0
+	}
+}
+func (s *set) bik() {
+	s.values = append(s.values, 0)
+	s.len = 0
+	s.size += 1
+	for i := range s.values {
+		s.values[i] = 0
+	}
+}
+
+func (s *set) has_free_space() bool {
+	return s.len < s.size
+}
+
+func (s *set) sort() {
+	sort.Ints(s.values)
+}
+
+func (s *set) add(x int) {
+	s.values[s.len] = x
+	s.len += 1
+	sort.Slice(s.values, func(i, j int) bool {
+		return i < j
+	})
+}
+
+func replace(problem, donor int, s1, s2 *set) {
+	for i1, v1 := range s1.values {
+		if v1 == problem {
+			for i2, v2 := range s2.values {
+				if v2 == donor {
+					s1.values[i1], s2.values[i2] = s2.values[i2], s1.values[i1]
+				}
+			}
+		}
+	}
+}
+
+func reversed(l []int) []int {
+	ll := make([]int, len(l))
+	for i, v := range l {
+		ll[len(l)-i-1] = v
+	}
+	return ll
+}
+
+func problems_for_x(x int, s *set, matrix [][]bool) []int {
+	p := make([]int, 0)
+	for _, v := range s.values {
+		if v != 0 && matrix[v-1][x-1] {
+			p = append(p, v)
+		}
+	}
+	fmt.Println(s.values, p)
+	sort.Slice(p, func(i, j int) bool {
+		return p[i] > p[j]
+	})
+
+	return p
+}
+
+func check(A, B *set, matrix [][]bool) bool {
+	for _, v := range A.values {
+		if len(problems_for_x(v, A, matrix)) != 0 {
+			return false
+		}
+	}
+	for _, v := range B.values {
+		if len(problems_for_x(v, B, matrix)) != 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
+func balance_A(A, B *set, matrix [][]bool) {
+	for _, x := range reversed(A.values) {
+		for _, problem := range problems_for_x(x, A, matrix) {
+			for _, donor := range B.values {
+				if len(problems_for_x(donor, A, matrix)) == 0 && len(problems_for_x(problem, B, matrix)) == 0 {
+					replace(problem, donor, A, B)
+				}
+			}
+		}
+	}
+	A.sort()
+	B.sort()
+
+}
+
+func balance_B(A, B *set, matrix [][]bool) {
+	// var min_problem, minx, sum int
+	for _, x := range B.values {
+		fmt.Println(x, "X")
+		for _, problem := range problems_for_x(x, B, matrix) {
+			fmt.Println(problem, "bpba")
+			for _, donor := range reversed(A.values) {
+				if len(problems_for_x(donor, B, matrix)) == 0 && len(problems_for_x(problem, A, matrix)) == 0 {
+					replace(problem, donor, B, A)
+				}
+			}
+		}
+	}
+	A.sort()
+	B.sort()
+}
+
+func balance(A, B *set, matrix [][]bool) bool {
+	if !check(A, B, matrix) {
+		balance_A(A, B, matrix)
+	}
+	fmt.Println(A, B, "BEFORE SORT B")
+	if !check(A, B, matrix) {
+		balance_B(A, B, matrix)
+	}
+	fmt.Println(A, B, "AFTER SORT B")
+
+	return check(A, B, matrix)
+}
+
+func fill(A, B *set, matrix [][]bool) bool {
+	// make right A and wrong B
+	for i := 1; i <= len(matrix); i++ {
+		if A.has_free_space() && len(problems_for_x(i, A, matrix)) == 0 {
+			A.add(i)
+		} else if B.has_free_space() {
+			B.add(i)
+		} else {
+			return true
+		}
+	}
+	return false
+}
+
+/*
+8
+- - + - - - - -
+- - - + - - - -
++ - - - - - - +
+- + - - - + - -
+- - - - - - - -
+- - - + - - - -
+- - - - - - - +
+- - + - - - + -
+*/
+func main() {
+	var n int
+	var c rune
+	fmt.Scanf("%d", &n)
+
+	matrix := make([][]bool, n)
+
+	for i := 0; i < n; i++ {
+		matrix[i] = make([]bool, n)
+		for j := 0; j < n; j++ {
+			fmt.Scanf("%c", &c)
+			if c == '+' {
+				matrix[i][j] = true
+			}
+			fmt.Scanf("%c", &c)
+		}
+	}
+
+	// n := 8
+	// matrix := [][]bool{
+	// 	{false, false, true, false, false, false, false, false}, {false, false, false, true, false, false, false, false}, {true, false, false, false, false, false, false, true}, {false, true, false, false, false, true, false, false}, {false, false, false, false, false, false, false, false}, {false, false, false, true, false, false, false, false}, {false, false, false, false, false, false, false, true}, {false, false, true, false, false, false, true, false},
+	// }
+
+	var A, B *set
+	A = &set{make([]int, n/2), n / 2, 0}
+	if n%2 == 1 {
+		B = &set{make([]int, n/2+1), n/2 + 1, 0}
+	} else {
+		B = &set{make([]int, n/2), n / 2, 0}
+	}
+
+	for i := 0; i < n/2; i++ {
+
+		if fill(A, B, matrix) {
+			break
+		}
+		if balance(A, B, matrix) {
+			for _, v := range A.values {
+				fmt.Printf("%d ", v)
+			}
+			return
+		} else {
+			A.smol()
+			B.bik()
+		}
+	}
+	fmt.Println("No solution")
+
+}

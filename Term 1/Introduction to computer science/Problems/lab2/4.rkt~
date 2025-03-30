@@ -1,0 +1,16 @@
+(define (intersperse e xs)
+  (if (null? xs)
+      '()
+      (if (= (length xs) 1)
+      xs
+      (cons (car xs) (cons e (intersperse e (cdr xs)))
+            )
+      )
+  
+  )
+)
+
+(intersperse 'x '(1 2 3 4))
+(intersperse 'x '(1 2))
+(intersperse 'x '(1))
+(intersperse 'x '())

@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="main" id="login">
+        <h1>Login to FTP</h1>
+        <div class="login-form">
+            <div class="login-form__field">
+                <label for="server">Enter server:</label>
+                <input type="text" id="server" name="server" value="" />
+            </div>
+            <div class="login-form__field">
+                <label for="username">Enter your login:</label>
+                <input type="text" id="username" name="username" value="" />
+            </div>
+            <div class="login-form__field">
+                <label for="password">Enter your password:</label>
+                <input type="password" id="password" name="password" value="" />
+            </div>
+            <div class="login-form__field">
+                <span>Status:</span>
+                <span id="connectionStatus">Disconnected</span>
+                <button onclick="sendLogin()" id="submitBtn">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main" id="console">
+        <h1>FTP server console</h1>
+        <div class="output" id="output" tabindex="0">
+            <template id="command-template">
+                <div class="output__line">
+                    <span class="output__prompt"></span>
+                    <span class="output__commands"></span>
+                    <span class="cursor">&nbsp;</span>
+                </div>
+            </template>
+            <template id="output-template">
+                <div class="output__line">
+                    <span class="output__text">Text</span>
+                </div>
+            </template>
+        </div>
+
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

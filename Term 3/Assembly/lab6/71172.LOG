@@ -1,0 +1,17 @@
+Turbo Assembler  Version 2.02  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   D:\main.asm  to  main.OBJ
+**Error** D:\main.asm(25) Name must come first
+**Error** D:\main.asm(26) Unknown character
+**Error** D:\main.asm(29) Illegal instruction
+**Error** D:\main.asm(30) Unknown character
+**Error** D:\main.asm(36) Forward reference needs override
+**Error** D:\main.asm(46) Forward reference needs override
+**Error** D:\main.asm(50) Forward reference needs override
+Error messages:    7
+Warning messages:  None
+Passes:            1
+Remaining memory:  486k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+d:\main.obj : unable to open file

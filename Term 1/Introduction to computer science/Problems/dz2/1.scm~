@@ -1,0 +1,91 @@
+(define (run a b d c)
+  (if (<= (- b d) a)
+      c
+      (run (+ a d) b d (cons (+ a d) c))
+      )
+  )
+
+(define (my-range a b d)
+  (reverse (run a b d (list a)))
+  )
+
+(my-range  0 11 3) ;; ⇒ (0 3 6 9)
+(display "---\n")
+
+
+(define (displayl t z) (display t) (display z) (newline))
+
+(define (my-flatten xs) 
+  (if (list? xs)
+      (if (= (length xs) 1)
+          (my-flatten (car xs))
+          (append (my-flatten (car xs)) (my-flatten (cdr xs)))
+          )
+      (list xs)
+      )
+  )
+
+;; (1 2 (3 4 . 5) . 6)
+(my-flatten '((1) 2 (3 (4 5)) 6)) ;; ⇒ (1 2 3 4 5 6)
+
+(display "---\n")
+
+(define (my-element? x xs)
+  (if (null? xs)
+      #f
+      (if (equal? x (car xs))
+          #t
+          (my-element? x (cdr xs))
+          )
+      )
+  
+  )
+(my-element? 1 '(3 2 1)) ;; ⇒ #t
+(my-element? 4 '(3 2 1)) ;; ⇒ #f
+
+(display "---\n")
+
+(define (_filt pred? xs good)
+  (if (null? xs)
+      good
+      (if (pred? (car xs))
+          (_filt pred? (cdr xs) (append good (cons (car xs) '())))
+          (_filt pred? (cdr xs) good)
+          )
+      )
+  )
+(define (my-filter pred? xs)
+  (_filt pred? xs '())
+  )
+
+(my-filter odd? (my-range 0 10 1))
+  ;; ⇒ (1 3 5 7 9)
+(my-filter (lambda (x) (= (remainder x 3) 0)) (my-range 0 13 1))
+  ;; ⇒ (0 3 6 9 12)
+
+
+(display "---\n")
+(define (_real op xs s)
+  (if (null? (cdr xs)) 
+      (if (equal? s "")
+          (car xs)
+          (op s (car xs))
+          )
+      (if (equal? s "")
+          (_real op (cddr xs) (op (car xs) (cadr xs)))
+          (_real op (cdr xs) (op s (car xs)))
+          )
+      )
+  )
+(define (my-fold-left op xs)
+  (_real op xs "")
+ )
+
+(define (my-fold-right op xs)
+  (_real op (reverse xs)  "")
+ )
+
+(my-fold-left  quotient '(16 2 2 2 2)) ;; ⇒ 1
+(my-fold-left  quotient '(1))          ;; ⇒ 1
+(my-fold-right expt     '(2 3 4))      ;; ⇒ 2417851639229258349412352
+(my-fold-right expt     '(2))          ;; ⇒ 2

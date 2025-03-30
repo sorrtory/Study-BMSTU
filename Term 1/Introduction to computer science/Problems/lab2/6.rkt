@@ -1,0 +1,23 @@
+(define (o . xs)
+  
+  (if (null? xs)
+      (lambda (x) x)  
+      (lambda (x) ((car xs) ((apply o (cdr xs)) x))
+        )
+      )
+  )
+
+(define (f x) (+ x 2))
+(define (g x) (* x 3))
+(define (h x) (- x))
+
+
+;; -1 * 3 + 2
+;; 1 * 3 + 2
+;; -1 * 1
+
+((o f g h) 1) ;;⇒ -1
+((o f g) 1)   ;; ⇒ 5
+((o h) 1)     ;; ⇒ -1
+((o) 1)       ;; ⇒ 1
+

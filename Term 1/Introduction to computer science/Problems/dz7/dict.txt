@@ -1,0 +1,5 @@
+the text of 
+dictionary
+which consists of any word
+such as hello foo bar zxc
+Yes Santa

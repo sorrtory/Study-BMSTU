@@ -1,0 +1,70 @@
+make 10 20
+index 10 of 10 20
+index 11 of 10 20
+make 21 22
+index 21 of 21 22
+l1[10]: index 10 of 10 20
+1
+make 10 22
+should be made
+clone 1
+clone 2
+COPY 10 22
+COPY 110 11 12 13 14 15 16 17 18 19 20 21 delete 10 22
+(l1+ l2)[21]: index 21 of 10 22
+3
+END OF PROGRAM
+delete 10 22
+delete 21 22
+delete 10 20
+4==    at 0x401243: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd0ec is 0 bytes after a block of size 44 alloc'd
+==53814==    at 0x4844723: operator new[](unsigned long) (vg_replace_malloc.c:725)
+==53814==    by 0x4013DE: PascalArray<10, 20, int>::PascalArray() (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x40121A: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814== 
+==53814== Invalid write of size 4
+==53814==    at 0x401266: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd184 is 4 bytes inside an unallocated block of size 4,116,064 in arena "client"
+==53814== 
+==53814== Invalid read of size 4
+==53814==    at 0x40174E: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd0ec is 0 bytes after a block of size 44 alloc'd
+==53814==    at 0x4844723: operator new[](unsigned long) (vg_replace_malloc.c:725)
+==53814==    by 0x4013DE: PascalArray<10, 20, int>::PascalArray() (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x40121A: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814== 
+==53814== Invalid write of size 4
+==53814==    at 0x401750: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd1b4 is 0 bytes after a block of size 52 alloc'd
+==53814==    at 0x4844723: operator new[](unsigned long) (vg_replace_malloc.c:725)
+==53814==    by 0x4019BA: PascalArray<10, 22, int>::PascalArray() (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x401706: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814== 
+==53814== Invalid write of size 4
+==53814==    at 0x4017A7: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd1d4 is 20 bytes after a block of size 64 in arena "client"
+==53814== 
+==53814== Invalid read of size 4
+==53814==    at 0x401A85: PascalArray<10, 22, int>::PascalArray(PascalArray<10, 22, int>&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4017E3: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==  Address 0x4dbd1b4 is 0 bytes after a block of size 52 alloc'd
+==53814==    at 0x4844723: operator new[](unsigned long) (vg_replace_malloc.c:725)
+==53814==    by 0x4019BA: PascalArray<10, 22, int>::PascalArray() (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x401706: PascalArray<10, 22, int> PascalArray<10, 20, int>::operator+<21, 22, int>(PascalArray<21, 22, int> const&) (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814==    by 0x4012BE: main (in /home/chinalap/Документы/YIMP_labs/lab8/files/code/main)
+==53814== 
+==53814== 
+==53814== HEAP SUMMARY:
+==53814==     in use at exit: 0 bytes in 0 blocks
+==53814==   total heap usage: 6 allocs, 6 frees, 78,328 bytes allocated
+==53814== 
+==53814== All heap blocks were freed -- no leaks are possible
+==53814== 
+==53814== For lists of detected and suppressed errors, rerun with: -s
+==53814== ERROR SUMMARY: 28 errors from 6 contexts (suppressed: 0 from 0)

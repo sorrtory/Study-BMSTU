@@ -1,0 +1,251 @@
+#include <iostream>
+#include <vector>
+#include <set>
+#include <unistd.h>
+#include <algorithm>
+
+using namespace std;
+
+template <typename INTYPE, typename OUTTYPE>
+class MealyMachine
+{
+
+public:
+    vector<vector<INTYPE>> D;  // переходы
+    vector<vector<OUTTYPE>> F; // выходы
+    int n, m;                  // количество состояний автомата n, размер входного алфавита m,
+
+    MealyMachine(int n, int m)
+    {
+        vector<vector<INTYPE>> D(n, vector<INTYPE>(m));
+        this->D = D;
+
+        vector<vector<OUTTYPE>> F(n, vector<OUTTYPE>(m));
+        this->F = F;
+
+        this->n = n;
+        this->m = m;
+    }
+
+    void graphviz()
+    {
+        cout << "digraph {\n\trankdir = LR\n";
+
+        for (size_t j = 0; j < n; j++)
+            for (size_t i = 0; i < m; i++)
+                cout << "\t" << j << " -> " << D[j][i] << " [label = \"" << (char)('a' + i) << "(" << F[j][i] << ")\"]\n";
+        cout << "}\n";
+    }
+};
+
+string repeatDelta(string s, string delta, int n)
+{
+    string s1 = delta;
+
+    for (int i = 1; i < n; i++)
+        s1 += delta;
+
+    return s + s1;
+}
+
+string getTail(const vector<string> &path, int qInPathIndex)
+{
+    // cout << "WANNA APPEND";
+    string tail = "";
+    for (auto i = qInPathIndex; i < path.size(); i++)
+        if (path[i] != "-")
+            tail += path[i];
+
+    return tail;
+}
+// string noMinus(string s)
+// {
+//     string s1 = "";
+//     for (auto &&i : s)
+//         if (i != '-')
+//             s1 += i;
+//     return s1;
+// }
+vector<string> slicing(vector<string> const &v, int X, int Y)
+{
+    vector<string> vector(v.begin() + X, v.begin() + Y + 1);
+    return vector;
+}
+
+int rfind(const vector<string> &myWay, string q)
+{
+    for (int i = myWay.size() - 1; i >= 0; i--)
+        if (myWay[i] == q)
+            return i;
+    return -1;
+}
+
+void dfs(int q, const MealyMachine<int, string> &MM, vector<string> &path, string pathNoMinus, vector<string> &myWay, const int maxSize, set<string> possibleStringsInVertex[])
+{
+    // cout << q << ": ";
+    // for (int i = 0; i < MM.n; i++)
+    // {
+    //     cout << "|";
+    //     for (auto &&j : possibleStringsInVertex[i])
+    //     {
+    //         cout << j << ";";
+    //     }
+    //     cout << "| ";
+    // }
+    // cout << endl;
+
+    // if (pathNoMinus.size() > maxSize || path.size() > MM.n)
+    //     return;
+
+    possibleStringsInVertex[q].insert(pathNoMinus);
+
+    // vector<string>::reverse_iterator qInPathIndex = find(myWay.rbegin(), myWay.rend(), to_string(q));
+    int qInPathIndex = rfind(myWay, to_string(q));
+
+    // cout << qInPathIndex << " iter" << endl;
+    myWay.push_back(to_string(q));
+    // sleep(1);
+    // cout << q << " by: ";
+    // for (auto &&i : myWay)
+    // {
+    //     cout << i;
+    // }
+    // cout << endl;
+    // cout << myWay << "|" << path << endl;
+    for (int i = 0; i < MM.m; i++)
+    {
+        for (string possiblePath : possibleStringsInVertex[q])
+        {
+            // cout << q << ": " << possiblePath << endl;
+
+            if (possiblePath.size() + 1 <= maxSize)
+            {
+                if (MM.F[q][i] == "-")
+                {
+
+                    if (MM.D[q][i] != q) // prevent self λ
+                    {
+
+                        // return;
+                        // cout << *((qInPathIndex+1).base()) << "Aga" << endl;
+                        if (qInPathIndex != -1) // update pathes of q λ descendant, if already visited q
+                        {
+                            // cout << q << endl;
+                            string tail = getTail(path, qInPathIndex);
+                            // cout << q << ": " << tail << endl;
+                            for (string base : possibleStringsInVertex[MM.D[q][i]])
+                            {
+                                if (base == "" || tail == "")
+                                {
+                                    continue;
+                                }
+
+                                string based = base + tail;
+                                while (based.size() <= maxSize)
+                                {
+                                    possibleStringsInVertex[q].insert(based);
+                                    possibleStringsInVertex[MM.D[q][i]].insert(based);
+                                    based += tail;
+                                }
+                            }
+                            return;
+                        }
+                        else
+                        {
+                            // cout << "BIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBABAABABA" << q << endl;
+
+                            // if (MM.D[MM.D[q][i]][0] == q && MM.F[MM.D[q][i]][0] == "-" &&
+                            //     MM.D[MM.D[q][i]][1] == q && MM.F[MM.D[q][i]][1] == "-") // neigbour λ cycle
+                            // {
+                            //     continue;
+                            // }
+                            // if (myWay.find(to_string(MM.D[q][i])) == string::npos)
+                            // {
+                            // if (/* condition */)
+                            // {
+                            //     /* code */
+                            // }
+                            path.push_back("-");
+                            dfs(MM.D[q][i], MM, path, possiblePath, myWay, maxSize, possibleStringsInVertex);
+                            // }
+
+                            // if (MM.D[MM.D[q][i]][0] == q && MM.F[MM.D[q][i]][0] == "-") // neigbour λ cycle
+                            // {
+                            //     continue;
+                            // }
+
+                            // if (MM.D[MM.D[q][i]][1] == q && MM.F[MM.D[q][i]][1] == "-")
+                            // {
+                            //     /* code */
+                            // }
+                            // for (size_t j = 0; j < MM.m; j++)
+                            // {
+                            //     if (!(MM.D[MM.D[q][i]][j] == q && MM.F[MM.D[q][i]][j] == "-"))
+                            //         dfs(MM.D[q][i], MM, path + "-", possiblePath, myWay, maxSize, possibleStringsInVertex);
+                            // }
+
+                            // cout << "here: path:" << path << " q: " << q << " myWAY:" << myWay << endl;
+                            // if (path.size() < MM.n)
+                            // dfs(MM.D[q][i], MM, path + "-", possiblePath, myWay, maxSize, possibleStringsInVertex);
+                        }
+                    }
+                }
+                else
+                {
+
+                    // cout << path << " and  " << possiblePath << "  PAthNOMINUS: " << pathNoMinus << " MMF: " << MM.F[q][i] << "END" << endl;
+                    if (possibleStringsInVertex[MM.D[q][i]].find(possiblePath + MM.F[q][i]) == possibleStringsInVertex[MM.D[q][i]].end())
+                    {
+                        path.push_back(MM.F[q][i]);
+                        dfs(MM.D[q][i], MM, path, possiblePath + MM.F[q][i], myWay, maxSize, possibleStringsInVertex);
+                    }
+
+                    // dfs(MM.D[q][i], MM, path + MM.F[q][i], pathNoMinus + MM.F[q][i], myWay, maxSize, possibleStringsInVertex);
+                }
+            }
+        }
+    }
+}
+
+int main(int argc, char const *argv[])
+{
+    int N = 10, M, q0;
+    string space;
+    cin >> N;
+
+    getline(cin, space);
+    MealyMachine<int, string> MM(N, 2);
+    for (auto &&i : MM.D)
+        for (auto &&j : i)
+            cin >> j;
+
+    getline(cin, space);
+    for (auto &&i : MM.F)
+        for (auto &&j : i)
+            cin >> j;
+
+    getline(cin, space);
+
+    cin >> q0;
+    cin >> M;
+    ////////////////////////////////////////
+    // MM.graphviz();
+    // cout << endl
+    //      << endl;
+    set<string> possibleStringsInVertex[N];
+    vector<string> path;
+    // string pathNoMinus = "";
+    vector<string> myWay;
+    dfs(q0, MM, path, "", myWay, M, possibleStringsInVertex);
+
+    set<string> out;
+    for (auto &&st : possibleStringsInVertex)
+        for (auto &&i : st)
+            if (i != "")
+                out.insert(i);
+
+    for (auto &&i : out)
+        cout << i << " ";
+    cout << endl;
+    return 0;
+}

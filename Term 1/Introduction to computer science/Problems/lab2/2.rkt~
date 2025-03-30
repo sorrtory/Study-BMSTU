@@ -1,0 +1,15 @@
+;; Хвостовая рекурсия
+
+(define (delete pred xs)
+  (if (= (length xs) 0)
+      '()
+      (if (pred (car xs))
+          (cons '() (delete pred (cdr xs)))
+          (cons (car xs) (delete pred (cdr xs)))
+          )
+          ) )
+
+  
+
+
+(delete even? '(0 1 2 3))

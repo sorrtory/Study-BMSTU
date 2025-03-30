@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form to Go</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form id="dataForm">
+        <button type="submit">Update</button>
+    </form>
+
+    <p id="response"></p>
+
+    
+    <form id="dataForm2">
+        <button type="submit">Delete</button>
+    </form>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("/update", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to submit form");
+                }
+
+                const result = await response.json();
+                document.getElementById("response").textContent = `Server response: ${result.message}`;
+            } catch (error) {
+                document.getElementById("response").textContent = `Error: ${error.message}`;
+            }
+        });
+
+        document.getElementById("dataForm2").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("/delete", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to submit form");
+                }
+
+                const result = await response.json();
+                document.getElementById("response").textContent = `Server response: ${result.message}`;
+            } catch (error) {
+                document.getElementById("response").textContent = `Error: ${error.message}`;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

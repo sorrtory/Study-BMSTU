@@ -1,0 +1,19 @@
+Turbo Assembler  Version 2.02  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   D:\main.asm  to  main.OBJ
+**Error** D:\main.asm(15) Name must come first
+**Error** D:\main.asm(16) Unknown character
+**Error** D:\main.asm(17) Code or data emission to undeclared segment
+**Error** D:\main.asm(18) Code or data emission to undeclared segment
+**Error** D:\main.asm(19) Illegal instruction
+**Error** D:\main.asm(20) Unknown character
+**Error** D:\main.asm(37) Forward reference needs override
+**Error** D:\main.asm(47) Forward reference needs override
+**Error** D:\main.asm(51) Forward reference needs override
+Error messages:    9
+Warning messages:  None
+Passes:            1
+Remaining memory:  486k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+d:\main.obj : unable to open file

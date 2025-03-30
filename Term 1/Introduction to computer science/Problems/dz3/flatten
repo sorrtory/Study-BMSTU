@@ -1,0 +1,61 @@
+(define-syntax flatten  ;; Макрос flatten
+  (syntax-rules ()
+    ((flatten xxs)
+     (eval (let loop ((xs (quote xxs)))
+       (if (list? xs)
+           (if (= (length xs) 1)
+               (loop (car xs))
+               (append (loop (car xs)) (loop (cdr xs)))
+               )
+           (begin (display xs) (newline) (list xs))
+           )) (interaction-environment)))))
+
+
+
+(define-syntax test
+  (syntax-rules ()
+    ((test returned expected) (list (quote returned) returned expected))))
+
+(define-syntax run-test
+  (syntax-rules ()
+    ((run-test test_obj)
+     (if (equal? (cadr test_obj) (caddr test_obj))
+         (begin (write (car test_obj)) (display " ok\n") #t)
+         (begin
+           (write (car test_obj))
+           (display " FAIL\n")
+           (display "  Expected: ")
+           (write (caddr test_obj))
+           (newline)
+           (display "  Returned: ")
+           (write (cadr test_obj))
+           (newline)
+           #f)))))
+
+(define-syntax run-tests
+  (syntax-rules ()
+    ((run-tests test_obj_list)
+     (not (member #f (map (lambda (n) (run-test n)) test_obj_list))))))
+
+
+
+(display "\n-=РОБОТ-ПРОВЕРЯЛЬЩИК ПРОВЕРЯЕТ МАКРОС flatten=-\n\n")
+
+(define (f x y z)
+  (flatten (((+ x) 3 (4 y) (((z)))) (7 y x 8))))  ;; (+ x 3 4 y z 7 y x 8)
+
+;;(flatten (((+ x) 3 (4 y) (((z)))) (7 y x 8)))
+
+
+(define tests
+  (list (test (f 1 1 1) 27)
+        (test (let ((a 5)
+                    (b 7)
+                    (c 1))
+                (flatten ((* (((a) (b)) c))))) ;; (* a b c)
+              35)
+	(test (flatten '(((string #\a) #\b (#\c #\d)) #\e)) "abcde")
+	(test (flatten '(string #\a (#\b) #\c ((#\d)) #\e)) "abcde")))
+
+
+(define **test-succeed-14048** (run-tests tests))

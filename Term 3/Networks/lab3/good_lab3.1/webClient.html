@@ -1,0 +1,579 @@
+<html>
+
+<head>
+  <title>DashBoard</title>
+  <!-- <link rel="stylesheet" href="style.css" type="text/css"/> -->
+  <meta charset="utf8">
+  <title>My dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+
+    }
+
+    .container, .cont3 {
+      text-align: center;
+      background-color: #f5f5f5;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 2.5vh;
+      max-width: fit-content;
+      margin-inline: auto; /*Delete?*/
+      margin-left: 40%;
+      min-height: 90vh;
+
+    }
+
+    .container {
+      height: fit-content;
+    }
+
+    .cont3 {
+      max-height: 90vh;
+
+      position: relative;
+      margin-left: 10%;
+      width: 100%;
+
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-sizing: border-box;
+      min-width: 50vh;
+
+
+    }
+    
+    .scrollable {
+      max-height: 75vh;
+      overflow-y: auto;
+      background: radial-gradient(white, #eee);
+    }
+
+    .text-box {
+      border: 1px solid #ccc;
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 2vh 0;
+      padding-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow-y: auto;
+      display: grid;
+
+    }
+
+    .text-box:last-child,
+    .text-box:first-child {
+      margin: 0;
+    }
+
+    .text-box b {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .text-box input,
+    select {
+      padding: 10px;
+
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 80%;
+      justify-self: center;
+
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      justify-self: center;
+    }
+
+    button:hover {
+      background-color: #000;
+    }
+
+    .box3 button {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cont2 {
+      position: fixed;
+      text-align: left;
+      height: auto;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 20px;
+      background-color: #f5f5f5;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .box3 {
+      padding: 20px;
+      font-size: 1.3rem;
+
+      color: #333;
+      margin: 0;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      box-sizing: border-box;
+      justify-content: center;
+
+      flex: 1;
+
+    }
+
+    .box3 span {
+      border: 1px solid #ccc;
+      padding: 20px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .box3 strong {
+      padding-bottom: 10px;
+    }
+
+    .box2 {
+      text-align: center;
+    }
+
+    .box2 b {
+      font-size: 1.5rem;
+    }
+
+    #messageContainer {
+    display: grid;               
+    grid-template-columns: 1fr;  
+    gap: 5px;                   
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+
+    .log_toremove {
+      border: 1px solid #ccc;   
+      padding: 3px;
+      max-width: 400px;          
+      background-color: #f9f9f9;   
+    }
+    .log_toremove:first-child {
+      margin-top: 10px;
+    }
+    .log_toremove:last-child {
+      margin-bottom: 10px;
+    }
+
+  </style>
+  <script>
+
+    const ips = ["185.104.251.226", "185.102.139.161", "185.102.139.168", "185.102.139.169"]
+    const wsPort = 1494
+    const httpPort = 1491
+    const ssePort = 1497
+    let msgCounters = [0, 0, 0, 0]
+    let transmition = ""
+    const psblTr = ["Get", "Post", "Socket"]
+
+    let sockets = []
+
+
+    function writeData(i, message) {
+      if (msgCounters[i] > 5) {
+        document.getElementById(i + " message").remove()
+        msgCounters[i]--;
+      }
+
+      let messageDiv = document.createElement("div");
+      messageDiv.id = i + " message"
+      messageDiv.className = "toremove"
+      messageDiv.textContent = message;
+
+      // Display the message in the #messages div
+      document.getElementById("id" + i).append(messageDiv);
+
+      msgCounters[i]++;
+    }
+
+    function startSocket(i) {
+
+      sockets[i] = new WebSocket("ws://" + ips[i] + ":" + wsPort)
+        const socket = sockets[i];
+
+        socket.onopen = function (e) {
+          console.log("Socket opened")
+        };
+
+        socket.onmessage = function (event) {
+          console.log(`Socket mesage to ${i}: ${event.data}`)
+          // Remove old messages
+          writeData(i, event.data)
+
+        };
+
+        socket.onclose = function (event) {
+          console.log("closed")
+          if (event.wasClean) {
+            //alert(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
+            // socket.send("UPDATE");
+
+          } else {
+            console.log("by server")
+            // например, сервер убил процесс или сеть недоступна
+            // обычно в этом случае event.code 1006
+            //alert('[close] Соединение прервано');
+          }
+        };
+
+        socket.onerror = function (error) {
+          alert(`[error] ${error.message}`);
+        };
+      }
+
+    function updateQuery(ip_index) {
+      const params = getInput(ip_index).split(" ")
+      const urlParams = new URLSearchParams();
+      urlParams.append("vps_id", ip_index)
+      urlParams.append('command', params[0]);
+
+      switch (params[0]) {
+        case "getSum":
+          urlParams.append('i1', params[1]);
+          urlParams.append('i2', params[2]);
+          break;
+        case "setValue":
+          urlParams.append('i1', params[1]);
+          urlParams.append('i2', params[2]);
+          break;
+        default:
+          break;
+      }
+
+    // Update the URL with the new query parameters
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
+
+    console.log("Updated query")
+
+    }
+
+    async function sendGetRequest() {
+      // Get WebForm query params
+      const urlParams = new URLSearchParams(window.location.search);
+      let ip_index = parseInt(urlParams.get("vps_id"))
+
+      // Create a URL with query parameters
+      const url = new URL('http://' + ips[ip_index] + ":" + httpPort + '/get' + `?${urlParams.toString()}`);
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        writeData(ip_index, data.message)
+      } catch (error) {
+        alert("Http Get error")
+      }
+    }
+    // Function to send a POST request
+    async function sendPostRequest(ip_index) {
+      try {
+        const params = getInput(ip_index).split(" ")
+        console.log(params)
+        const response = await fetch('http://' + ips[ip_index] + ":" + httpPort + '/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            "command": params[0],
+            "i1": params[1],
+            "i2": params[2],
+          })
+        });
+
+        const data = await response.json();
+        writeData(ip_index, data.message)
+
+      } catch (error) {
+        alert("Http Post error")
+
+      }
+    }
+
+    function clearVpsLog(index) {
+      let v = document.getElementById("inp" + index).value
+      if (v == "clear") {
+        els = document.getElementsByClassName("toremove")
+        Array.from(els).forEach((el) => {
+          el.remove()
+        });
+        
+        msgCounters = [0, 0, 0, 0]
+        console.clear()
+        return true
+      }
+      return false
+    }
+
+    function getInput(index) {
+      let v = document.getElementById("inp" + index).value
+      if (v == "clear") {
+        els = document.getElementsByClassName("toremove")
+        Array.from(els).forEach((el) => {
+          el.remove()
+        });
+        
+        msgCounters = [0, 0, 0, 0]
+        console.clear()
+        return ""
+      } else {
+        console.log("Command: \"" + v + "\" sended to vps " + index)
+        return v
+      }
+    }
+
+    function sendToSocket(index) {
+      sockets[index].send(getInput(index))
+    }
+
+    function send(ind) {
+      if (!clearVpsLog(ind)){
+        switch (transmition) {
+          case "Get":
+            updateQuery(ind)
+            break;
+          case "Post":
+            sendPostRequest(ind)
+            break;
+          case "Socket":
+            sendToSocket(ind)
+            break;
+          default:
+            console.error("Choose right transmition option!")
+            alert("No mode")
+            return
+        }
+        console.log("By", transmition)
+      }
+    }
+
+
+    function setTrMode() {
+      let mode = document.getElementById("trmode").value
+      updatePushButton()
+
+      if (psblTr.includes(mode)) {
+        transmition = mode
+        document.getElementById("currentMode").innerHTML = transmition
+        console.log("Switching to transmission mode: " + mode)
+        
+      } else {
+        alert("Bad mode!")
+      }
+    }
+
+    function connect() {
+      let mode = document.getElementById("currentMode").innerHTML
+      
+      // Secon connect by get is send
+      if (mode == "Get") {
+          sendGetRequest()
+          return
+      }
+      
+      if (mode == "Socket") {
+        // let btn = document.getElementById("btn_connect")
+        // btn.disabled = true;
+        // btn.style.opacity = 0.5
+        return
+      }
+
+    }
+  
+    function writeToLog(message, ip_index) {
+      const messageContainer = document.getElementById('messageContainer');
+      if (ip_index != undefined){
+        ip_index += ") "
+      } else {
+        ip_index = ""
+      }
+
+      // Create a new div for each message
+      const newMessageDiv = document.createElement('div');
+      newMessageDiv.className = "log_toremove"
+      newMessageDiv.innerText = ip_index + message;
+      
+      messageContainer.appendChild(newMessageDiv);
+    }
+
+    function clearLog() {
+      els = document.getElementsByClassName("log_toremove")
+        Array.from(els).forEach((el) => {
+          el.remove()
+          return ""
+        });
+      console.log("SSE log cleared")
+    }
+   // Open an SSE connection to the server
+   function startSSE(ip_index) {
+      const eventSource = new EventSource('http://' + ips[ip_index] + ":" + ssePort + '/events');
+
+      // Listen for messages from the server
+      eventSource.onmessage = function(event) {
+          const message = event.data;
+          let splitSymbolInd = message.indexOf("$")
+          let ip = message.slice(0, splitSymbolInd)
+          let odata = message.slice(splitSymbolInd + 1)
+          console.log(`SSE message from ${ip}: ${odata}`)
+          writeToLog(odata, ips.indexOf(ip))
+      };
+
+      // Handle SSE errors
+      eventSource.onerror = function(event) {
+          console.error(`SSE error on ${ips[ip_index]}`);
+          writeToLog("Can't connect!", ip_index)
+          setTimeout(startSSE(ip_index), 2000);
+      };
+
+      eventSource.onopen = function(event){
+        console.log("SSE connected")
+        writeToLog("SSE connected!", ip_index)
+      }
+      
+  } 
+
+
+  function updatePushButton() {
+    const selectedValue = document.getElementById("trmode").value;
+        let btn = document.getElementById("btn_connect")
+        btn.disabled = false;
+        btn.style.opacity = 1
+        switch (selectedValue) {
+          case "Get":
+            btn.innerHTML = "Send request"
+            break;
+          case "Post":
+              btn.disabled = true;
+              btn.innerHTML = "Automatically"
+              btn.style.opacity = 0.5
+              break
+          case "Socket":
+            btn.innerHTML = "Connect"
+            btn.disabled = true;
+            btn.style.opacity = 0.5
+          default:
+            break;
+        }
+    
+  }
+
+  window.onload = () => {
+    for (let i = 0; i < ips.length; i++) {
+      startSSE(i)
+      startSocket(i)
+    }
+  }
+  
+
+//   // Test data for logs
+//   window.addEventListener('load', function() {
+//     for (let index = 0; index < 100; index++) {
+//       writeToLog(index)      
+//       writeData(3, index)
+//       writeData(0, index)
+//     }
+// });
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="cont2">
+    <div class="text-box box2">
+      <b>Set transmition mode</b>
+      <select name="transMode" id="trmode">
+        <option value="Socket">Socket</option>
+        <option value="Get">Get</option>
+        <option value="Post">Post</option>
+      </select>
+
+      <button onclick="setTrMode()">Set</button>
+    </div>
+    <div class="box3">
+      <strong>Current mode</strong>
+      <span id="currentMode">No mode</span>
+      <button onclick="connect()" id="btn_connect">Connect</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="id0" class="text-box">
+      <b> Vps 0 </b>
+      <input id="inp0" type="text" placeholder="Enter command">
+      <button onclick="send(0)">Submit</button>
+      <hr style="width: 100%;">
+    </div>
+    <div id="id1" class="text-box">
+      <b> Vps 1 </b>
+      <input id="inp1" type="text" placeholder="Enter command">
+      <button onclick="send(1)">Submit</button>
+      <hr style="width: 100%;">
+    </div>
+    <div id="id2" class="text-box">
+      <b> Vps 2 </b>
+      <input id="inp2" type="text" placeholder="Enter command">
+      <button onclick="send(2)">Submit</button>
+      <hr style="width: 100%;">
+    </div>
+    <div id="id3" class="text-box">
+      <b> Vps 3 </b>
+      <input id="inp3" type="text" placeholder="Enter command">
+      <button onclick="send(3)"> Submit</button>
+      <hr style="width: 100%;">
+    </div>
+  </div>
+  <div class="cont3">
+    <div>
+      <button type="reset" onclick="clearLog()">Clear</button>
+    </div>
+    <hr style="width: 100%;">
+    <div style="position: relative;">
+      <h3>SSE log</h3>
+      <div>
+        <div class="scrollable">
+            <div id="messageContainer" style="overflow-y: auto;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+; Пример процедуры с ошибкой
+; 
+(define (signum x)
+  (cond
+    ((< x 0) -1)
+    ((= x 0)  1) ; Ошибка здесь!
+    (else     1)))
+
+; Загружаем каркас
+;
+(load "unit-test.scm")
+
+; Определяем список тестов
+;
+(define the-tests
+  (list (test (signum -2) -1)
+        (test (signum  0)  0)
+        (test (signum  2)  1)))
+
+; Выполняем тесты
+;
+(run-tests the-tests)

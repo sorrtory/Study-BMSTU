@@ -1,0 +1,5 @@
+(define (factorize xs)
+  (display xs)
+  )
+
+(factorize '(- (expt x 2) (expt y 2))) 

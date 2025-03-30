@@ -1,0 +1,17 @@
+BuyFood(30) <
+    CutMeat(5) <
+    BoilMeat(60) <
+    BoilAll(30) <
+    ServeUp(1);
+BuyFood <
+    PeelPotatoes(5) <
+    CutPotatoes(5) <
+    BoilAll;
+BuyFood <
+    CutCabbage(10) <
+    BoilAll;
+BuyFood <
+    CutOnion(3) <
+    FryOnion(8) <
+    ServeUp
+

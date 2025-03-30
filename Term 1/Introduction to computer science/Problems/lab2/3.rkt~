@@ -1,0 +1,15 @@
+(define (iterate f x n)
+  (if (null? n)
+      '()
+      (cons x (f x))))
+
+
+
+
+
+
+
+
+(iterate (lambda (x) (* 2 x)) 1 6)
+(iterate (lambda (x) (* 2 x)) 1 1)
+(iterate (lambda (x) (* 2 x)) 1 0)

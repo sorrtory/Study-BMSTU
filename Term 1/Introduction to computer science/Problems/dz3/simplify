@@ -1,0 +1,137 @@
+(define (simplify xs)  ;; Фукция simplify
+  (display xs)
+  (newline)
+  (if (not (list? xs))
+      xs
+      (if (equal? (car xs) '*)
+          (if (or (equal? '0 (cadr xs)) (equal? '0 (caddr xs)))
+              '0
+              (if (or (equal? '1 (cadr xs)) (equal? '1 (caddr xs)))
+                  (if (equal? '1 (cadr xs))
+                      (caddr xs)
+                      (cadr xs)
+                      )
+                  (if (list? (cadr xs))
+                      (list (simplify (cadr xs)))
+                      )
+                  )    
+              )
+          (if (equal? (car xs) '+)
+              (if (or (equal? '0 (cadr xs)) (equal? '0 (caddr xs)))
+                  (if (equal? '0 (cadr xs))
+                      (caddr xs)
+                      (cadr xs)
+                      )
+                  xs
+                  )
+              (if (equal? (car xs) '-)
+                  (if (equal? '0 (caddr xs))
+                      (cadr xs)
+                      (if (equal? '0 (cadr xs))
+                          `(- ,(caddr xs))
+                          xs)
+                      )
+                  xs
+                  )
+              )
+          )
+      )
+  )
+
+(simplify '(* (+ 2 x 0 (* 3 x 1)) (+ 3 5 1 (* 1 0))))
+
+(define-syntax test
+  (syntax-rules ()
+    ((test returned expected) (list (quote returned) returned expected))))
+
+(define-syntax run-test
+  (syntax-rules ()
+    ((run-test test_obj)
+     (if (equal? (cadr test_obj) (caddr test_obj))
+         (begin (write (car test_obj)) (display " ok\n") #t)
+         (begin
+           (write (car test_obj))
+           (display " FAIL\n")
+           (display "  Expected: ")
+           (write (caddr test_obj))
+           (newline)
+           (display "  Returned: ")
+           (write (cadr test_obj))
+           (newline)
+           #f)))))
+
+(define-syntax run-tests
+  (syntax-rules ()
+    ((run-tests test_obj_list)
+     (not (member #f (map (lambda (n) (run-test n)) test_obj_list))))))
+
+
+
+(display "\n-=РОБОТ-ПРОВЕРЯЛЬЩИК ПРОВЕРЯЕТ simplify=-\n\n")
+
+(define (any xs)
+  (and (not (null? xs))
+       (or (car xs) (any (cdr xs)))))
+
+
+(define (find-invalid expr)
+  (cond ((not (pair? expr)) #f)
+        ((equal? (car expr) '+)
+         (if (member 0 (cdr expr))
+             expr
+             (any (map find-invalid (cdr expr)))))
+        ((equal? (car expr) '*)
+         (if (or (member 0 (cdr expr))
+                 (member 1 (cdr expr)))
+             expr
+             (any (map find-invalid (cdr expr)))))
+        (else (any (map find-invalid (cdr expr))))))
+
+
+(define ie (interaction-environment))
+
+(define-syntax simplify-test
+  (syntax-rules ()
+    ((simplify-test argument expected call-arg)
+     (test (eval `(let ((x call-arg))
+                    ,(simplify 'argument))
+                 ie)
+           (eval '(let ((x call-arg))
+                    expected)
+                 ie)))))
+
+(define PI (* 4 (atan 1)))
+
+#;(find-invalid (simplify '(* (+ 2 x 0 (* 3 x 1))
+                                          (+ 3 5 1 (* 1 0)))))
+(define tests
+  (list #|(test (simplify 'x) 'x)
+        (test (simplify '(* x 5)) '(* x 5))
+        (test (simplify '(* 0 5)) 0)
+        (test (simplify '(* x 1)) 'x)
+        (test (simplify '(* x 0)) 0)
+        (test (simplify '(* 1 5)) 5)
+        (test (simplify '(+ x 5)) '(+ x 5))
+        (test (simplify '(+ x 0)) 'x)
+        (test (simplify '(+ 0 5)) 5)|#
+        (test (find-invalid (simplify '(* (+ 2 x 0 (* 3 x 1))
+                                          (+ 3 5 1 (* 1 0)))))
+              #f)
+        (test (find-invalid (simplify '(+ (* (+ 0 (* 1 x))
+                                             (cos (* 2 x (+ 1 0))))
+                                          (* (+ 1 (* 0 x))
+                                             (cos (* 2 x (+ 1 x)))))))
+              #f)#|
+        (simplify-test (* (+ 3 x) (+ 0 0)) 0 5)
+        (simplify-test (+ (* (- 1 (* 2 x)) (cos (* 2 x (- 1 x))))
+                          (* (+ 1 (* 2 x)) (cos (* 2 x (+ 1 x)))))
+                       (+ (* (- 1 (* 2 x)) (cos (* 2 x (- 1 x))))
+                          (* (+ 1 (* 2 x)) (cos (* 2 x (+ 1 x)))))
+                       10)
+        (simplify-test (+ (* (+ 0 (* 1 x)) (cos (* 2 x (+ 1 0))))
+                          (* (+ 1 (* 0 x)) (cos (* 2 x (+ 1 x)))))
+                       (+ (* x (cos (* 2 x))) (cos (* 2 x (+ 1 x))))
+                       10))|#))
+
+
+(define **test-succeed-8904** (run-tests tests))
