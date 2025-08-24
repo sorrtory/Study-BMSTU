@@ -4,10 +4,10 @@ This repo contains some parts of labs and other IT tasks that I did at universit
 
 ---
 
-Things I touched upon
+Some topics I covered
 
 - C & Data Structures + Algorithms
-- Lisp(Scheme) & Programming strategies
+- Lisp(Scheme) & Programming basics
 - Java/C++ & OOP
 - Go & Discrete Math
 - Go & Computer Networks
@@ -15,6 +15,5 @@ Things I touched upon
 - OpenGL
 - OpenBSD + ReactOS drivers 🤕 
 
-
-The main point of this is to see my progress and keep it. \
-Then I'll update the repo after passing the next exam.
+My point is to see my progress and keep it here. \
+I'll update this repo after passing next exams.
