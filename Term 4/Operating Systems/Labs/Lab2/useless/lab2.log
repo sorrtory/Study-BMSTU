@@ -1,0 +1,1 @@
+(../boot/freeldr/freeldr/ntldr/winldr.c:540) err: PeLdrLoadImage('kdfile.dll') failed

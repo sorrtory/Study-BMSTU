@@ -1,0 +1,5 @@
+#define REACTOS_VERSION_DLL
+#define REACTOS_STR_FILE_DESCRIPTION  "Lab2Lib"
+#define REACTOS_STR_INTERNAL_NAME     "Lab2Lib"
+#define REACTOS_STR_ORIGINAL_FILENAME "lab2lib.sys"
+#include <reactos/version.rc>

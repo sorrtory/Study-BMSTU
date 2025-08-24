@@ -1,0 +1,3 @@
+sc create lab2driver binPath= C:\ReactOS\system32\drivers\
+lab2.sys type= kernel
+sc start lab2driver

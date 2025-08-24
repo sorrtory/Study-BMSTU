@@ -1,0 +1,2 @@
+sc create lab3driver binPath= C:\ReactOS\system32\drivers\lab3.sys type= kernel
+sc start lab3driver

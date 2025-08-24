@@ -1,0 +1,42 @@
+# https://en.wikipedia.org/wiki/Flood_fill
+def flood_fill(x, y, fill_color, boundary_color):
+    def inside(px, py):
+        return (0 <= px < WIDTH and 0 <= py < HEIGHT and
+                not np.array_equal(framebuffer[py, px], fill_color) and
+                not np.array_equal(framebuffer[py, px], boundary_color))
+
+    stack = [(x, x, y, 1), (x, x, y - 1, -1)]  # Initialize stack with two directions
+    pixel_count = 0  # Counter for filled pixels
+
+    while stack:
+        x1, x2, cy, dy = stack.pop()
+        x = x1
+
+        # Move left to find the start of the span
+        while inside(x - 1, cy):
+            framebuffer[cy, x - 1] = fill_color
+            x -= 1
+            pixel_count += 1
+            if pixel_count % 100 == 0:
+                display()
+
+        if x < x1:
+            stack.append((x, x1 - 1, cy - dy, -dy))
+
+        # Fill the span and check for new spans above and below
+        while x1 <= x2:
+            while inside(x1, cy):
+                framebuffer[cy, x1] = fill_color
+                x1 += 1
+                pixel_count += 1
+                if pixel_count % 100 == 0:
+                    display()
+
+            if x1 > x:
+                stack.append((x, x1 - 1, cy + dy, dy))
+            if x1 - 1 > x2:
+                stack.append((x2 + 1, x1 - 1, cy - dy, -dy))
+            x1 += 1
+            while x1 < x2 and not inside(x1, cy):
+                x1 += 1
+            x = x1

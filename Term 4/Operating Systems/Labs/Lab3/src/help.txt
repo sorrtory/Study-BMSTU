@@ -1,0 +1,5 @@
+screen /dev/pts/2 115200
+
+
+# NetBSD
+Has everything in the manual.pdf

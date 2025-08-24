@@ -1,0 +1,10 @@
+Отлично, давай приступим к отчету для лабораторной номер 7. В формате latex напиши цель работы, теорию, ход работы(опиши процессы оптимизации 
+OPTIMIZE_USE_DL = True      # Use Display Lists for rendering
+OPTIMIZE_USE_VA = False     # Use Vertex Array for rendering
+OPTIMIZE_LIGHT = False      # Combine ambient and diffuse lighting
+OPTIMIZE_USE_VAI = False    # Use VA with indices for rendering
+Пока не касайся шейдеров
+) 
+
+Используй тот же код, чтобы написать ход работы (тебе нужно будет описать реализацию оптимизации)
+Такжи учти 
