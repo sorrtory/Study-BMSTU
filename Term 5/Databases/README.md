@@ -1,6 +1,6 @@
 # Databases course
 
-<img align=right src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/2560px-Microsoft_SQL_Server_2025_icon.svg.png" height="50px" width="50px">
+<img align=right src="https://upload.wikimedia.org/wikipedia/commons/4/41/Microsoft_SQL_Server_2025_icon.svg" height="50px" width="50px">
 
 This course covers the fundamentals of database systems.
 

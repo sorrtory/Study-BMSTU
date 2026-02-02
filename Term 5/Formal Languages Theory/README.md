@@ -1,6 +1,6 @@
 # Formal Languages Theory
 
-<img align=right src="https://web.cs.ucdavis.edu/~rogaway/classes/120/spring14/pl.jpg" height="50px" width="50px">
+<img align=right src="https://web.cs.ucdavis.edu/~rogaway/classes/120/spring14/pl.jpg" height="150px" width="150px">
 
 This course was about formal languages, automata theory and regular expressions.
 We solved dozens of tasks about language classification and wrote several labs implementing various automata and grammars.
