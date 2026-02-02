@@ -1,6 +1,6 @@
 # Симуляция жидкости с использованием WebGPU
 
-<img align=right src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7ff4ba379cdea97818e1918691419800124eb79" height="50px" width="50px" style="background: white;">
+<img align=right src="https://www.w3.org/2023/02/webgpu-logos/webgpu-notext.svg" height="50px" width="50px">
 Визуализация течения жидкости с использованием WebGPU на основе алгоритма Stable Fluids.
 
 - [Видео демонстрация](./DEMO/coursework.mp4)
