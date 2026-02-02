@@ -1,0 +1,77 @@
+@startuml "Hospital Relational Diagram from Semantic Model"
+
+hide circle
+skinparam linetype ortho
+skinparam fixCircleLabelOverlapping true
+
+entity Doctor {
+  *doctor_id NOT NULL (PK)
+  --
+  email NOT NULL (AK1.1)
+  name NOT NULL
+  specialization NOT NULL
+  phone_number NULL
+  status NOT NULL
+}
+
+entity Appointment {
+  *appointment_id NOT NULL (PK)
+  --
+  schedule_date NOT NULL (AK1.1)
+  doctor_id NOT NULL (FK) (AK1.2)
+  patient_id NULL (FK)
+  address NULL
+  room_number NULL
+  examination NULL
+  status NOT NULL
+}
+
+entity Prescription {
+  *prescription_id NOT NULL (PK)
+  --
+  prescription_number NOT NULL (AK1.1)
+  doctor_id NOT NULL (FK) (AK1.2)
+  patient_id NOT NULL (FK)
+  prescribe_date NOT NULL
+  recommendations NOT NULL
+  drug_name NOT NULL
+  dosage NOT NULL
+  frequency NOT NULL
+  duration NOT NULL
+}
+
+entity Patient {
+  *insurance_number NOT NULL (PK)
+  --
+  name NOT NULL
+  phone_number NOT NULL (AK1.1)
+  email NOT NULL (AK2.1)
+  date_of_birth NULL
+  home_address NULL
+  emergency_contact NULL
+  status NOT NULL
+}
+
+entity Assay {
+  *assay_id NOT NULL (PK)
+  --
+  assay_number NOT NULL (AK1.1)
+  patient_id NOT NULL (FK) (AK1.2)
+  doctor_id NULL (FK)
+  test_date NOT NULL
+  sample_type NOT NULL
+  results NULL
+  status NOT NULL
+  reference_range NULL
+  is_urgent NOT NULL
+}
+
+Doctor ||--o{ Appointment
+Doctor ||--o{ Prescription
+Doctor |o--o{ Assay
+
+Patient |o--o{ Appointment
+Patient ||--o{ Prescription
+Patient ||--o{ Assay
+
+@enduml

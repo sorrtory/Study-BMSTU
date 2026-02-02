@@ -1,0 +1,66 @@
+\usepackage{polyglossia} % языковой пакет
+
+\usepackage{pdfpages} % пакет для импорта pdf-файлов
+
+\usepackage{tocvsec2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{longtable,booktabs,array}
+
+\usepackage{calc}
+
+\usepackage{ulem}
+
+\usepackage{setspace}
+
+\usepackage[labelsep=period]{caption}
+
+\usepackage{caption}
+
+\usepackage{graphicx} % пакет для использования графики (чтобы вставлять рисунки, фотографии и пр.)
+
+% настройки оглавления
+\usepackage{tocloft}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+
+% качественные листинги кода
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{lstfiracode}
+
+% paragraph formatting
+% https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+% \usepackage{titlesec}
+% \setcounter{secnumdepth}{4}
+% \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\usepackage{amsmath} % поддержка математических символов
+
+\usepackage{url} % поддержка url-ссылок
+
+\usepackage{natbib} % менеджер цитирования natlib.
+
+\bibliographystyle{unsrtnat} % выбираем стиль библиографии отсюда: https://www.overleaf.com/learn/latex/Natbib_bibliography_styles
+
+% \setcitestyle{authoryear, open={(},close={)}} % Определяем стиль цитирования. Указываем, чтобы цитирование в тексте вставлялось в формате (Автор, год). 
+\setcitestyle{numbers,open={[},close={]}}
+% Alternatively, you can use:
+% \bibpunct{[}{]}{,}{n}{}{,}
+
+\usepackage{multirow} % таблицы с объединенными строками
+
+\usepackage{hyperref} % пакет для интеграции гиперссылок
+
+\usepackage{indentfirst} % пакет для отступа абзаца
+
+
+\usepackage{chngcntr} % пакет подписей и нумерации рисунков
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

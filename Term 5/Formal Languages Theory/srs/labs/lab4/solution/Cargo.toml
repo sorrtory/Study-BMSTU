@@ -1,0 +1,10 @@
+[package]
+name = "solution"
+version = "0.1.0"
+edition = "2024"
+
+default-run = "solution"
+
+[dependencies]
+plotters = "0.3.7"
+rand = "0.9.2"

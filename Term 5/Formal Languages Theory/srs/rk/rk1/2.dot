@@ -1,0 +1,47 @@
+digraph {
+	rankdir = LR
+	node [shape=circle]
+	dummy [label = "", shape = none]
+    start [shape = point];
+    start -> "eps";
+	eps [shape=doublecircle]
+	a [shape=doublecircle]
+	b [shape=doublecircle]
+	aa [shape=doublecircle]
+	ab [shape=doublecircle]
+	abb [shape=doublecircle]
+
+    eps -> a [label="a"]
+    eps -> b [label="b"]
+    
+    a -> aa [label="a"]
+    a -> ab [label="b"]
+    
+    ab -> T [label="a"] # aba
+    ab -> abb [label="b"]
+    
+    abb -> abb [label="b"]
+    abb -> abba [label="a"] # +1 счетчик на bba
+    
+    abba -> abbaa [label="a"]
+    abba -> abbab [label="b"]
+    
+    abbaa -> abbaa [label="a"]
+    abbaa -> ab [label="b"] # +1 счетчик aab
+    
+    abbab -> T [label="a"] # aba
+    abbab -> T [label="b"] # если зайдем в 2+ bba, то не сможем компенсировать так как aab не стакаются из-за отсутсвия aba и факта что aabba уравнивает счетчик
+    
+    aa -> aa [label="a"]
+    aa -> aab [label="b"] # +1 счетчик для aab
+    
+    aab -> T [label="a"] # aba
+    aab -> aabb [label="b"]
+    
+    aabb -> aabb [label="b"]
+    aabb -> a [label="a"] # +1 счетчик bba
+    
+    
+    b -> a  [label="a"]
+    b -> abb [label="b"]
+}

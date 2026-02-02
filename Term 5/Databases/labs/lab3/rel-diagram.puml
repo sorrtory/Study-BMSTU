@@ -1,0 +1,87 @@
+@startuml "Hospital Relational Diagram"
+
+' hide the spot
+hide circle
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+' Prevent overlapping labels on circles
+skinparam fixCircleLabelOverlapping true 
+
+
+
+entity Doctor {
+  *doctor_id (PK)
+  --
+  email (AK1.1)
+  name
+  specialization
+  phone_number
+  status
+}
+
+
+entity Appointment {
+  * appointment_id (PK)
+  --
+  schedule_date (AK1.1)
+  doctor_id (FK) (AK1.2)
+  patient_id (FK)
+  address
+  room_number
+  examination
+  status
+}
+
+entity Prescription {
+  *prescription_id (PK)
+  --
+  prescription_number (AK1.1)
+  doctor_id (FK) (AK1.2)
+  patient_id (FK)
+  prescribe_date
+  recommendations
+  drug_name
+  dosage
+  frequency
+  duration
+}
+
+
+
+entity Patient {
+  *insurance_number (PK)
+  --
+  name
+  phone_number (AK1.1)
+  email (AK2.1)
+  date_of_birth
+  home_address
+  emergency_contact
+  status
+}
+
+entity Assay {
+  *assay_id (PK)
+  --
+  assay_number (AK1.1)
+  patient_id (FK) (AK1.2)
+  doctor_id (FK)
+  test_date
+  sample_type
+  results
+  status
+  reference_range
+  is_urgent
+}
+
+Doctor ||--o{ Appointment
+Doctor ||--o{ Prescription
+Doctor |o--o{ Assay
+
+Patient |o--o{ Appointment
+Patient ||--o{ Prescription
+Patient ||--o{ Assay
+
+
+@enduml

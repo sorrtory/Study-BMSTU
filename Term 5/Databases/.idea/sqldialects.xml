@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/lab10/00_lab10.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/01_locks.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/03_nonrepeatable_read_1.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/03_nonrepeatable_read_2.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/04_phantom_read_1.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/04_phantom_read_2.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/05_serializable_1.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab10/05_serializable_2.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab13/lab13.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab14/lab14.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/lab15/lab15.sql" dialect="TSQL" />
+  </component>
+</project>

@@ -1,0 +1,56 @@
+Разработанное приложение, основанное на WebGPU, также требует определенных шагов по настройке и инициализации. В этой секции описывается процесс создания веб-приложения с использованием TypeScript и Next.js, а также интеграция WebGPU для выполнения вычислений на GPU.
+
+\subsection{Создание веб-приложения}
+
+Для удобства разработки и быстроты разработки веб-приложения был выбран фреймворк Next.js, который предоставляет мощные инструменты для создания приложений на TypeScript.
+
+В начале необходимо настроить проект Next.js с поддержкой TypeScript. Это включает в себя создание нового проекта, установку необходимых зависимостей и настройку конфигурационных файлов, линтера и прочих инструментов разработки рекоммендованных в официальной документации Next.js \cite{nextjsdocs}.
+
+\newpage
+
+\begin{lstlisting}[language=bash, caption=Создание нового проекта Next.js с TypeScript]
+pnpm create next-app@latest my-app --yes
+cd my-app
+pnpm dev
+\end{lstlisting}
+
+После создания проекта, необходимо установить типы для WebGPU, чтобы обеспечить поддержку TypeScript при работе с API WebGPU. Кроме того, для создания пользовательского интерфейса с динамическими параметрами симуляции будет использоваться библиотека \texttt{lil-gui}.
+
+\begin{lstlisting}[language=bash, caption=Установка зависимостей]
+pnpm add -D @webgpu/types # Установка типов для WebGPU
+pnpm add lil-gui          # Установка библиотеки lil-gui
+\end{lstlisting}
+
+\subsection{Подключение WebGPU}
+
+Для веб-приложения были разработаны React-компоненты, один из которых является точкой входа для инициализации WebGPU и создания контекста рендеринга. В этом компоненте происходит вызов функций инициализации WebGPU, а также передача параметров мыши (координаты и скорость) для удобного взаимодействия с симуляцией.
+
+\begin{lstlisting}[language=ES6,caption=Часть React-компонента для инициализации WebGPU]
+useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    setupMouseListener(canvas, params.mouse)
+
+    // This will hold the cleanup function returned by main()
+    let cleanup: (() => void) | undefined
+
+    main(canvas, params)
+      .then((c) => {
+        // Store the cleanup function for later
+        cleanup = c
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+
+    return () => {
+      if (cleanup) cleanup()
+    }
+  }, []) // only initialize WebGPU once
+}
+\end{lstlisting}
+
+Функция \texttt{main} отвечает за инициализацию WebGPU, создание устройства GPU, выделение буферов и настройку вычислительных шейдеров. Она также запускает основной цикл рендеринга и обновления симуляции.
+
+Таким образом, веб-приложение на Next.js соединяется с WebGPU, позволяя эффективно использовать возможности GPU для выполнения вычислительных задач, связанных с симуляцией жидкости.

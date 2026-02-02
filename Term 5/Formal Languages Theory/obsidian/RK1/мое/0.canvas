@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"35edb3d27d59cd49","type":"file","file":"RK1/мое/1.jpg","x":-580,"y":-300,"width":300,"height":400},
+		{"id":"f9359b609a5e17e7","type":"file","file":"RK1/мое/3.jpg","x":-580,"y":200,"width":300,"height":400},
+		{"id":"23543859dd880aca","type":"file","file":"RK1/мое/4.jpg","x":-280,"y":200,"width":300,"height":400},
+		{"id":"f984dd009ffe047a","type":"file","file":"RK1/мое/2.jpg","x":-280,"y":-300,"width":300,"height":400},
+		{"id":"ecf4f234cd87860c","x":-480,"y":-660,"width":400,"height":320,"type":"file","file":"Assets/m.jpeg"}
+	],
+	"edges":[]
+}

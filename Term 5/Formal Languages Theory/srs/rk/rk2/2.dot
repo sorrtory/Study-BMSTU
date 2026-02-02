@@ -1,0 +1,41 @@
+digraph PDA{
+  rankdir = LR
+  node [shape=circle]
+  start [shape=point];
+
+  "F" [shape=doublecircle];
+
+  start -> 1;
+
+  1 -> 2 [label="a, x/Ax"]; 
+  1 -> 2 [label="b, x/Bx"]; 
+
+  2 -> 2 [label="a, x/Ax"];  
+  2 -> 2 [label="b, x/Bx"];  
+  2 -> 3 [label="a, x/Ax"];
+
+  3 -> 4 [label="b, x/Cx"];
+  3 -> 4 [label="c, x/Dx"];  
+
+  4 -> 4 [label="b, x/Cx"];
+  4 -> 4 [label="c, x/Dx"];
+  4 -> 5 [label="a"];
+  4 -> 5 [label="c"];
+
+  5 -> 5 [label="a"]; 
+  5 -> 5 [label="c"];
+  5 -> 6 [label="c, D/eps"];
+  5 -> 6 [label="b, C/eps"];
+
+  6 -> 6 [label="b, C/eps"];
+  6 -> 6 [label="c, D/eps"];
+  6 -> 7 [label="eps, A/A"];
+  6 -> 7 [label="eps, B/B"];
+
+  7 -> 7 [label="b"];
+  7 -> 8 [label="a, A/eps"];
+
+  8 -> 8 [label="a, A/eps"];
+  8 -> 8 [label="b, B/eps"];
+  8 -> "F" [label="eps, z0/z0"];
+}

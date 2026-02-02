@@ -1,0 +1,7 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Постановка задачи}{2}{Doc-Start}%
+\contentsline {section}{Практическая реализация}{3}{Doc-Start}%
+\contentsline {subsection}{Код программы}{4}{section*.1}%
+\contentsline {subsection}{Вывод программы}{11}{lstnumber.1.308}%
+\contentsline {section}{Вывод}{11}{lstnumber.2.23}%
+\contentsline {section}{Характеристики компьютера}{12}{lstnumber.2.23}%

@@ -1,0 +1,84 @@
+@startuml "Hospital ER Diagram"
+
+' hide the spot
+hide circle
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+' Prevent overlapping labels on circles
+skinparam fixCircleLabelOverlapping true 
+
+
+
+
+entity Doctor {
+  *email
+  --
+  name
+  specialization
+  phone_number
+  status
+}
+
+
+entity Appointment {
+  *schedule_date
+  *doctor
+  --
+  patient
+  address
+  room_number
+  examination
+  status
+}
+
+entity Prescription {
+  *prescription_number
+  *doctor
+  --
+  patient
+  prescribe_date
+  recommendations
+  drug_name
+  dosage
+  frequency
+  duration
+}
+
+
+
+entity Patient {
+  *insurance_number
+  --
+  name
+  phone_number
+  date_of_birth
+  home_address
+  email
+  emergency_contact
+  status
+}
+
+entity Assay {
+  *assay_number
+  *patient
+  --
+  doctor
+  test_date
+  sample_type
+  results
+  status
+  reference_range
+  is_urgent
+}
+
+Doctor ||--o{ Appointment
+Doctor ||--o{ Prescription
+Doctor |o--o{ Assay
+
+Patient |o--o{ Appointment
+Patient ||--o{ Prescription
+Patient ||--o{ Assay
+
+
+@enduml

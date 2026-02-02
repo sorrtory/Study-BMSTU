@@ -1,0 +1,153 @@
+digraph AFA {
+    rankdir = LR;
+    node [shape = circle];
+    dummy [label = "", shape = none];
+
+    // Конъюнктивное состояние
+    amp [label="&"];
+
+    dummy -> amp;
+
+    // ---------- ОСНОВНАЯ ВЕТКА: твой NFA (структура A*B*) ----------
+
+    0  [shape = doublecircle];
+    1;
+    2;
+    3;
+    4;
+    5  [shape = doublecircle];
+    6;
+    7;
+    8;
+    9;
+    10;
+    11;
+    12;
+    13 [shape = doublecircle];
+    14;
+    15;
+    16;
+    17;
+    18;
+
+    // amp запускает основную ветку
+    amp -> 0 [label="ε_main"];
+
+    0 -> 1  [label = "a"];
+    0 -> 2  [label = "a"];
+    0 -> 3  [label = "a"];
+    0 -> 4  [label = "a"];
+    0 -> 5  [label = "b"];
+    0 -> 6  [label = "c"];
+    0 -> 7  [label = "c"];
+    0 -> 8  [label = "c"];
+
+    1 -> 9  [label = "a"];
+    2 -> 9  [label = "b"];
+    3 -> 10 [label = "b"];
+    4 -> 11 [label = "b"];
+
+    5 -> 4  [label = "a"];
+    5 -> 5  [label = "b"];
+    5 -> 7  [label = "c"];
+    5 -> 8  [label = "c"];
+
+    6 -> 9  [label = "c"];
+
+    7 -> 12 [label = "c"];
+
+    8 -> 5  [label = "a"];
+
+    9 -> 1  [label = "a"];
+    9 -> 2  [label = "a"];
+    9 -> 3  [label = "a"];
+    9 -> 6  [label = "c"];
+
+    10 -> 13 [label = "a"];
+    11 -> 14 [label = "a"];
+
+    12 -> 5  [label = "b"];
+    12 -> 7  [label = "c"];
+    12 -> 8  [label = "c"];
+
+    13 -> 1  [label = "a"];
+    13 -> 2  [label = "a"];
+    13 -> 3  [label = "a"];
+    13 -> 4  [label = "a"];
+    13 -> 15 [label = "a"];
+    13 -> 5  [label = "b"];
+    13 -> 16 [label = "b"];
+    13 -> 6  [label = "c"];
+    13 -> 7  [label = "c"];
+    13 -> 8  [label = "c"];
+
+    14 -> 17 [label = "c"];
+
+    15 -> 10 [label = "a"];
+
+    16 -> 18 [label = "c"];
+
+    17 -> 5  [label = "b"];
+    17 -> 8  [label = "c"];
+
+    18 -> 13 [label = "c"];
+
+    // ---------- ВЕТКА ИНВАРИАНТА L1: НЕТ 'bcb' ----------
+
+    B0 [label="B0", shape=doublecircle];
+    B1 [label="B1", shape=doublecircle];
+    B2 [label="B2", shape=doublecircle];
+    Bdead [label="Bdead", shape=circle];
+
+    // amp запускает bcb-контролёр
+    amp -> B0 [label="ε_bcb"];
+
+    // переходы для контроля 'bcb'
+    B0 -> B1    [label="b"];
+    B0 -> B0    [label="a"];
+    B0 -> B0    [label="c"];
+
+    B1 -> B1    [label="b"];
+    B1 -> B0    [label="a"];
+    B1 -> B2    [label="c"];
+
+    B2 -> Bdead [label="b"];   // увидели 'bcb' -> ловушка
+    B2 -> B0    [label="a"];
+    B2 -> B0    [label="c"];
+
+    Bdead -> Bdead [label="a"];
+    Bdead -> Bdead [label="b"];
+    Bdead -> Bdead [label="c"];
+
+    // ---------- ВЕТКА ИНВАРИАНТА L2: СУФФИКС НЕ 'ac'/'bc' ----------
+
+    S0   [label="S0",  shape=doublecircle]; // старт, последний символ не a/b
+    Sa   [label="Sa",  shape=doublecircle]; // последний 'a'
+    Sb   [label="Sb",  shape=doublecircle]; // последний 'b'
+    Sac  [label="Sac", shape=circle];       // последние две: 'ac'
+    Sbc  [label="Sbc", shape=circle];       // последние две: 'bc'
+
+    // amp запускает суффиксный контролёр
+    amp -> S0 [label="ε_suf"];
+
+    // переходы
+    S0  -> Sa  [label="a"];
+    S0  -> Sb  [label="b"];
+    S0  -> S0  [label="c"];
+
+    Sa  -> Sa  [label="a"];
+    Sa  -> Sb  [label="b"];
+    Sa  -> Sac [label="c"];
+
+    Sb  -> Sa  [label="a"];
+    Sb  -> Sb  [label="b"];
+    Sb  -> Sbc [label="c"];
+
+    Sac -> Sa  [label="a"];
+    Sac -> Sb  [label="b"];
+    Sac -> S0  [label="c"];
+
+    Sbc -> Sa  [label="a"];
+    Sbc -> Sb  [label="b"];
+    Sbc -> S0  [label="c"];
+}

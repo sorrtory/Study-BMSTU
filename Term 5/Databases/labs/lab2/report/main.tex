@@ -1,0 +1,428 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+\usepackage{tikz}
+\usepackage{aeguill}
+\usepackage[table]{xcolor}
+
+% Поля
+%--------------------------------------
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm}
+%--------------------------------------
+
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, main=russian]{babel}
+%--------------------------------------
+
+\usepackage{textcomp}
+% § for list
+\usepackage{easylist}
+
+% Красная строка
+%--------------------------------------
+\usepackage{indentfirst}               
+%--------------------------------------             
+
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+%--------------------------------------
+
+% Полуторный интервал
+%--------------------------------------
+\linespread{1.3}                    
+%--------------------------------------
+
+%Выравнивание и переносы
+% \usepackage{tabularx}
+%--------------------------------------
+% Избавляемся от переполнений
+\sloppy
+% Запрещаем разрыв страницы после первой строки абзаца
+\clubpenalty=10000
+% Запрещаем разрыв страницы после последней строки абзаца
+\widowpenalty=10000
+%--------------------------------------
+
+%Списки
+\usepackage{enumitem}
+
+%Подписи
+\usepackage{caption} 
+
+%Гиперссылки
+\usepackage{hyperref}
+
+\hypersetup {
+    unicode=true,
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Рисунки
+%--------------------------------------
+\DeclareCaptionLabelSeparator*{emdash}{~--- }
+\captionsetup[figure]{labelsep=emdash,font=onehalfspacing,position=bottom}
+%--------------------------------------
+
+\usepackage{tempora}
+
+%Листинги
+%--------------------------------------
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize, 
+  %basicstyle=\footnotesize\AnkaCoder,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks shoulbd only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  inputencoding=utf8,
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bf,       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  xleftmargin=25pt,
+  xrightmargin=25pt,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 8 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % Для отображения русского языка
+  extendedchars=true,
+  literate={Ö}{ {\"O} }1
+  {Ä}{ {\"A} }1
+  {Ü}{ {\"U} }1
+  {ß}{ {\ss} }1
+  {ü}{ {\"u} }1
+  {ä}{ {\"a} }1
+  {ö}{ {\"o} }1
+  {~}{ {\textasciitilde} }1
+  {а}{ {\selectfont\char224} }1
+  {б}{ {\selectfont\char225} }1
+  {в}{ {\selectfont\char226} }1
+  {г}{ {\selectfont\char227} }1
+  {д}{ {\selectfont\char228} }1
+  {е}{ {\selectfont\char229} }1
+  {ё}{ {\"e} }1
+  {ж}{ {\selectfont\char230} }1
+  {з}{ {\selectfont\char231} }1
+  {и}{ {\selectfont\char232} }1
+  {й}{ {\selectfont\char233} }1
+  {к}{ {\selectfont\char234} }1
+  {л}{ {\selectfont\char235} }1
+  {м}{ {\selectfont\char236} }1
+  {н}{ {\selectfont\char237} }1
+  {о}{ {\selectfont\char238} }1
+  {п}{ {\selectfont\char239} }1
+  {р}{ {\selectfont\char240} }1
+  {с}{ {\selectfont\char241} }1
+  {т}{ {\selectfont\char242} }1
+  {у}{ {\selectfont\char243} }1
+  {ф}{ {\selectfont\char244} }1
+  {х}{ {\selectfont\char245} }1
+  {ц}{ {\selectfont\char246} }1
+  {ч}{ {\selectfont\char247} }1
+  {ш}{ {\selectfont\char248} }1
+  {щ}{ {\selectfont\char249} }1
+  {ъ}{ {\selectfont\char250} }1
+  {ы}{ {\selectfont\char251} }1
+  {ь}{ {\selectfont\char252} }1
+  {э}{ {\selectfont\char253} }1
+  {ю}{ {\selectfont\char254} }1
+  {я}{ {\selectfont\char255} }1
+  {А}{ {\selectfont\char192} }1
+  {Б}{ {\selectfont\char193} }1
+  {В}{ {\selectfont\char194} }1
+  {Г}{ {\selectfont\char195} }1
+  {Д}{ {\selectfont\char196} }1
+  {Е}{ {\selectfont\char197} }1
+  {Ё}{ {\"E} }1
+  {Ж}{ {\selectfont\char198} }1
+  {З}{ {\selectfont\char199} }1
+  {И}{ {\selectfont\char200} }1
+  {Й}{ {\selectfont\char201} }1
+  {К}{ {\selectfont\char202} }1
+  {Л}{ {\selectfont\char203} }1
+  {М}{ {\selectfont\char204} }1
+  {Н}{ {\selectfont\char205} }1
+  {О}{ {\selectfont\char206} }1
+  {П}{ {\selectfont\char207} }1
+  {Р}{ {\selectfont\char208} }1
+  {С}{ {\selectfont\char209} }1
+  {Т}{ {\selectfont\char210} }1
+  {У}{ {\selectfont\char211} }1
+  {Ф}{ {\selectfont\char212} }1
+  {Х}{ {\selectfont\char213} }1
+  {Ц}{ {\selectfont\char214} }1
+  {Ч}{ {\selectfont\char215} }1
+  {Ш}{ {\selectfont\char216} }1
+  {Щ}{ {\selectfont\char217} }1
+  {Ъ}{ {\selectfont\char218} }1
+  {Ы}{ {\selectfont\char219} }1
+  {Ь}{ {\selectfont\char220} }1
+  {Э}{ {\selectfont\char221} }1
+  {Ю}{ {\selectfont\char222} }1
+  {Я}{ {\selectfont\char223} }1
+  {і}{ {\selectfont\char105} }1
+  {ї}{ {\selectfont\char168} }1
+  {є}{ {\selectfont\char185} }1
+  {ґ}{ {\selectfont\char160} }1
+  {І}{ {\selectfont\char73} }1
+  {Ї}{ {\selectfont\char136} }1
+  {Є}{ {\selectfont\char153} }1
+  {Ґ}{ {\selectfont\char128} }1
+  % \definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+  % {\{}{ { {\color{brackets}\{} } }1 % Цвет скобок {
+  % {\} }{ { {\color{brackets}\} } } }1 % Цвет скобок }
+}
+
+%--------------------------------------
+
+% Table of contents
+\usepackage{tocloft}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+\usepackage{titlesec}
+\titleformat{\paragraph} % Format the paragraph command
+[hang] % Shape
+{\normalfont\normalsize\bfseries} % Format for the text
+{} % Label (we leave this empty to remove the number)
+{0em} % Horizontal separation between label and title
+{} % Code before the title body
+
+% --- REDUCE PARAGRAPH INDENT IN TOC ---
+% Reduce the space before the paragraph number (if numbered)
+\setlength{\cftparaindent}{3em} % Default is often 2.5em or larger
+% Reduce the box reserved for the paragraph number
+% \setlength{\cftparanumwidth}{2.3em} % Default is often 3.0em
+% \setlength{\cftparanumwidth}{0em}
+
+% THIS IS THE CRUCIAL LINE: Set depth to 4 (paragraph) or even 5 (subparagraph)
+\setcounter{tocdepth}{4} % 4 = paragraph, 5 = subparagraph
+% --------------------------------------
+
+%%% Математические пакеты %%%
+%--------------------------------------
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}  % Математические дополнения от AMS
+\usepackage{mathtools}                              % Добавляет окружение multlined
+\usepackage[perpage]{footmisc}
+%--------------------------------------
+
+%--------------------------------------
+%			НАЧАЛО ДОКУМЕНТА
+%--------------------------------------
+
+\begin{document}
+
+%--------------------------------------
+%			ТИТУЛЬНЫЙ ЛИСТ
+%--------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%Шапка титульного листа
+%--------------------------------------
+\vspace*{-60pt}
+\hspace{-65pt}
+\begin{minipage}{0.3\textwidth}
+\hspace*{-20pt}\centering
+\includegraphics[width=\textwidth]{emblem}
+\end{minipage}
+\begin{minipage}{0.67\textwidth}\small \textbf{
+\vspace*{-0.7ex}
+\hspace*{-6pt}\centerline{Министерство науки и высшего образования Российской Федерации}
+\vspace*{-0.7ex}
+\centerline{Федеральное государственное бюджетное образовательное учреждение }
+\vspace*{-0.7ex}
+\centerline{высшего образования}
+\vspace*{-0.7ex}
+\centerline{<<Московский государственный технический университет}
+\vspace*{-0.7ex}
+\centerline{имени Н.Э. Баумана}
+\vspace*{-0.7ex}
+\centerline{(национальный исследовательский университет)>>}
+\vspace*{-0.7ex}
+\centerline{(МГТУ им. Н.Э. Баумана)}}
+\end{minipage}
+%--------------------------------------
+
+%Полосы
+%--------------------------------------
+\vspace{-25pt}
+\hspace{-35pt}\rule{\textwidth}{2.3pt}
+
+\vspace*{-20.3pt}
+\hspace{-35pt}\rule{\textwidth}{0.4pt}
+%--------------------------------------
+
+\vspace{1.5ex}
+\hspace{-35pt} \noindent \small ФАКУЛЬТЕТ\hspace{80pt} <<Информатика и системы управления>>
+
+\vspace*{-16pt}
+\hspace{47pt}\rule{0.83\textwidth}{0.4pt}
+
+\vspace{0.5ex}
+\hspace{-35pt} \noindent \small КАФЕДРА\hspace{50pt} <<Теоретическая информатика и компьютерные технологии>>
+
+\vspace*{-16pt}
+\hspace{30pt}\rule{0.866\textwidth}{0.4pt}
+  
+\vspace{11em}
+
+\begin{center}
+\Large {\bf Лабораторная работа № 2} \\ 
+\large {\bf по курсу <<Базы данных>>} \\
+
+\end{center}\normalsize
+
+\vspace{8em}
+
+
+\begin{flushright}
+ \begin{minipage}{0.5\linewidth}
+      {Студент: Федуков А. А. \hspace*{15pt}\\ 
+      Группа: ИУ9-52Б \\ 
+      Преподаватель: Вишняков И.Э. \hspace*{15pt}}
+  \end{minipage}
+\end{flushright}
+\bigskip
+\vfill
+\begin{center}
+\textsl{Москва, 2025 г.}
+\end{center}
+\end{titlepage}
+%--------------------------------------
+%		КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+%--------------------------------------
+
+% \renewcommand{\ttdefault}{pcr}
+
+\setlength{\tabcolsep}{3pt}
+\setcounter{page}{2}
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+\addcontentsline{toc}{section}{Постановка задачи}
+\section*{Постановка задачи}\label{Sect::goal}
+Целью данной лабораторной работы является моделирование данных с использованием модели семантических объектов.
+Для достижения поставленной цели необходимо решить следующие задачи:
+\begin{itemize}
+    \item  Создать модель семантических объектов для
+предметной области, выбранной в
+лабораторной работе №1. 
+    \item  Обосновать выбор кардинальных чисел
+атрибутов и типов объектов.
+\end{itemize}
+
+\addcontentsline{toc}{section}{Практическая реализация}
+\section*{Практическая реализация}\label{Sect::implementation}
+
+\addcontentsline{toc}{subsection}{Семантическая модель}
+\subsection*{Семантическая модель}
+
+Далее представлена диаграмма семантической модели, отображающая концептуальные сущности, их атрибуты и связи, разработанная для предметной области «Поликлиника». 
+Визуализация диаграммы выполнена при помощи инструмента \textit{excalidraw}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{lab2}
+\caption{Семантическая диаграмма системы «Поликлиника»}
+\label{fig:er_diagram}
+\end{figure}
+\clearpage
+
+% Обоснование кардинальных чисел свойств
+\paragraph{Обоснование кардинальных чисел свойств}
+Кардинальные числа, указанные в нижних индексах атрибутов и связей, отражают минимальное и максимальное количество экземпляров, которые могут быть связаны с данной сущностью или атрибутом. Приведу пояснения для основных свойств, соответствующих актуальной модели:
+
+\begin{itemize}
+    \item \textbf{Doctor}: 
+    \begin{itemize}
+        \item \textbf{email} (1,1) - Каждый врач должен иметь уникальный адрес внутренней почты поликлиники.
+        \item \textbf{name} (1,1) - ФИО врача обязательно.
+        \item \textbf{specialization} (1,1) - Врач может иметь только одну специализацию.
+        \item \textbf{phone\_number} (1,1) - Контактный телефон является обязательным.
+        \item \textbf{status} (1,1) - Статус врача обязателен для определения его текущего состояния.
+        \item \textbf{patient\_assay} (0,N) - Врач может проводить анализы пациентам в любом количестве, но не обязательно.
+        \begin{itemize}
+            \item \textbf{assay\_number} (1,1) - Номер анализа обязателен для идентификации.
+            \item \textbf{Patient} (1,1) - Пациент, которому назначен анализ.
+        \end{itemize}
+        \item \textbf{Prescription} (0,N) - Врач может выписывать рецепты в любом количестве, но не обязательно.
+        \begin{itemize}
+            \item \textbf{prescription\_number} (1,1) - Номер рецепта обязателен для идентификации.
+            \item \textbf{prescribe\_date} (1,1) - Дата выписки рецепта обязательна.
+            \item \textbf{recommendations} (0,1) - Рекомендации врача могут быть указаны, но не обязательно.
+            \item \textbf{drug\_name} (1,1) - Наименование препарата обязательно.
+            \item \textbf{drug\_recipe} (0,1) - Рецептурная информация может быть указана, но не обязательно.
+            \item \textbf{dosage} (0,1) - Дозировка может быть указана, но не обязательно.
+            \item \textbf{frequency} (0,1) - Частота приема может быть указана, но не обязательно.
+            \item \textbf{duration} (0,1) - Продолжительность курса лечения может быть указана, но не обязательно.
+            \item \textbf{status} (1,1) - Статус рецепта обязателен для понимания его актуальности.
+            \item \textbf{Patient} (1,1) - Каждый рецепт должен быть связан с пациентом, которому он выдан.
+        \end{itemize}
+        \item \textbf{Appointment} (0,N) - Врач может проводить приемы в любом количестве, но не обязательно.
+        \begin{itemize}
+            \item \textbf{appointment\_number} (1,1) - Порядковый номер приема обязателен для идентификации.
+            \item \textbf{schedule\_date} (1,1) - Дата и время приема обязательны для планирования.
+            \item \textbf{address} (1,1) - Адрес проведения приема должен быть указан, чтобы пациент знал место (филиал) проведения приема.
+            \item \textbf{room\_number} (1,1) - Номер кабинета должен быть указан, чтобы пациент знал, куда конкретно приходить.
+            \item \textbf{examination} (0,1) - Информация о осмотре может быть указана врачом, но это не обязательно.
+            \item \textbf{status} (1,1) - Статус приема обязателен для понимания факта его проведения.
+            \item \textbf{Patient} (0,1) - Каждый прием должен быть связан с одним пациентом, который на него записался, но если он еще не записан, то информации о записи нет.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Patient}:
+    \begin{itemize}
+        \item \textbf{insurance\_number} (1,1) - Номер страхового полиса обязателен для идентификации пациента.
+        \item \textbf{name} (1,1) - ФИО пациента обязательно.
+        \item \textbf{phone\_number} (1,1) - Контактный телефон обязателен.
+        \item \textbf{date\_of\_birth} (0,1) - Дата рождения выдается пациентом по желанию для его удобства.
+        \item \textbf{home\_address} (0,1) - Адрес может быть также указан, но не обязателен.
+        \item \textbf{email} (1,1) - Электронная почта обязательна для связи с пациентом.
+        \item \textbf{emergency\_contact} (0,1) - Контакт для экстренной связи может быть указан, но не обязателен.
+        \item \textbf{doctor\_prescription} (0,N) - Пациент может получить несколько рецептов от врачей, но не обязательно.
+        \item \textbf{status} (1,1) - Статус пациента обязателен для определения его текущего состояния.
+        \begin{itemize}
+            \item \textbf{packages\_number} (1,1) - Номер рецепта обязателен для идентификации.
+            \item \textbf{Doctor} (1,1) - Врач, который выписал рецепт.
+        \end{itemize}
+        \item \textbf{doctor\_appointment} (0,N) - Пациент может записаться на прием к врачу любое количество раз, но не обязательно.
+        \begin{itemize}
+            \item \textbf{schedule\_date} (1,1) - Дата и время приема обязательны для планирования.
+            \item \textbf{Doctor} (1,1) - Врач, к которому записан пациент.
+        \end{itemize}
+        \item \textbf{Assay} (0,N) - Пациент может пройти несколько анализов, но не обязательно.
+        \begin{itemize}
+            \item \textbf{assay\_number} (1,1) - Номер анализа обязателен для идентификации.
+            \item \textbf{sample\_type} (1,1) - Тип образца обязателен для понимания, какой анализ проводится.
+            \item \textbf{test\_date} (1,1) - Дата взятия образца обязательна для отслеживания сроков.
+            \item \textbf{results} (0,1) - Результаты анализа появляются после проведения, но изначально могут отсутствовать.
+            \item \textbf{status} (1,1) - Статус анализа обязателен для понимания текущего состояния.
+            \item \textbf{reference\_range} (0,1) - Референсные значения могут быть указаны врачом для интерпретации результатов.
+            \item \textbf{is\_urgent} (1,1) - Обязательный признак срочности анализа обязателен для определения приоритетности выполнения.
+            \item \textbf{Doctor} (0,1) - Каждый анализ должен быть связан с врачом, который его взял, но если анализ еще не взят, то информации о враче нет.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{document}

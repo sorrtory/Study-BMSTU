@@ -1,0 +1,7 @@
+USE Lab10;
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+INSERT INTO Orders(Amount)
+VALUES (200);   -- Amount > 100
+
+SELECT 'Session 2 inserted row' AS Msg;

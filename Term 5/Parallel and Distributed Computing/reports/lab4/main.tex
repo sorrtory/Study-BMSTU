@@ -1,0 +1,714 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+\usepackage{tikz}
+\usepackage{aeguill}
+
+% Поля
+%--------------------------------------
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm}
+%--------------------------------------
+
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, main=russian]{babel}
+%--------------------------------------
+
+\usepackage{textcomp}
+% § for list
+\usepackage{easylist}
+
+% Красная строка
+%--------------------------------------
+\usepackage{indentfirst}               
+%--------------------------------------             
+
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+%--------------------------------------
+
+% Полуторный интервал
+%--------------------------------------
+\linespread{1.3}                    
+%--------------------------------------
+
+% Таблицы
+\usepackage{longtable}
+
+%Выравнивание и переносы
+\usepackage{tabularx}
+% ragged X column for wrapping long text in table cells
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+%--------------------------------------
+% Избавляемся от переполнений
+\sloppy
+% Запрещаем разрыв страницы после первой строки абзаца
+\clubpenalty=10000
+% Запрещаем разрыв страницы после последней строки абзаца
+\widowpenalty=10000
+%--------------------------------------
+
+%Списки
+\usepackage{enumitem}
+
+%Подписи
+\usepackage{caption} 
+
+%Гиперссылки
+\usepackage{hyperref}
+
+\hypersetup {
+    unicode=true,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Рисунки
+%--------------------------------------
+\DeclareCaptionLabelSeparator*{emdash}{~--- }
+\captionsetup[figure]{labelsep=emdash,font=onehalfspacing,position=bottom}
+%--------------------------------------
+
+\usepackage{tempora}
+
+%Листинги
+%--------------------------------------
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize, 
+  %basicstyle=\footnotesize\AnkaCoder,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks shoulbd only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  inputencoding=utf8,
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bf,       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  xleftmargin=25pt,
+  xrightmargin=25pt,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 8 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % Для отображения русского языка
+  extendedchars=true,
+  literate={Ö}{ {\"O} }1
+  {Ä}{ {\"A} }1
+  {Ü}{ {\"U} }1
+  {ß}{ {\ss} }1
+  {ü}{ {\"u} }1
+  {ä}{ {\"a} }1
+  {ö}{ {\"o} }1
+  {~}{ {\textasciitilde} }1
+  {а}{ {\selectfont\char224} }1
+  {б}{ {\selectfont\char225} }1
+  {в}{ {\selectfont\char226} }1
+  {г}{ {\selectfont\char227} }1
+  {д}{ {\selectfont\char228} }1
+  {е}{ {\selectfont\char229} }1
+  {ё}{ {\"e} }1
+  {ж}{ {\selectfont\char230} }1
+  {з}{ {\selectfont\char231} }1
+  {и}{ {\selectfont\char232} }1
+  {й}{ {\selectfont\char233} }1
+  {к}{ {\selectfont\char234} }1
+  {л}{ {\selectfont\char235} }1
+  {м}{ {\selectfont\char236} }1
+  {н}{ {\selectfont\char237} }1
+  {о}{ {\selectfont\char238} }1
+  {п}{ {\selectfont\char239} }1
+  {р}{ {\selectfont\char240} }1
+  {с}{ {\selectfont\char241} }1
+  {т}{ {\selectfont\char242} }1
+  {у}{ {\selectfont\char243} }1
+  {ф}{ {\selectfont\char244} }1
+  {х}{ {\selectfont\char245} }1
+  {ц}{ {\selectfont\char246} }1
+  {ч}{ {\selectfont\char247} }1
+  {ш}{ {\selectfont\char248} }1
+  {щ}{ {\selectfont\char249} }1
+  {ъ}{ {\selectfont\char250} }1
+  {ы}{ {\selectfont\char251} }1
+  {ь}{ {\selectfont\char252} }1
+  {э}{ {\selectfont\char253} }1
+  {ю}{ {\selectfont\char254} }1
+  {я}{ {\selectfont\char255} }1
+  {А}{ {\selectfont\char192} }1
+  {Б}{ {\selectfont\char193} }1
+  {В}{ {\selectfont\char194} }1
+  {Г}{ {\selectfont\char195} }1
+  {Д}{ {\selectfont\char196} }1
+  {Е}{ {\selectfont\char197} }1
+  {Ё}{ {\"E} }1
+  {Ж}{ {\selectfont\char198} }1
+  {З}{ {\selectfont\char199} }1
+  {И}{ {\selectfont\char200} }1
+  {Й}{ {\selectfont\char201} }1
+  {К}{ {\selectfont\char202} }1
+  {Л}{ {\selectfont\char203} }1
+  {М}{ {\selectfont\char204} }1
+  {Н}{ {\selectfont\char205} }1
+  {О}{ {\selectfont\char206} }1
+  {П}{ {\selectfont\char207} }1
+  {Р}{ {\selectfont\char208} }1
+  {С}{ {\selectfont\char209} }1
+  {Т}{ {\selectfont\char210} }1
+  {У}{ {\selectfont\char211} }1
+  {Ф}{ {\selectfont\char212} }1
+  {Х}{ {\selectfont\char213} }1
+  {Ц}{ {\selectfont\char214} }1
+  {Ч}{ {\selectfont\char215} }1
+  {Ш}{ {\selectfont\char216} }1
+  {Щ}{ {\selectfont\char217} }1
+  {Ъ}{ {\selectfont\char218} }1
+  {Ы}{ {\selectfont\char219} }1
+  {Ь}{ {\selectfont\char220} }1
+  {Э}{ {\selectfont\char221} }1
+  {Ю}{ {\selectfont\char222} }1
+  {Я}{ {\selectfont\char223} }1
+  {і}{ {\selectfont\char105} }1
+  {ї}{ {\selectfont\char168} }1
+  {є}{ {\selectfont\char185} }1
+  {ґ}{ {\selectfont\char160} }1
+  {І}{ {\selectfont\char73} }1
+  {Ї}{ {\selectfont\char136} }1
+  {Є}{ {\selectfont\char153} }1
+  {Ґ}{ {\selectfont\char128} }1
+  % \definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+  % {\{}{ { {\color{brackets}\{} } }1 % Цвет скобок {
+  % {\} }{ { {\color{brackets}\} } } }1 % Цвет скобок }
+}
+
+%--------------------------------------
+
+% Table of contents
+\usepackage{tocloft}
+\usepackage{adjustbox}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+\usepackage{titlesec}
+\titleformat{\paragraph} % Format the paragraph command
+[hang] % Shape
+{\normalfont\normalsize\bfseries} % Format for the text
+{} % Label (we leave this empty to remove the number)
+{0em} % Horizontal separation between label and title
+{} % Code before the title body
+
+% --- REDUCE PARAGRAPH INDENT IN TOC ---
+% Reduce the space before the paragraph number (if numbered)
+\setlength{\cftparaindent}{3em} % Default is often 2.5em or larger
+% Reduce the box reserved for the paragraph number
+% \setlength{\cftparanumwidth}{2.3em} % Default is often 3.0em
+% \setlength{\cftparanumwidth}{0em}
+
+% THIS IS THE CRUCIAL LINE: Set depth to 4 (paragraph) or even 5 (subparagraph)
+\setcounter{tocdepth}{4} % 4 = paragraph, 5 = subparagraph
+% --------------------------------------
+
+%%% Математические пакеты %%%
+%--------------------------------------
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}  % Математические дополнения от AMS
+\usepackage{mathtools}                              % Добавляет окружение multlined
+\usepackage[perpage]{footmisc}
+%--------------------------------------
+
+%--------------------------------------
+%			НАЧАЛО ДОКУМЕНТА
+%--------------------------------------
+
+\begin{document}
+
+%--------------------------------------
+%			ТИТУЛЬНЫЙ ЛИСТ
+%--------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%Шапка титульного листа
+%--------------------------------------
+\vspace*{-60pt}
+\hspace{-65pt}
+\begin{minipage}{0.3\textwidth}
+\hspace*{-20pt}\centering
+\includegraphics[width=\textwidth]{emblem}
+\end{minipage}
+\begin{minipage}{0.67\textwidth}\small \textbf{
+\vspace*{-0.7ex}
+\hspace*{-6pt}\centerline{Министерство науки и высшего образования Российской Федерации}
+\vspace*{-0.7ex}
+\centerline{Федеральное государственное автономное образовательное учреждение}
+\vspace*{-0.7ex}
+\centerline{высшего образования}
+\vspace*{-0.7ex}
+\centerline{<<Московский государственный технический университет}
+\vspace*{-0.7ex}
+\centerline{имени Н.Э. Баумана}
+\vspace*{-0.7ex}
+\centerline{(национальный исследовательский университет)>>}
+\vspace*{-0.7ex}
+\centerline{(МГТУ им. Н.Э. Баумана)}}
+\end{minipage}
+%--------------------------------------
+
+%Полосы
+%--------------------------------------
+\vspace{-25pt}
+\hspace{-35pt}\rule{\textwidth}{2.3pt}
+
+\vspace*{-20.3pt}
+\hspace{-35pt}\rule{\textwidth}{0.4pt}
+%--------------------------------------
+
+\vspace{1.5ex}
+\hspace{-35pt} \noindent \small ФАКУЛЬТЕТ\hspace{80pt} <<Информатика и системы управления>>
+
+\vspace*{-16pt}
+\hspace{47pt}\rule{0.83\textwidth}{0.4pt}
+
+\vspace{0.5ex}
+\hspace{-35pt} \noindent \small КАФЕДРА\hspace{50pt} <<Теоретическая информатика и компьютерные технологии>>
+
+\vspace*{-16pt}
+\hspace{30pt}\rule{0.866\textwidth}{0.4pt}
+  
+\vspace{11em}
+
+\begin{center}
+\Large {\bf Лабораторная работа № 4} \\ 
+\large {\bf по курсу <<Разработка параллельных и \\ распределенных программ>>} \\
+\textit{Задача о пяти обедающих философах.}
+
+\end{center}\normalsize
+
+\vspace{8em}
+
+
+\begin{flushright}
+ \begin{minipage}{0.5\linewidth}
+      {Студент: Федуков А. А. \hspace*{15pt}\\ 
+      Группа: ИУ9-52Б \\ 
+      Преподаватель: Царев А. С. \hspace*{15pt}}
+  \end{minipage}
+\end{flushright}
+\bigskip
+\vfill
+\begin{center}
+\textsl{Москва, 2025 г.}
+\end{center}
+\end{titlepage}
+%--------------------------------------
+%		КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+%--------------------------------------
+
+\renewcommand{\ttdefault}{pcr}
+
+\setlength{\tabcolsep}{3pt}
+\newpage
+\setcounter{page}{2}
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+
+\addcontentsline{toc}{section}{Постановка задачи}
+\section*{Постановка задачи}\label{Sect::goal}
+Пять философов сидят за круглым столом и по очереди думают и едят. В центре обеденный сосуд со спагетти. Между каждыми двумя соседями лежит по одной вилке (всего 5 вилок). Для того чтобы поесть, философу требуется две вилки — левая и правая. Философ не может захватить сразу обе вилки: он сначала берёт одну (накладывая блокировку), затем — вторую; при окончании еды он освобождает обе вилки (снимает блокировки), что может происходить одновременно.
+
+Задача — реализовать программу-имитацию следующей модели и обеспечить её корректность и отсутствие взаимоблокировок.
+
+Требования:
+\begin{enumerate}
+    \item Модель:
+        \begin{itemize}
+            \item Каждый философ реализуется как отдельный поток.
+            \item В каждый момент каждый философ находится в одном из состояний: размышляет, берёт левую вилку, берёт правую вилку, ест, кладёт вилки.
+            \item Времена размышлений и приёма пищи задаются генератором случайных чисел в заданных интервалах.
+        \end{itemize}
+    \item Синхронизация:
+        \begin{itemize}
+            \item Вилки — разделяемый ресурс, представленный отдельными примитивами блокировки (по одной на вилку).
+            \item Нельзя захватывать сразу две блокировки; последовательность действий должна быть: наложить блокировку на первую вилку — взять первую вилку — наложить блокировку на вторую вилку — взять вторую вилку.
+            \item Освобождение вилок может происходить одновременно (снятие обеих блокировок).
+            \item Необходимо избежать ситуации взаимоблокировки, когда все философы ждут вторую вилку (например, реализовать стратегию официанта/семафора или изменение порядка взятия вилок для одного философа).
+        \end{itemize}
+    \item Ограничения и свойства:
+        \begin{itemize}
+            \item Одновременно могут есть не более двух философов (из-за ограниченного числа вилок).
+            \item Соседи не могут есть одновременно.
+            \item Программа должна корректно завершаться по истечении заданного времени симуляции: все потоки останавливаются, ресурсы освобождаются, логгер корректно выводит финальные состояния.
+        \end{itemize}
+    \item Вывод и логирование:
+        \begin{itemize}
+            \item В ходе работы программа должна логировать события: метка времени (мс от старта), идентификатор философа и его состояние.
+            \item Формат вывода — табличный лог, показывающий состояние каждого философа во времени (пример: t(ms) | P00 P01 ...).
+        \end{itemize}
+    \item Сдача работы:
+        \begin{itemize}
+            \item Исходный код программы.
+            \item Пример вывода работы программы (лог) при запуске симуляции.
+            \item Краткий отчёт с описанием использованной стратегии предотвращения взаимоблокировок и кратким анализом корректности.
+        \end{itemize}
+\end{enumerate}
+
+Параметры, которые должны быть легко настраиваемы в программе: число философов (по умолчанию 5), длительность симуляции, интервалы для времени размышления и приёма пищи, а также стратегия предотвращения взаимоблокировок (например, семафор/официант, изменение порядка захвата вилок для одного философа и т.п.).
+\addcontentsline{toc}{section}{Практическая реализация}
+
+\section*{Практическая реализация}\label{Sect::implementation}
+
+\subsection*{Код программы}\label{Subsect::source_code}
+\addcontentsline{toc}{subsection}{Код программы}
+
+\begin{lstlisting}[caption={Исходный код программы}, label={lst:source_code}]
+use rand::Rng;
+use std::{
+    fmt,
+    sync::{
+        Arc, Condvar, Mutex,
+        atomic::{AtomicBool, Ordering},
+        mpsc,
+    },
+    thread,
+    time::{Duration, Instant},
+};
+
+const N: usize = 5; // Число философов
+const SECONDS: u64 = 1; // Время симуляции
+
+#[derive(Clone, Copy, Debug)]
+enum State {
+    Thinking,
+    TakingLeft,
+    TakingRight,
+    Eating,
+    PuttingDown,
+}
+
+impl fmt::Display for State {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let s = match self {
+            State::Thinking => "THINK",
+            State::TakingLeft => "TAKE_L",
+            State::TakingRight => "TAKE_R",
+            State::Eating => "EAT",
+            State::PuttingDown => "PUT",
+        };
+        write!(f, "{s}")
+    }
+}
+
+struct Waiter {
+    permits: Mutex<usize>,
+    cv: Condvar,
+}
+
+impl Waiter {
+    fn new(initial: usize) -> Self {
+        Self {
+            permits: Mutex::new(initial),
+            cv: Condvar::new(),
+        }
+    }
+
+    /// Возвращает false, если надо завершаться.
+    fn acquire(&self, running: &AtomicBool) -> bool {
+        // Блокируем мьютекс
+        let mut p = self.permits.lock().unwrap();
+        while *p == 0 {
+            // Проверяем общий флаг завершения
+            if !running.load(Ordering::Relaxed) {
+                return false;
+            }
+            // Ждем свободной вилки (с таймаутом)
+            let (pp, _) = self.cv.wait_timeout(p, Duration::from_millis(50)).unwrap();
+            p = pp;
+        }
+        // Выдаем одну вилку
+        *p -= 1;
+        true
+    }
+
+    fn release(&self) {
+        let mut p = self.permits.lock().unwrap();
+        // Освобождаем вилку
+        *p += 1;
+        // Уведомляем что вилка освобождена
+        self.cv.notify_one();
+    }
+}
+
+// Событие для логгера
+#[derive(Debug)]
+struct Event {
+    t_ms: u128,
+    id: usize,
+    state: State,
+}
+
+fn main() {
+    assert!(N >= 2, "N должно быть >= 2");
+
+    // Запоминаем стартовое время
+    let start_time = Instant::now();
+
+    // Общий флаг работы
+    let running = Arc::new(AtomicBool::new(true));
+
+    // Создаем вилки
+    let forks: Arc<Vec<Mutex<()>>> = Arc::new((0..N).map(|_| Mutex::new(())).collect());
+
+    // ОСоздаем официанта, разрешаем максимум N - 1 философов одновременно
+    let waiter = Arc::new(Waiter::new(N));
+
+    // Создаем канал для логов
+    let (tx, rx) = mpsc::channel::<Event>();
+
+    // Создаем логгер как отдельный поток
+    let logger_n = N;
+    let logger = thread::spawn(move || {
+        let mut states = vec![State::Thinking; logger_n];
+
+        print!("t(ms) | ");
+        for i in 0..logger_n {
+            print!("P{i:02} ");
+        }
+        println!();
+        println!("{}", "-".repeat(7 + 1 + logger_n * 7)); // под ширину "TAKE_L "
+
+        while let Ok(ev) = rx.recv() {
+            states[ev.id] = ev.state;
+            print!("{:>5} | ", ev.t_ms);
+            for i in 0..logger_n {
+                print!("{:>6} ", states[i]);
+            }
+            println!();
+        }
+    });
+
+    // Запускаем философов
+    let mut thread_handles = Vec::with_capacity(N);
+    for id in 0..N {
+        // Клонируем ссылки для потоков
+        let forks = Arc::clone(&forks);
+        let waiter = Arc::clone(&waiter);
+        let running = Arc::clone(&running);
+        let tx = tx.clone();
+        let start = start_time;
+
+        let thread_handle = thread::spawn(move || {
+            let mut rng = rand::thread_rng();
+            let left = id;
+            let right = (id + 1) % N;
+
+            // Последний философ берёт сначала правую, потом левую.
+            let reverse = id == N - 1;
+
+            // Функция отправки состояния в логгер
+            let send_state = |state: State, tx: &mpsc::Sender<Event>| {
+                let _ = tx.send(Event {
+                    t_ms: start.elapsed().as_millis(),
+                    id,
+                    state,
+                });
+            };
+
+            while running.load(Ordering::Relaxed) {
+                // THINK
+                send_state(State::Thinking, &tx);
+                thread::sleep(Duration::from_millis(rng.gen_range(80..250)));
+
+                // Завершаемся, если официант не дал разрешение
+                if !waiter.acquire(&running) {
+                    break;
+                }
+
+                // Определяем взятия вилок (для последнего философа в обратном порядке)
+                let (first_idx, second_idx, first_state, second_state) = if !reverse {
+                    (left, right, State::TakingLeft, State::TakingRight)
+                } else {
+                    (right, left, State::TakingRight, State::TakingLeft)
+                };
+
+                // Берем первую вилку
+                // Запускаем цикл с попытками взять вилку
+                send_state(first_state, &tx);
+                let first_guard = loop {
+                    // Если общее завершение, то отпускаем официанта и выходим
+                    if !running.load(Ordering::Relaxed) {
+                        waiter.release();
+                        return;
+                    }
+                    // Пытаемся взять вилку
+                    if let Ok(g) = forks[first_idx].try_lock() {
+                        break g;
+                    }
+                    // Пауза перед повторной попыткой
+                    thread::sleep(Duration::from_millis(5));
+                };
+                // Делаем паузу между действиями
+                thread::sleep(Duration::from_millis(rng.gen_range(10..40)));
+
+                // Берем вторую вилку
+                send_state(second_state, &tx);
+                let second_guard = loop {
+                    if !running.load(Ordering::Relaxed) {
+                        // Освобождаем первую вилку и завершаемся
+                        drop(first_guard);
+                        waiter.release();
+                        return;
+                    }
+                    if let Ok(g) = forks[second_idx].try_lock() {
+                        break g;
+                    }
+                    thread::sleep(Duration::from_millis(5));
+                };
+                thread::sleep(Duration::from_millis(rng.gen_range(10..40)));
+
+                // EAT
+                send_state(State::Eating, &tx);
+                thread::sleep(Duration::from_millis(rng.gen_range(80..220)));
+
+                // PUT
+                send_state(State::PuttingDown, &tx);
+                drop(second_guard);
+                drop(first_guard);
+                waiter.release();
+
+                thread::sleep(Duration::from_millis(rng.gen_range(10..40)));
+            }
+        });
+
+        thread_handles.push(thread_handle);
+    }
+
+    // Считаем время
+    thread::sleep(Duration::from_secs(SECONDS));
+
+    // Завершаем работу философов
+    running.store(false, Ordering::Relaxed);
+
+    // Закрываем канал логгера
+    drop(tx);
+
+    // Ждем завершения всех потоков
+    for h in thread_handles {
+        let _ = h.join();
+    }
+
+    // Ждем завершения логгера
+    let _ = logger.join();
+
+    println!("Simulation finished cleanly");
+}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Вывод программы}
+\subsection*{Вывод программы}\label{Subsect::program_output}
+
+
+
+\begin{lstlisting}[caption={Вывод программы}, label={lst:program_output}, language=C++]
+t(ms) | P00 P01 P02 P03 P04 
+-------------------------------------------
+    0 | THINK THINK THINK THINK THINK 
+    0 | THINK THINK THINK THINK THINK 
+    0 | THINK THINK THINK THINK THINK 
+    0 | THINK THINK THINK THINK THINK 
+    0 | THINK THINK THINK THINK THINK 
+  111 | THINK THINK TAKE_L THINK THINK 
+  133 | THINK THINK TAKE_R THINK THINK 
+  144 | THINK THINK EAT THINK THINK 
+  145 | THINK THINK EAT THINK TAKE_R 
+  164 | THINK THINK EAT THINK TAKE_L 
+  187 | THINK THINK EAT THINK EAT 
+  187 | THINK TAKE_L EAT THINK EAT 
+  201 | THINK TAKE_R EAT THINK EAT 
+  233 | TAKE_L TAKE_R EAT THINK EAT 
+  249 | TAKE_L TAKE_R EAT TAKE_L EAT 
+  265 | TAKE_L TAKE_R PUT TAKE_L EAT 
+  278 | TAKE_L EAT PUT TAKE_L EAT 
+  284 | TAKE_L EAT PUT TAKE_R EAT 
+  295 | TAKE_L EAT THINK TAKE_R EAT 
+  384 | TAKE_L EAT THINK TAKE_R PUT 
+  406 | TAKE_L EAT THINK TAKE_R THINK 
+  410 | TAKE_R EAT THINK TAKE_R THINK 
+  420 | TAKE_R EAT THINK EAT THINK 
+  437 | TAKE_R PUT THINK EAT THINK 
+  457 | EAT PUT THINK EAT THINK 
+  462 | EAT THINK THINK EAT THINK 
+  489 | EAT THINK THINK EAT TAKE_R 
+  494 | EAT THINK TAKE_L EAT TAKE_R 
+  512 | EAT THINK TAKE_R EAT TAKE_R 
+  545 | PUT THINK TAKE_R EAT TAKE_R 
+  558 | PUT THINK TAKE_R EAT TAKE_L 
+  563 | PUT TAKE_L TAKE_R EAT TAKE_L 
+  574 | THINK TAKE_L TAKE_R EAT TAKE_L 
+  584 | THINK TAKE_R TAKE_R EAT TAKE_L 
+  595 | THINK TAKE_R TAKE_R PUT TAKE_L 
+  618 | THINK TAKE_R TAKE_R PUT EAT 
+  629 | THINK TAKE_R EAT PUT EAT 
+  630 | THINK TAKE_R EAT THINK EAT 
+  700 | TAKE_L TAKE_R EAT THINK EAT 
+  732 | TAKE_L TAKE_R EAT THINK PUT 
+  742 | TAKE_L TAKE_R PUT THINK PUT 
+  742 | TAKE_R TAKE_R PUT THINK PUT 
+  750 | TAKE_R TAKE_R PUT THINK THINK 
+  762 | TAKE_R TAKE_R THINK THINK THINK 
+  772 | TAKE_R EAT THINK THINK THINK 
+  842 | TAKE_R EAT TAKE_L THINK THINK 
+  856 | TAKE_R EAT TAKE_L TAKE_L THINK 
+  868 | TAKE_R EAT TAKE_L TAKE_L TAKE_R 
+  889 | TAKE_R EAT TAKE_L TAKE_R TAKE_R 
+  911 | TAKE_R EAT TAKE_L EAT TAKE_R 
+  984 | TAKE_R PUT TAKE_L EAT TAKE_R 
+  997 | EAT PUT TAKE_L EAT TAKE_R 
+  999 | EAT THINK TAKE_L EAT TAKE_R 
+ 1012 | EAT THINK TAKE_L PUT TAKE_R 
+ 1015 | EAT THINK TAKE_R PUT TAKE_R 
+ 1124 | PUT THINK TAKE_R PUT TAKE_R 
+ 1231 | PUT TAKE_L TAKE_R PUT TAKE_R 
+Simulation finished cleanly
+\end{lstlisting}
+
+\addcontentsline{toc}{section}{Вывод}
+\section*{Вывод}\label{Sect::conclusion}
+В данной лабораторной работе была реализована модель задачи о пяти обедающих философах с использованием потоков и механизмов синхронизации в языке Rust. Для предотвращения взаимоблокировок была применена стратегия официанта, которая ограничивает количество философов, одновременно пытающихся взять вилки.
+
+\addcontentsline{toc}{section}{Характеристики компьютера}
+\section*{Характеристики компьютера}
+
+\begin{lstlisting}[caption={Характеристики компьютера}, label={lst:computer_specs}]
+> inxi --cpu --memory
+Memory:
+  System RAM: total: 16 GiB available: 14.8 GiB used: 10.48 GiB (70.8%)
+  Array-1: capacity: 64 GiB slots: 4 modules: 4 EC: None
+  Device-1: Channel-A DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-2: Channel-B DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-3: Channel-C DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-4: Channel-D DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+CPU:
+  Info: 6-core model: AMD Ryzen 5 7640HS w/ Radeon 760M Graphics bits: 64
+    type: MT MCP cache: L2: 6 MiB
+  Speed (MHz): avg: 1200 min/max: 400/5017 cores: 1: 1390 2: 1100 3: 1100
+    4: 1100 5: 1100 6: 1100 7: 1396 8: 1100 9: 1432 10: 1100 11: 1389 12: 1100
+\end{lstlisting}
+
+\end{document}

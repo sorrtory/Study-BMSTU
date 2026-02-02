@@ -1,0 +1,144 @@
+По ходу тестирования было обнаружено множество багов и недочетов. Все они были исправлены, что позволило улучшить качество и правдоподобность симуляции. Тем не менее итоговая производительность оказалась ниже ожидаемой, поэтому также были проведены улучшения и общая оптимизация, направленные на повышение скорости работы программы.
+
+\subsection{Отступы и выравнивание данных в буферах}
+
+Во время тестирования были выявлены проблемы с передачей через буферы данных между шейдерами WGSL и TypeScript.
+
+\begin{lstlisting}[language=ES6, caption=Пример передачи динамических параметров из CPU на GPU]
+// render.ts
+
+const data = new Float32Array([
+    params.dt,
+    params.viscosity,
+    params.diffusion,
+    params.dissipation,
+    N_CELLS.x,
+    params.vorticity,
+    params.gravity,
+    params.faucet_dye
+])
+device.queue.writeBuffer(uniformBuffer, 0, data.buffer)
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Пример получения динамических параметров в шейдере]
+// 00_header.wgsl
+
+@group(1) @binding(0) var<uniform> sim_uniforms : SimUniforms;
+struct SimUniforms {
+  delta_t: f32,
+  viscosity: f32,
+  diffusion: f32,
+  dissipation: f32,
+
+  N: f32,        // assume square grid N x N
+  vorticity: f32,
+  gravity: f32,
+  faucet_dye: f32,
+};
+\end{lstlisting}
+
+Ключевым моментом было правильное выравнивания данных в uniform буферах, что позволило избежать неправильных результатов при чтении данных в шейдерах. Поскольку чтение осуществляется в формате vec4 (по 4 компоненты), необходимо было точно упаковать данные и учитывать выравнивание. В этом случае использовалось кратное 4 количество float-значений в uniform буфере из-за не потребовалось добавлять дополнительные пустые значения.
+
+\subsection{Ping-pong буферы}
+
+Во время тестирования производительности симуляции было выявлено, что использование техники ping-pong для буферов значительно улучшает скорость выполнения шейдеров. Эта техника позволяет эффективно переключаться между двумя буферами для чтения и записи данных, что минимизирует задержки и повышает общую производительность.
+
+\begin{lstlisting}[language=ES6, caption=Пример использования ping-pong буферов для решения давления, label={lst:pingpong}]
+// render.ts
+// 30) clear pressure field
+cpass.setPipeline(pipelines.clearPressurePipeline)
+cpass.setBindGroup(1, bindGroups.simBG[p])
+cpass.dispatchWorkgroups(wx, wy)
+p ^= 1 // IMPORTANT: now the cleared pressure lives in p_in of the new state
+
+// 31) divergence (writes div)
+cpass.setPipeline(pipelines.divergePipeline)
+cpass.setBindGroup(1, bindGroups.simBG[p])
+cpass.dispatchWorkgroups(wx, wy)
+// p stays the same
+
+// 32) pressure solve (Jacobi)
+for (let k = 0; k < PRESSURE_ITERATIONS; k++) {
+    cpass.setPipeline(pipelines.pressurePipeline)
+    cpass.setBindGroup(1, bindGroups.simBG[p])
+    cpass.dispatchWorkgroups(wx, wy)
+    p ^= 1 // CRITICAL: swaps p_in/p_out so next iter reads the new pressure
+}
+
+// 33) subtract gradient (updates velocity using pressure)
+cpass.setPipeline(pipelines.gradientPipeline)
+cpass.setBindGroup(1, bindGroups.simBG[p])
+cpass.dispatchWorkgroups(wx, wy)
+p ^= 1
+\end{lstlisting}
+
+Тем не менее, реализация ping-pong буферов потребовала тщательной настройки и управления состояниями буферов, во время использования которых были выявлены некоторые сложности. В частности, необходимо было обеспечить правильное управление состояниями буферов, чтобы избежать конфликтов при чтении и записи данных. Это включало в себя тщательное отслеживание текущего состояния буферов и правильное переключение между ними в нужные моменты времени (см. листинг \ref{lst:pingpong}).
+
+\begin{lstlisting}[caption=Подключение буфферов и решение давления методом Якоби в WGSL, label={lst:pingpong_shader}]
+// 00_header.wgsl
+
+// Velocity ping-pong
+@group(1) @binding(0) var<storage, read>  vel_in  : array<vec2<f32>>;
+@group(1) @binding(1) var<storage, read_write> vel_out : array<vec2<f32>>;
+// Dye ping-pong
+@group(1) @binding(2) var<storage, read>  dye_in  : array<f32>;
+@group(1) @binding(3) var<storage, read_write> dye_out : array<f32>;
+
+// Projection buffers
+@group(1) @binding(4) var<storage, read_write> divergence : array<f32>;
+@group(1) @binding(5) var<storage, read>  p_in  : array<f32>;
+@group(1) @binding(6) var<storage, read_write> p_out : array<f32>;
+
+// 42_pressure_jacobi.wgsl
+
+//  divergence + p_in -> p_out (one Jacobi iteration)
+@compute @workgroup_size(16,16,1)
+fn cs_main(@builtin(global_invocation_id) gid: vec3<u32>) {
+  let x = i32(gid.x);
+  let y = i32(gid.y);
+  if (x < 0 || y < 0 || x >= i32(N_u32()) || y >= i32(N_u32())) { return; }
+
+  let i = idx(u32(x), u32(y));
+
+  // pass-through vel/dye so pinging pressure iterations doesn't scramble them
+  vel_out[i] = vel_in[i];
+  dye_out[i] = dye_in[i];
+
+  let pl = p_at(x - 1, y);
+  let pr = p_at(x + 1, y);
+  let pb = p_at(x, y - 1);
+  let pt = p_at(x, y + 1);
+
+  let div = divergence[i];
+  p_out[i] = (pl + pr + pb + pt - div) * 0.25;
+}
+
+\end{lstlisting}
+
+В листинге \ref{lst:pingpong_shader} можно увидеть как шейдер решения давления и использует ping-pong буферы, переключая состояние буферов (в листинге \ref{lst:pingpong}) после каждой итерации. Это позволяет эффективно использовать результаты предыдущей итерации для следующей, что значительно ускоряет процесс решения.
+
+\subsection{Результат}
+
+
+Текущая реализация выполнена с физической точки зрения достоверна и не имеет графических багов. Она демонстрирует корректность и стабильность работы симуляции. Примеры финальной симуляции и поля давления приведены на рисунках \ref{fig:image1} и \ref{fig:image2}.
+
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\textwidth / 2]{fluid.png}
+  \caption{Течение жидкости}
+  \label{fig:image1}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\textwidth / 2]{pressure.png}
+  \caption{Поле давления}
+  \label{fig:image2}
+\end{figure}
+
+На рисунке \ref{fig:image1} представлена визуализация двумерного течения жидкости, демонстрирующая динамическое поведение потока и взаимодействие с добавляемым веществом (краской). На 5 шаге конвейера происходит добавление краски в центр области симуляции, что позволяет наблюдать за распространением вещества в потоке жидкости. На систему действует гравитация, вектор течения же направлен в правый верхний угол, что видно по форме и направлению завихрений в жидкости.
+
+На рисунке \ref{fig:image2} показано распределение давления в области симуляции. От синего (нулевого) к красному (максимальному) что позволяет оценить влияние различных сил и условий на поведение жидкости. Исходя из направления течения жидкости, можно наблюдать, как давление изменяется в зависимости от скорости и направления потока.
+
+\clearpage

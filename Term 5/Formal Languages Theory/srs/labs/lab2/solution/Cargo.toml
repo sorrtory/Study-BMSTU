@@ -1,0 +1,20 @@
+[package]
+name = "solution"
+version = "0.1.0"
+edition = "2024"
+default-run = "fuzz"
+
+[dependencies]
+fancy-regex = "0.16.2"
+rand = "0.9.2"
+
+
+
+[[bin]]
+name = "table"
+path = "src/myhill_nerode.rs"
+
+
+[[bin]]
+name = "fuzz"
+path = "src/main.rs"

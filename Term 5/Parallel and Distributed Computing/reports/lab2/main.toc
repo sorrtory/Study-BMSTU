@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Постановка задачи}{2}{Doc-Start}%
+\contentsline {paragraph}{РЕШЕНИЕ СИСТЕМ ЛИНЕЙНЫХ АЛГЕБРАИЧЕСКИХ УРАВНЕНИЙ ИТЕРАЦИОННЫМИ МЕТОДАМИ}{2}{section*.1}%
+\contentsline {section}{Практическая реализация}{2}{Item.3}%
+\contentsline {subsection}{Код программы}{3}{section*.2}%
+\contentsline {subsection}{Вывод программы}{7}{lstnumber.1.195}%
+\contentsline {section}{Вывод}{10}{lstnumber.2.78}%
+\contentsline {section}{Характеристики компьютера}{10}{lstnumber.2.78}%

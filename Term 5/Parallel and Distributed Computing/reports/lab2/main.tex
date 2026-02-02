@@ -1,0 +1,673 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+\usepackage{tikz}
+\usepackage{aeguill}
+
+% Поля
+%--------------------------------------
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm}
+%--------------------------------------
+
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, main=russian]{babel}
+%--------------------------------------
+
+\usepackage{textcomp}
+% § for list
+\usepackage{easylist}
+
+% Красная строка
+%--------------------------------------
+\usepackage{indentfirst}               
+%--------------------------------------             
+
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+%--------------------------------------
+
+% Полуторный интервал
+%--------------------------------------
+\linespread{1.3}                    
+%--------------------------------------
+
+% Таблицы
+\usepackage{longtable}
+
+%Выравнивание и переносы
+\usepackage{tabularx}
+% ragged X column for wrapping long text in table cells
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+%--------------------------------------
+% Избавляемся от переполнений
+\sloppy
+% Запрещаем разрыв страницы после первой строки абзаца
+\clubpenalty=10000
+% Запрещаем разрыв страницы после последней строки абзаца
+\widowpenalty=10000
+%--------------------------------------
+
+%Списки
+\usepackage{enumitem}
+
+%Подписи
+\usepackage{caption} 
+
+%Гиперссылки
+\usepackage{hyperref}
+
+\hypersetup {
+    unicode=true,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Рисунки
+%--------------------------------------
+\DeclareCaptionLabelSeparator*{emdash}{~--- }
+\captionsetup[figure]{labelsep=emdash,font=onehalfspacing,position=bottom}
+%--------------------------------------
+
+\usepackage{tempora}
+
+%Листинги
+%--------------------------------------
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize, 
+  %basicstyle=\footnotesize\AnkaCoder,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks shoulbd only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  inputencoding=utf8,
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bf,       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  xleftmargin=25pt,
+  xrightmargin=25pt,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 8 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % Для отображения русского языка
+  extendedchars=true,
+  literate={Ö}{ {\"O} }1
+  {Ä}{ {\"A} }1
+  {Ü}{ {\"U} }1
+  {ß}{ {\ss} }1
+  {ü}{ {\"u} }1
+  {ä}{ {\"a} }1
+  {ö}{ {\"o} }1
+  {~}{ {\textasciitilde} }1
+  {а}{ {\selectfont\char224} }1
+  {б}{ {\selectfont\char225} }1
+  {в}{ {\selectfont\char226} }1
+  {г}{ {\selectfont\char227} }1
+  {д}{ {\selectfont\char228} }1
+  {е}{ {\selectfont\char229} }1
+  {ё}{ {\"e} }1
+  {ж}{ {\selectfont\char230} }1
+  {з}{ {\selectfont\char231} }1
+  {и}{ {\selectfont\char232} }1
+  {й}{ {\selectfont\char233} }1
+  {к}{ {\selectfont\char234} }1
+  {л}{ {\selectfont\char235} }1
+  {м}{ {\selectfont\char236} }1
+  {н}{ {\selectfont\char237} }1
+  {о}{ {\selectfont\char238} }1
+  {п}{ {\selectfont\char239} }1
+  {р}{ {\selectfont\char240} }1
+  {с}{ {\selectfont\char241} }1
+  {т}{ {\selectfont\char242} }1
+  {у}{ {\selectfont\char243} }1
+  {ф}{ {\selectfont\char244} }1
+  {х}{ {\selectfont\char245} }1
+  {ц}{ {\selectfont\char246} }1
+  {ч}{ {\selectfont\char247} }1
+  {ш}{ {\selectfont\char248} }1
+  {щ}{ {\selectfont\char249} }1
+  {ъ}{ {\selectfont\char250} }1
+  {ы}{ {\selectfont\char251} }1
+  {ь}{ {\selectfont\char252} }1
+  {э}{ {\selectfont\char253} }1
+  {ю}{ {\selectfont\char254} }1
+  {я}{ {\selectfont\char255} }1
+  {А}{ {\selectfont\char192} }1
+  {Б}{ {\selectfont\char193} }1
+  {В}{ {\selectfont\char194} }1
+  {Г}{ {\selectfont\char195} }1
+  {Д}{ {\selectfont\char196} }1
+  {Е}{ {\selectfont\char197} }1
+  {Ё}{ {\"E} }1
+  {Ж}{ {\selectfont\char198} }1
+  {З}{ {\selectfont\char199} }1
+  {И}{ {\selectfont\char200} }1
+  {Й}{ {\selectfont\char201} }1
+  {К}{ {\selectfont\char202} }1
+  {Л}{ {\selectfont\char203} }1
+  {М}{ {\selectfont\char204} }1
+  {Н}{ {\selectfont\char205} }1
+  {О}{ {\selectfont\char206} }1
+  {П}{ {\selectfont\char207} }1
+  {Р}{ {\selectfont\char208} }1
+  {С}{ {\selectfont\char209} }1
+  {Т}{ {\selectfont\char210} }1
+  {У}{ {\selectfont\char211} }1
+  {Ф}{ {\selectfont\char212} }1
+  {Х}{ {\selectfont\char213} }1
+  {Ц}{ {\selectfont\char214} }1
+  {Ч}{ {\selectfont\char215} }1
+  {Ш}{ {\selectfont\char216} }1
+  {Щ}{ {\selectfont\char217} }1
+  {Ъ}{ {\selectfont\char218} }1
+  {Ы}{ {\selectfont\char219} }1
+  {Ь}{ {\selectfont\char220} }1
+  {Э}{ {\selectfont\char221} }1
+  {Ю}{ {\selectfont\char222} }1
+  {Я}{ {\selectfont\char223} }1
+  {і}{ {\selectfont\char105} }1
+  {ї}{ {\selectfont\char168} }1
+  {є}{ {\selectfont\char185} }1
+  {ґ}{ {\selectfont\char160} }1
+  {І}{ {\selectfont\char73} }1
+  {Ї}{ {\selectfont\char136} }1
+  {Є}{ {\selectfont\char153} }1
+  {Ґ}{ {\selectfont\char128} }1
+  % \definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+  % {\{}{ { {\color{brackets}\{} } }1 % Цвет скобок {
+  % {\} }{ { {\color{brackets}\} } } }1 % Цвет скобок }
+}
+
+%--------------------------------------
+
+% Table of contents
+\usepackage{tocloft}
+\usepackage{adjustbox}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+\usepackage{titlesec}
+\titleformat{\paragraph} % Format the paragraph command
+[hang] % Shape
+{\normalfont\normalsize\bfseries} % Format for the text
+{} % Label (we leave this empty to remove the number)
+{0em} % Horizontal separation between label and title
+{} % Code before the title body
+
+% --- REDUCE PARAGRAPH INDENT IN TOC ---
+% Reduce the space before the paragraph number (if numbered)
+\setlength{\cftparaindent}{3em} % Default is often 2.5em or larger
+% Reduce the box reserved for the paragraph number
+% \setlength{\cftparanumwidth}{2.3em} % Default is often 3.0em
+% \setlength{\cftparanumwidth}{0em}
+
+% THIS IS THE CRUCIAL LINE: Set depth to 4 (paragraph) or even 5 (subparagraph)
+\setcounter{tocdepth}{4} % 4 = paragraph, 5 = subparagraph
+% --------------------------------------
+
+%%% Математические пакеты %%%
+%--------------------------------------
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}  % Математические дополнения от AMS
+\usepackage{mathtools}                              % Добавляет окружение multlined
+\usepackage[perpage]{footmisc}
+%--------------------------------------
+
+%--------------------------------------
+%			НАЧАЛО ДОКУМЕНТА
+%--------------------------------------
+
+\begin{document}
+
+%--------------------------------------
+%			ТИТУЛЬНЫЙ ЛИСТ
+%--------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%Шапка титульного листа
+%--------------------------------------
+\vspace*{-60pt}
+\hspace{-65pt}
+\begin{minipage}{0.3\textwidth}
+\hspace*{-20pt}\centering
+\includegraphics[width=\textwidth]{emblem}
+\end{minipage}
+\begin{minipage}{0.67\textwidth}\small \textbf{
+\vspace*{-0.7ex}
+\hspace*{-6pt}\centerline{Министерство науки и высшего образования Российской Федерации}
+\vspace*{-0.7ex}
+\centerline{Федеральное государственное автономное образовательное учреждение}
+\vspace*{-0.7ex}
+\centerline{высшего образования}
+\vspace*{-0.7ex}
+\centerline{<<Московский государственный технический университет}
+\vspace*{-0.7ex}
+\centerline{имени Н.Э. Баумана}
+\vspace*{-0.7ex}
+\centerline{(национальный исследовательский университет)>>}
+\vspace*{-0.7ex}
+\centerline{(МГТУ им. Н.Э. Баумана)}}
+\end{minipage}
+%--------------------------------------
+
+%Полосы
+%--------------------------------------
+\vspace{-25pt}
+\hspace{-35pt}\rule{\textwidth}{2.3pt}
+
+\vspace*{-20.3pt}
+\hspace{-35pt}\rule{\textwidth}{0.4pt}
+%--------------------------------------
+
+\vspace{1.5ex}
+\hspace{-35pt} \noindent \small ФАКУЛЬТЕТ\hspace{80pt} <<Информатика и системы управления>>
+
+\vspace*{-16pt}
+\hspace{47pt}\rule{0.83\textwidth}{0.4pt}
+
+\vspace{0.5ex}
+\hspace{-35pt} \noindent \small КАФЕДРА\hspace{50pt} <<Теоретическая информатика и компьютерные технологии>>
+
+\vspace*{-16pt}
+\hspace{30pt}\rule{0.866\textwidth}{0.4pt}
+  
+\vspace{11em}
+
+\begin{center}
+\Large {\bf Лабораторная работа № 2} \\ 
+\large {\bf по курсу <<Разработка параллельных и \\ распределенных программ>>} \\
+\textit{Параллельная реализация решения \\ системы линейных алгебраических уравнений с помощью MPI}
+
+\end{center}\normalsize
+
+\vspace{8em}
+
+
+\begin{flushright}
+ \begin{minipage}{0.5\linewidth}
+      {Студент: Федуков А. А. \hspace*{15pt}\\ 
+      Группа: ИУ9-52Б \\ 
+      Преподаватель: Царев А. С. \hspace*{15pt}}
+  \end{minipage}
+\end{flushright}
+\bigskip
+\vfill
+\begin{center}
+\textsl{Москва, 2025 г.}
+\end{center}
+\end{titlepage}
+%--------------------------------------
+%		КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+%--------------------------------------
+
+\renewcommand{\ttdefault}{pcr}
+
+\setlength{\tabcolsep}{3pt}
+\newpage
+\setcounter{page}{2}
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+
+\addcontentsline{toc}{section}{Постановка задачи}
+\section*{Постановка задачи}\label{Sect::goal}
+\paragraph{РЕШЕНИЕ СИСТЕМ ЛИНЕЙНЫХ АЛГЕБРАИЧЕСКИХ УРАВНЕНИЙ ИТЕРАЦИОННЫМИ МЕТОДАМИ}
+
+Пусть дана система из $N$ линейных алгебраических уравнений в виде $Ax = b$, где $A$~--- матрица коэффициентов размером $N \times N$, $b$~--- вектор правых частей размером $N$, $x$~--- искомый вектор решений размером $N$.
+
+Решение системы уравнений итерационным методом состоит в выполнении следующих шагов:
+\begin{enumerate}
+    \item Задаётся $x^{(0)}$~--- произвольное начальное приближение решения (вектор с произвольными начальными значениями).
+    \item Приближение многократно улучшается с использованием формулы вида $x^{(n+1)} = f(x^{(n)})$, где функция $f$ определяется используемым методом\footnote{Например, методом Якоби, методом Зейделя и др.}.
+    \item Процесс продолжается, пока не выполнится условие $g(x^{(n)}) < \varepsilon$, где функция $g$ определяется используемым методом, а величина $\varepsilon$ задаёт требуемую точность.
+\end{enumerate}
+\addcontentsline{toc}{section}{Практическая реализация}
+
+\section*{Практическая реализация}\label{Sect::implementation}
+
+\subsection*{Код программы}\label{Subsect::source_code}
+\addcontentsline{toc}{subsection}{Код программы}
+
+\begin{lstlisting}[caption={Исходный код программы}, label={lst:source_code}]
+use mpi::Count;
+use mpi::collective::SystemOperation;
+use mpi::datatype::PartitionMut;
+use mpi::traits::*;
+use rand::prelude::*;
+use std::time::Instant;
+
+// забирает оперативки N*N*8 bytes
+const N: usize = 16384;
+
+// критерий остановки
+const EPS: f64 = 1e-7;
+
+// шаг в итерации
+const TAU: f64 = 0.1 / N as f64;
+// const TAU: f64 = -0.1 / N as f64;
+
+// максимальное число итераций
+const MAX_ITERS: usize = 2_000_000;
+
+fn main() {
+    // Инициализация MPI
+    let universe = mpi::initialize().unwrap();
+    let world = universe.world(); // коммуникатор всех процессов
+
+    let rank = world.rank() as usize; // номер текущего процесса
+    let p = world.size() as usize; // общее число процессов
+
+    // Вычисляем, сколько строк у каждого процесса
+    let base = N / p; // число строк на процесс
+    let rem = N % p; // число процессов, получающих на 1 строку больше
+    // 0..(rem-1) процессы получают по (base+1) строк
+    // rem..(p) процессы получают по base строк
+
+    // число строк, обрабатываемых текущим процессом
+    let local_n = base + if rank < rem { 1 } else { 0 };
+    // начальный номер строки для текущего процесса
+    let start_row = rank * base + rank.min(rem);
+
+    // counts/displs нужны для сборки b_full через all_gather_varcount_into
+    let mut counts: Vec<Count> = vec![0; p]; // число элементов от каждого процесса
+    let mut displs: Vec<Count> = vec![0; p]; // смещения для каждого процесса
+    {
+        let mut off: Count = 0;
+        for r in 0..p {
+            let cnt = (base + if r < rem { 1 } else { 0 }) as Count;
+            counts[r] = cnt;
+            displs[r] = off;
+            off += cnt;
+        }
+    }
+
+    // вектор из всех 1.0. он должен быть решением системы
+    let x_true = vec![1.0_f64; N];
+
+    // A_local - локальный блок строк матрицы A: local_n строк по N столбцов
+    let mut a_local = vec![0.0_f64; local_n * N];
+
+    // Заполняем A
+    // Модельная задача с заданным решением: диагональные элементы = 2, остальные = 1
+    for i_local in 0..local_n {
+        let i_global = start_row + i_local;
+        let row_offset = i_local * N;
+        for j in 0..N {
+            a_local[row_offset + j] = if i_global == j { 2.0 } else { 1.0 };
+        }
+    }
+
+    // b_local = A_local * x_true
+    // считаем локальный кусок вектора правой части
+    let mut b_local = vec![0.0_f64; local_n];
+    for i_local in 0..local_n {
+        let row_offset = i_local * N;
+        let mut sum = 0.0_f64;
+        for j in 0..N {
+            sum += a_local[row_offset + j] * x_true[j];
+        }
+        b_local[i_local] = sum;
+    }
+
+    // посчитаем полный вектор b
+    // b дублируется во всех процессах: соберём b_full через Allgatherv
+    let mut b_full = vec![0.0_f64; N];
+    {
+        // разбиваем b_full на части для каждого процесса
+        let mut part_b = PartitionMut::new(&mut b_full[..], &counts[..], &displs[..]);
+        // собираем полное b_full из локальных кусков b_local
+        world.all_gather_varcount_into(&b_local[..], &mut part_b);
+        // MPI_Allgatherv
+    }
+
+    // посчитаем ||b||_2
+    let local_b2: f64 = b_local.iter().map(|v| v * v).sum();
+    let mut global_b2 = 0.0_f64;
+    world.all_reduce_into(&local_b2, &mut global_b2, SystemOperation::sum());
+    let norm_b = global_b2.sqrt();
+
+    // ------ Реализация итеративного метода
+
+    // x хранится целиком в каждом процессе
+    let mut x_n_full = vec![0.0_f64; N];
+    let mut x_np1_full = vec![0.0_f64; N];
+    let mut x_np1_local = vec![0.0_f64; local_n];
+
+    // инициализируем rng
+    let mut rng = StdRng::seed_from_u64(123456789); // фиксированный seed
+
+    // инициализируем x0 как рандомные числа в диапазоне [-1, 1]
+    for i in 0..N {
+        x_n_full[i] = rng.gen_range(-1.0_f64..1.0_f64);
+    }
+
+    // Замер времени вычислений
+    world.barrier();
+    let t0 = Instant::now();
+
+    let mut iters_done: usize = 0;
+    let mut last_ratio: f64 = f64::INFINITY;
+
+    // итерируемся, пока не привысим MAX_ITERS или не достигнем EPS
+    for n_iter in 0..MAX_ITERS {
+        let mut local_r2 = 0.0_f64;
+
+        // вычисляем локальный кусок r и x_{n+1}
+        for i_local in 0..local_n {
+            // Ax_n для строки i_local:
+            let row_offset = i_local * N;
+            let mut ax = 0.0_f64;
+            for j in 0..N {
+                ax += a_local[row_offset + j] * x_n_full[j];
+            }
+
+            // r_i = (Ax_n)_i - b_i
+            let i_global = start_row + i_local;
+            let r_i = ax - b_full[i_global];
+
+            local_r2 += r_i * r_i;
+
+            // считаем x_{n+1} для этой строки
+            let x_i_n = x_n_full[i_global];
+            x_np1_local[i_local] = x_i_n - TAU * r_i;
+        }
+
+        let mut global_r2 = 0.0_f64;
+
+        // собираем ||r||_2^2 по всем процессам как сумму локальных вкладов
+        world.all_reduce_into(&local_r2, &mut global_r2, SystemOperation::sum());
+        // MPI_Allreduce + MPI_SUM
+
+        // вычисляем g(x_n) = ||r||_2 / ||b||_2
+        last_ratio = global_r2.sqrt() / norm_b;
+        iters_done = n_iter + 1;
+
+        // собираем полный x_{n+1} во всех процессах из x_np1_local
+        {
+            let mut part_xnp1 = PartitionMut::new(&mut x_np1_full[..], &counts[..], &displs[..]);
+            world.all_gather_varcount_into(&x_np1_local[..], &mut part_xnp1);
+            // MPI_Allgatherv
+        }
+
+        // меняем указатели для следующей итерации
+        std::mem::swap(&mut x_n_full, &mut x_np1_full);
+
+        // проверяем условие остановки
+        if last_ratio < EPS {
+            break;
+        }
+    }
+
+    // ждем завершения всех процессов
+    world.barrier();
+    // замеряем время
+    let elapsed = t0.elapsed().as_secs_f64();
+
+    // Вывод результатов
+    if rank == 0 {
+        println!("N={}, p={}, EPS={:.3e}, TAU={:.6e}", N, p, EPS, TAU);
+        println!("iters={}, g(x_n)={:.6e}", iters_done, last_ratio);
+        println!("time_sec={:.6}", elapsed);
+        println!("Result x_n_full[0..3]: {:?}", &x_n_full[0..3]);
+    }
+
+    // выводим максимальную погрешность
+    if rank == 0 {
+        let mut max_err = 0.0_f64;
+        for i in 0..N {
+            let e = (x_n_full[i] - x_true[i]).abs();
+            if e > max_err {
+                max_err = e;
+            }
+        }
+        println!("max_abs_error={:.6e}", max_err);
+    }
+    println!("Rank {} done.", rank);
+}
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Вывод программы}
+\subsection*{Вывод программы}\label{Subsect::program_output}
+
+Инициализируем начальное значение вектора $x^{(0)}$ случайными числами в диапазоне $[-1, 1]$ с фиксированным seed для генератора случайных чисел, чтобы обеспечить воспроизводимость результатов.
+
+\begin{itemize}
+    \item Размер системы: $N = 16384$.
+    \item Критерий остановки: $\varepsilon = 1 \times 10^{-7}$.
+    \item Шаг итерации: $\tau = \frac{0.1}{N}$.
+    \item Максимальное число итераций: $2000000$.
+    \item Используемые числа процессов: $p = 1, 2, 4, 8, 16$.
+    \item iters --- количество выполненных итераций до достижения критерия остановки.
+    \item g(x\_n) --- значение критерия остановки на последней итерации.
+    \item time\_sec --- время выполнения программы в секундах.
+    \item max\_abs\_error --- максимальная абсолютная ошибка между вычисленным решением и истинным решением (вектор из всех 1.0).
+\end{itemize}
+
+Не удавалось запустить с 8 и 16 процессами без дополнительных флагов из-за недостатка слотов на системе. С использованием флага `--use-hwthread-cpus` для 8 процессов и `--oversubscribe` для 16 процессов программа успешно выполнялась.
+
+\begin{lstlisting}[caption={Вывод программы}, label={lst:program_output}]
+const N: usize = 16384;
+const EPS: f64 = 1e-7;
+const TAU: f64 = 0.1 / N as f64;
+
+> cargo build --release
+> mpirun -np 1 target/release/lab2
+N=16384, p=1, EPS=1.000e-7, TAU=6.103516e-6
+iters=154, g(x_n)=9.969014e-8
+time_sec=30.898948
+Result x_n_full[0..3]: [0.9999999102791989, 0.9999999102791989, 0.9999999102791989]
+max_abs_error=8.972080e-8
+Rank 0 done.
+> mpirun -np 2 target/release/lab2
+N=16384, p=2, EPS=1.000e-7, TAU=6.103516e-6
+iters=154, g(x_n)=9.969014e-8
+time_sec=16.331055
+Result x_n_full[0..3]: [0.9999999102791989, 0.9999999102791989, 0.9999999102791989]
+max_abs_error=8.972080e-8
+Rank 0 done.
+Rank 1 done.
+> mpirun -np 4 target/release/lab2
+N=16384, p=4, EPS=1.000e-7, TAU=6.103516e-6
+iters=154, g(x_n)=9.969014e-8
+time_sec=10.134222
+Result x_n_full[0..3]: [0.9999999102791989, 0.9999999102791989, 0.9999999102791989]
+max_abs_error=8.972080e-8
+Rank 0 done.
+Rank 1 done.
+Rank 2 done.
+Rank 3 done.
+> mpirun -np 8 target/release/lab2
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 8
+slots that were requested by the application:
+...
+> mpirun --use-hwthread-cpus -np 8 target/release/lab2
+
+N=16384, p=8, EPS=1.000e-7, TAU=6.103516e-6
+iters=154, g(x_n)=9.969014e-8
+time_sec=8.730051
+Result x_n_full[0..3]: [0.9999999102791989, 0.9999999102791989, 0.9999999102791989]
+max_abs_error=8.972080e-8
+Rank 0 done.
+Rank 1 done.
+Rank 2 done.
+Rank 3 done.
+Rank 4 done.
+Rank 5 done.
+Rank 6 done.
+Rank 7 done.
+> mpirun --use-hwthread-cpus -np 16 target/release/lab2
+There are not enough slots available in the system to satisfy the 16
+slots that were requested by the application:
+...
+
+> mpirun --oversubscribe -np 16 target/release/lab2
+
+Rank 10 done.
+Rank 11 done.
+Rank 12 done.
+Rank 14 done.
+Rank 15 done.
+Rank 1 done.
+Rank 2 done.
+Rank 4 done.
+Rank 6 done.
+Rank 8 done.
+Rank 9 done.
+Rank 3 done.
+Rank 7 done.
+Rank 13 done.
+Rank 5 done.
+N=16384, p=16, EPS=1.000e-7, TAU=6.103516e-6
+iters=154, g(x_n)=9.969014e-8
+time_sec=10.606535
+Result x_n_full[0..3]: [0.9999999102791989, 0.9999999102791989, 0.9999999102791989]
+max_abs_error=8.972080e-8
+Rank 0 done.
+\end{lstlisting}
+
+\addcontentsline{toc}{section}{Вывод}
+\section*{Вывод}\label{Sect::conclusion}
+В данной лабораторной работе была реализована параллельная программа на языке Rust с использованием библиотеки MPI для решения системы линейных алгебраических уравнений итерационным методом. Программа успешно выполняет распределённые вычисления, демонстрируя снижение времени выполнения при увеличении числа процессов. Результаты показывают, что достигнута требуемая точность решения, а максимальная абсолютная ошибка остаётся в пределах допустимых значений. Работа иллюстрирует эффективность параллельных вычислений для задач линейной алгебры и подчёркивает важность правильного распределения данных между процессами для оптимизации производительности.
+
+
+\addcontentsline{toc}{section}{Характеристики компьютера}
+\section*{Характеристики компьютера}
+
+\begin{lstlisting}[caption={Характеристики компьютера}, label={lst:computer_specs}]
+> inxi --cpu --memory
+Memory:
+  System RAM: total: 16 GiB available: 14.8 GiB used: 10.48 GiB (70.8%)
+  Array-1: capacity: 64 GiB slots: 4 modules: 4 EC: None
+  Device-1: Channel-A DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-2: Channel-B DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-3: Channel-C DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-4: Channel-D DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+CPU:
+  Info: 6-core model: AMD Ryzen 5 7640HS w/ Radeon 760M Graphics bits: 64
+    type: MT MCP cache: L2: 6 MiB
+  Speed (MHz): avg: 1200 min/max: 400/5017 cores: 1: 1390 2: 1100 3: 1100
+    4: 1100 5: 1100 6: 1100 7: 1396 8: 1100 9: 1432 10: 1100 11: 1389 12: 1100
+\end{lstlisting}
+
+\end{document}

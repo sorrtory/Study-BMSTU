@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\definecolor{Maroon}{RGB}{128,0,0}
+\definecolor{LightCyan}{RGB}{0,155,255}
+
+\begin{document}
+
+\begin{center}
+
+% -- Object
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|}
+\hline
+%% Object name
+\textbf{COLLEGE} \\
+\hline
+
+%% ID
+\ \ \underline{\textsubscript{ID}}\ \ CollegeName\textsubscript{1.1} \\
+%% Simple object
+\ \ \ \ DeanName\textsubscript{1.1} \\
+\ \ \ \ PhoneNumber\textsubscript{1.N} \\
+\hline
+
+% Composite object
+\color{LightCyan}CampusAddress\textsubscript{0.1}\\
+\hspace{2em}-- Building\textsubscript{1.1}\\
+\hspace{2em}-- OfficeNumber\textsubscript{1.1}\\
+\hline
+
+%% Compound object
+\cellcolor{Maroon}{\color{white}\ \ DEPARTMENT\textsubscript{1.N}} \\
+
+\hline
+\end{tabular}
+\end{table}
+% -- END of Object
+
+\end{center}
+
+\end{document}

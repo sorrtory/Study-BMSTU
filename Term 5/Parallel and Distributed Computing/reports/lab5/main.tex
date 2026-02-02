@@ -1,0 +1,692 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+\usepackage{tikz}
+\usepackage{aeguill}
+
+% Поля
+%--------------------------------------
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm}
+%--------------------------------------
+
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, main=russian]{babel}
+%--------------------------------------
+
+\usepackage{textcomp}
+% § for list
+\usepackage{easylist}
+
+% Красная строка
+%--------------------------------------
+\usepackage{indentfirst}               
+%--------------------------------------             
+
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+%--------------------------------------
+
+% Полуторный интервал
+%--------------------------------------
+\linespread{1.3}                    
+%--------------------------------------
+
+% Таблицы
+\usepackage{longtable}
+
+%Выравнивание и переносы
+\usepackage{tabularx}
+% ragged X column for wrapping long text in table cells
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+%--------------------------------------
+% Избавляемся от переполнений
+\sloppy
+% Запрещаем разрыв страницы после первой строки абзаца
+\clubpenalty=10000
+% Запрещаем разрыв страницы после последней строки абзаца
+\widowpenalty=10000
+%--------------------------------------
+
+%Списки
+\usepackage{enumitem}
+
+%Подписи
+\usepackage{caption} 
+
+%Гиперссылки
+\usepackage{hyperref}
+
+\hypersetup {
+    unicode=true,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Рисунки
+%--------------------------------------
+\DeclareCaptionLabelSeparator*{emdash}{~--- }
+\captionsetup[figure]{labelsep=emdash,font=onehalfspacing,position=bottom}
+%--------------------------------------
+
+\usepackage{tempora}
+
+%Листинги
+%--------------------------------------
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize, 
+  %basicstyle=\footnotesize\AnkaCoder,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks shoulbd only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  inputencoding=utf8,
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bf,       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  xleftmargin=25pt,
+  xrightmargin=25pt,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 8 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % Для отображения русского языка
+  extendedchars=true,
+  literate={Ö}{ {\"O} }1
+  {Ä}{ {\"A} }1
+  {Ü}{ {\"U} }1
+  {ß}{ {\ss} }1
+  {ü}{ {\"u} }1
+  {ä}{ {\"a} }1
+  {ö}{ {\"o} }1
+  {~}{ {\textasciitilde} }1
+  {а}{ {\selectfont\char224} }1
+  {б}{ {\selectfont\char225} }1
+  {в}{ {\selectfont\char226} }1
+  {г}{ {\selectfont\char227} }1
+  {д}{ {\selectfont\char228} }1
+  {е}{ {\selectfont\char229} }1
+  {ё}{ {\"e} }1
+  {ж}{ {\selectfont\char230} }1
+  {з}{ {\selectfont\char231} }1
+  {и}{ {\selectfont\char232} }1
+  {й}{ {\selectfont\char233} }1
+  {к}{ {\selectfont\char234} }1
+  {л}{ {\selectfont\char235} }1
+  {м}{ {\selectfont\char236} }1
+  {н}{ {\selectfont\char237} }1
+  {о}{ {\selectfont\char238} }1
+  {п}{ {\selectfont\char239} }1
+  {р}{ {\selectfont\char240} }1
+  {с}{ {\selectfont\char241} }1
+  {т}{ {\selectfont\char242} }1
+  {у}{ {\selectfont\char243} }1
+  {ф}{ {\selectfont\char244} }1
+  {х}{ {\selectfont\char245} }1
+  {ц}{ {\selectfont\char246} }1
+  {ч}{ {\selectfont\char247} }1
+  {ш}{ {\selectfont\char248} }1
+  {щ}{ {\selectfont\char249} }1
+  {ъ}{ {\selectfont\char250} }1
+  {ы}{ {\selectfont\char251} }1
+  {ь}{ {\selectfont\char252} }1
+  {э}{ {\selectfont\char253} }1
+  {ю}{ {\selectfont\char254} }1
+  {я}{ {\selectfont\char255} }1
+  {А}{ {\selectfont\char192} }1
+  {Б}{ {\selectfont\char193} }1
+  {В}{ {\selectfont\char194} }1
+  {Г}{ {\selectfont\char195} }1
+  {Д}{ {\selectfont\char196} }1
+  {Е}{ {\selectfont\char197} }1
+  {Ё}{ {\"E} }1
+  {Ж}{ {\selectfont\char198} }1
+  {З}{ {\selectfont\char199} }1
+  {И}{ {\selectfont\char200} }1
+  {Й}{ {\selectfont\char201} }1
+  {К}{ {\selectfont\char202} }1
+  {Л}{ {\selectfont\char203} }1
+  {М}{ {\selectfont\char204} }1
+  {Н}{ {\selectfont\char205} }1
+  {О}{ {\selectfont\char206} }1
+  {П}{ {\selectfont\char207} }1
+  {Р}{ {\selectfont\char208} }1
+  {С}{ {\selectfont\char209} }1
+  {Т}{ {\selectfont\char210} }1
+  {У}{ {\selectfont\char211} }1
+  {Ф}{ {\selectfont\char212} }1
+  {Х}{ {\selectfont\char213} }1
+  {Ц}{ {\selectfont\char214} }1
+  {Ч}{ {\selectfont\char215} }1
+  {Ш}{ {\selectfont\char216} }1
+  {Щ}{ {\selectfont\char217} }1
+  {Ъ}{ {\selectfont\char218} }1
+  {Ы}{ {\selectfont\char219} }1
+  {Ь}{ {\selectfont\char220} }1
+  {Э}{ {\selectfont\char221} }1
+  {Ю}{ {\selectfont\char222} }1
+  {Я}{ {\selectfont\char223} }1
+  {і}{ {\selectfont\char105} }1
+  {ї}{ {\selectfont\char168} }1
+  {є}{ {\selectfont\char185} }1
+  {ґ}{ {\selectfont\char160} }1
+  {І}{ {\selectfont\char73} }1
+  {Ї}{ {\selectfont\char136} }1
+  {Є}{ {\selectfont\char153} }1
+  {Ґ}{ {\selectfont\char128} }1
+  % \definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+  % {\{}{ { {\color{brackets}\{} } }1 % Цвет скобок {
+  % {\} }{ { {\color{brackets}\} } } }1 % Цвет скобок }
+}
+
+%--------------------------------------
+
+% Table of contents
+\usepackage{tocloft}
+\usepackage{adjustbox}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+\usepackage{titlesec}
+\titleformat{\paragraph} % Format the paragraph command
+[hang] % Shape
+{\normalfont\normalsize\bfseries} % Format for the text
+{} % Label (we leave this empty to remove the number)
+{0em} % Horizontal separation between label and title
+{} % Code before the title body
+
+% --- REDUCE PARAGRAPH INDENT IN TOC ---
+% Reduce the space before the paragraph number (if numbered)
+\setlength{\cftparaindent}{3em} % Default is often 2.5em or larger
+% Reduce the box reserved for the paragraph number
+% \setlength{\cftparanumwidth}{2.3em} % Default is often 3.0em
+% \setlength{\cftparanumwidth}{0em}
+
+% THIS IS THE CRUCIAL LINE: Set depth to 4 (paragraph) or even 5 (subparagraph)
+\setcounter{tocdepth}{4} % 4 = paragraph, 5 = subparagraph
+% --------------------------------------
+
+%%% Математические пакеты %%%
+%--------------------------------------
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}  % Математические дополнения от AMS
+\usepackage{mathtools}                              % Добавляет окружение multlined
+\usepackage[perpage]{footmisc}
+%--------------------------------------
+
+%--------------------------------------
+%			НАЧАЛО ДОКУМЕНТА
+%--------------------------------------
+
+\begin{document}
+
+%--------------------------------------
+%			ТИТУЛЬНЫЙ ЛИСТ
+%--------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%Шапка титульного листа
+%--------------------------------------
+\vspace*{-60pt}
+\hspace{-65pt}
+\begin{minipage}{0.3\textwidth}
+\hspace*{-20pt}\centering
+\includegraphics[width=\textwidth]{emblem}
+\end{minipage}
+\begin{minipage}{0.67\textwidth}\small \textbf{
+\vspace*{-0.7ex}
+\hspace*{-6pt}\centerline{Министерство науки и высшего образования Российской Федерации}
+\vspace*{-0.7ex}
+\centerline{Федеральное государственное автономное образовательное учреждение}
+\vspace*{-0.7ex}
+\centerline{высшего образования}
+\vspace*{-0.7ex}
+\centerline{<<Московский государственный технический университет}
+\vspace*{-0.7ex}
+\centerline{имени Н.Э. Баумана}
+\vspace*{-0.7ex}
+\centerline{(национальный исследовательский университет)>>}
+\vspace*{-0.7ex}
+\centerline{(МГТУ им. Н.Э. Баумана)}}
+\end{minipage}
+%--------------------------------------
+
+%Полосы
+%--------------------------------------
+\vspace{-25pt}
+\hspace{-35pt}\rule{\textwidth}{2.3pt}
+
+\vspace*{-20.3pt}
+\hspace{-35pt}\rule{\textwidth}{0.4pt}
+%--------------------------------------
+
+\vspace{1.5ex}
+\hspace{-35pt} \noindent \small ФАКУЛЬТЕТ\hspace{80pt} <<Информатика и системы управления>>
+
+\vspace*{-16pt}
+\hspace{47pt}\rule{0.83\textwidth}{0.4pt}
+
+\vspace{0.5ex}
+\hspace{-35pt} \noindent \small КАФЕДРА\hspace{50pt} <<Теоретическая информатика и компьютерные технологии>>
+
+\vspace*{-16pt}
+\hspace{30pt}\rule{0.866\textwidth}{0.4pt}
+  
+\vspace{11em}
+
+\begin{center}
+\Large {\bf Лабораторная работа № 5} \\ 
+\large {\bf по курсу <<Разработка параллельных и \\ распределенных программ>>} \\
+\textit{Синхронизация потоков}
+
+\end{center}\normalsize
+
+\vspace{8em}
+
+
+\begin{flushright}
+ \begin{minipage}{0.5\linewidth}
+      {Студент: Федуков А. А. \hspace*{15pt}\\ 
+      Группа: ИУ9-52Б \\ 
+      Преподаватель: Царев А. С. \hspace*{15pt}}
+  \end{minipage}
+\end{flushright}
+\bigskip
+\vfill
+\begin{center}
+\textsl{Москва, 2025 г.}
+\end{center}
+\end{titlepage}
+%--------------------------------------
+%		КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+%--------------------------------------
+
+\renewcommand{\ttdefault}{pcr}
+
+\setlength{\tabcolsep}{3pt}
+\newpage
+\setcounter{page}{2}
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+
+\addcontentsline{toc}{section}{Постановка задачи}
+\section*{Постановка задачи}\label{Sect::goal}
+\begin{enumerate}
+    \item \textbf{Использование барьерной синхронизации — задача «эволюция».}\\
+        Реализовать параллельную модель клеточного автомата на прямоугольной матрице размеров M \(\times\) K:
+        \begin{itemize}
+            \item Каждая клетка содержит 0 или 1; начальная матрица заполняется случайно.
+            \item Правила эволюции стандартные (см. условие): у живой клетки меньше 2 соседей — смерть, 2 или 3 — выживает, больше 3 — смерть; пустая клетка с ровно 3 соседями становится живой.
+            \item Граничные клетки имеют тороидальную геометрию (соседи с противоположной стороны).
+            \item Запустить заданное число шагов T моделирования при помощи n потоков. Каждый поток отвечает за непрерывную горизонтальную (или вертикальную) полосу матрицы. Результаты шага вычисляются в отдельной «новой» матрице.
+            \item После завершения вычисления шага все потоки синхронизировать барьером; затем содержимое новой матрицы копируется в исходную (копирование может выполняться потоками параллельно при соблюдении барьера).
+            \item Поскольку поток видит только свою полосу, при обращении к элементам, лежащим за границей своей полосы, он должен получить их у соседних потоков (реализовать обмен граничными полосами через каналы/общую структуру с синхронизацией или читать соседние границы перед началом шага).
+            \item Измерить среднее время одного шага при параллельной реализации (различные n) и сравнить со средней длительностью шага однопоточной реализации на том же входе. В отчёте привести методику измерения, таблицу результатов и краткий вывод.
+        \end{itemize}
+
+    \item \textbf{Использование синхронизаций чтения и записи (reader/writer).}\\
+        Написать программу, в которой n потоков генерируют по R псевдослучайных чисел в диапазоне [0,1000] и пытаются помещать их в конец однонаправленного связного списка только если такого числа там ещё нет:
+        \begin{itemize}
+            \item Поиск наличия числа в списке выполнять под общей блокировкой чтения (shared/read lock).
+            \item Если число не найдено, перейти к блокировке записи (exclusive/write lock), и перед вставкой повторно проверить отсутствие числа (возможна «гонка» между чтением и захватом записи).
+            \item Вставлять новый элемент в конец списка только под записью.
+            \item По завершении всех потоков основной поток должен пройти по списку и проверить отсутствие повторяющихся значений.
+            \item В отчёте привести исходный код программы и короткий отчёт о проверке корректности (например, длина списка и отсутствие дубликатов).
+        \end{itemize}
+\end{enumerate}
+\addcontentsline{toc}{section}{Практическая реализация}
+
+\section*{Практическая реализация}\label{Sect::implementation}
+
+\subsection*{Код программы}\label{Subsect::source_code}
+\addcontentsline{toc}{subsection}{Код программы}
+
+\begin{lstlisting}[caption={Исходный код программы для задачи 1}, label={lst:source_code}]
+use rand::rngs::StdRng;
+use rand::{Rng, SeedableRng};
+use std::sync::{
+    Arc, Barrier,
+    atomic::{AtomicU8, Ordering},
+};
+use std::thread;
+use std::time::Instant;
+
+const ROWS: usize = 4096;
+const COLS: usize = 4096;
+const STEPS: usize = 1; // количество шагов эволюции
+const THREADS: usize = 16;
+const SEED: u64 = 1; // сид для генератора случайных чисел
+
+#[inline(always)]
+fn evolve(alive: u8, n: u32) -> u8 {
+    if alive == 1 {
+        if n < 2 {
+            0
+        } else if n == 2 || n == 3 {
+            1
+        } else {
+            0
+        }
+    } else {
+        if n == 3 { 1 } else { 0 }
+    }
+}
+
+struct Inboxes {
+    top: Vec<AtomicU8>,    // сосед сверху пишет сюда
+    bottom: Vec<AtomicU8>, // сосед снизу пишет сюда
+}
+
+fn make_inboxes() -> Inboxes {
+    // создаем буферы для верхней и нижней граничных строк потока
+    Inboxes {
+        top: (0..COLS).map(|_| AtomicU8::new(0)).collect(),
+        bottom: (0..COLS).map(|_| AtomicU8::new(0)).collect(),
+    }
+}
+
+fn main() {
+    let threads_n = THREADS.min(ROWS).max(1); // проверяем что потоков не больше строк
+
+    // Сколько строк на поток
+    let base = ROWS / threads_n;
+    // Сколько строк остаётся (прибавим к последнему потоку)
+    let rem = ROWS % threads_n;
+
+    let barrier = Arc::new(Barrier::new(threads_n));
+
+    // Для каждого потока создаем буферы для обмена граничными (по вертикали) строками
+    let inboxes: Vec<Arc<Inboxes>> = (0..threads_n).map(|_| Arc::new(make_inboxes())).collect();
+
+    let start = Instant::now();
+
+    let mut thread_handles = Vec::with_capacity(threads_n);
+
+    for tid in 0..threads_n {
+        // строки для текущего потока (для последнего потока + остаток)
+        let my_rows = if tid == threads_n - 1 {
+            base + rem
+        } else {
+            base
+        };
+
+        // номера потоков-соседей (замыкаем по кругу)
+        let up = (tid + threads_n - 1) % threads_n;
+        let down = (tid + 1) % threads_n;
+
+        // создаем ссылки на
+        let b = barrier.clone();
+        let me = inboxes[tid].clone();
+        let up_in = inboxes[up].clone();
+        let down_in = inboxes[down].clone();
+
+        thread_handles.push(thread::spawn(move || -> u64 {
+            // Старые строки матрицы
+            let mut local = vec![0u8; my_rows * COLS];
+            // Новые строки матрицы
+            let mut next = vec![0u8; my_rows * COLS];
+
+            // скармливаем сид + tid для получения разных значений на каждом потоке
+            let mut rng =
+                StdRng::seed_from_u64(SEED ^ (tid as u64).wrapping_mul(0x9E3779B97F4A7C15));
+            // заполняем полосу случайными 0 и 1
+            for x in &mut local {
+                *x = if rng.random_bool(0.5) { 1 } else { 0 };
+            }
+
+            for _ in 0..STEPS {
+                // ------ 1: обновляем границы
+                // отправляем верхнюю и нижнюю строки соседям
+                let last_off = (my_rows - 1) * COLS;
+                for j in 0..COLS {
+                    // верхняя строка -> up.bottom
+                    up_in.bottom[j].store(local[j], Ordering::Release);
+                    // нижняя строка -> down.top
+                    down_in.top[j].store(local[last_off + j], Ordering::Release);
+                }
+                // Ждем пока все потоки отправят свои граничные строки
+                b.wait();
+
+                // ------ 2: вычисляем следующее состояние для всех строк этого потока
+                for i in 0..my_rows {
+                    // смещение для текущей строки
+                    let row_off = i * COLS;
+                    // флаги. Является ли верхняя/нижняя строка граничной?
+                    let up_is_inbox = i == 0;
+                    let dn_is_inbox = i + 1 == my_rows;
+
+                    // проходим по всем столбцам
+                    for j in 0..COLS {
+                        let jl = if j == 0 { COLS - 1 } else { j - 1 };
+                        let jr = if j + 1 == COLS { 0 } else { j + 1 };
+
+                        let mut n: u32 = 0;
+
+                        // верзняя часть
+                        if up_is_inbox {
+                            // берем атомики из буфера
+                            n += me.top[jl].load(Ordering::Acquire) as u32;
+                            n += me.top[j].load(Ordering::Acquire) as u32;
+                            n += me.top[jr].load(Ordering::Acquire) as u32;
+                        } else {
+                            let up_off = (i - 1) * COLS;
+                            n += local[up_off + jl] as u32;
+                            n += local[up_off + j] as u32;
+                            n += local[up_off + jr] as u32;
+                        }
+
+                        // лево и право
+                        n += local[row_off + jl] as u32;
+                        n += local[row_off + jr] as u32;
+
+                        // низ
+                        if dn_is_inbox {
+                            // берем атомики из буфера
+                            n += me.bottom[jl].load(Ordering::Acquire) as u32;
+                            n += me.bottom[j].load(Ordering::Acquire) as u32;
+                            n += me.bottom[jr].load(Ordering::Acquire) as u32;
+                        } else {
+                            let dn_off = (i + 1) * COLS;
+                            n += local[dn_off + jl] as u32;
+                            n += local[dn_off + j] as u32;
+                            n += local[dn_off + jr] as u32;
+                        }
+
+                        // Вызываем эволюцию и записываем в next
+                        let alive = local[row_off + j];
+                        next[row_off + j] = evolve(alive, n);
+                    }
+                }
+                // Ждем пока все потоки подсчитают новое состояние
+                b.wait();
+
+                // ------ 3: меняем старое и новое состояние местами
+                std::mem::swap(&mut local, &mut next);
+                // Ждем пока все потоки закончат обновление состояния
+                b.wait();
+            }
+
+            // Вычисляем контрольную сумму по локальному куску
+            local.iter().map(|&x| x as u64).sum()
+        }));
+    }
+
+    // Собираем контрольные суммы от всех потоков
+    let mut checksum = 0u64;
+    for h in thread_handles {
+        checksum = checksum.wrapping_add(h.join().unwrap());
+    }
+
+    println!("{} ms (checksum={})", start.elapsed().as_millis(), checksum);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Исходный код программы для задачи 2}, label={lst:cargo_toml}]
+    use parking_lot::RwLock;
+use rand::{rngs::ThreadRng, Rng};
+use std::collections::{HashSet, LinkedList};
+use std::sync::Arc;
+use std::thread;
+use std::time::Instant;
+
+const THREADS: usize = 16;
+const COUNT: usize = 1_000_000;
+
+fn contains(list: &LinkedList<i32>, v: i32) -> bool {
+    list.iter().any(|&x| x == v)
+}
+
+fn worker(num_values: usize, list: Arc<RwLock<LinkedList<i32>>>) {
+    let mut rng: ThreadRng = rand::thread_rng();
+
+    for _ in 0..num_values {
+        let v: i32 = rng.gen_range(0..=1000);
+
+        // 1) Проверка под read-lock
+        {
+            let guard = list.read();
+            if contains(&guard, v) {
+                continue;
+            }
+        }
+
+        // 2) Запись под write-lock + повторная проверка
+        {
+            let mut guard = list.write();
+            if !contains(&guard, v) {
+                guard.push_back(v);
+            }
+        }
+    }
+}
+
+fn main() {
+    let start_time = Instant::now();
+    let list = Arc::new(RwLock::new(LinkedList::<i32>::new()));
+
+    let mut thread_handles = Vec::with_capacity(THREADS);
+    for _ in 0..THREADS {
+        let l = Arc::clone(&list);
+        thread_handles.push(thread::spawn(move || worker(COUNT, l)));
+    }
+
+    // Ждем пока все потоки завершатся
+    for h in thread_handles {
+        h.join().unwrap();
+    }
+
+    // Вывод результата
+    let values: Vec<i32> = {
+        let guard = list.read();
+        guard.iter().copied().collect()
+    };
+
+    // print!("Result list: ");
+    // for v in &values {
+        // print!("{v} ");
+    // }
+    // println!();
+    let elapsed = start_time.elapsed().as_millis();
+    println!("Elapsed time: {} ms", elapsed);
+
+    // Проверка на дубли
+    let mut seen = HashSet::new();
+    for &v in &values {
+        if !seen.insert(v) {
+            panic!("Duplicate value found: {v}");
+        }
+    }
+    println!("No duplicates found. Total unique values: {}", seen.len());
+}
+
+\end{lstlisting}
+
+\addcontentsline{toc}{subsection}{Вывод программы}
+\subsection*{Вывод программы}\label{Subsect::program_output}
+
+\begin{enumerate}
+    \item \textbf{Вывод программы для задачи 1.}\\
+        В листинге \ref{lst:program_output} приведены результаты замеров времени выполнения программы для различных количеств потоков и двух значений количества шагов эволюции (STEPS = 10 и STEPS = 1). Также приведены контрольные суммы (checksum) для проверки корректности работы программы.
+    \item \textbf{Вывод программы для задачи 2.}\\
+        В листинге \ref{lst:program_output_2} приведены результаты замеров времени выполнения программы для различных количеств потоков. Программа успешно завершилась без обнаружения дубликатов в связном списке.
+\end{enumerate}
+
+
+
+\begin{lstlisting}[caption={Вывод программы 1}, label={lst:program_output}, language=C++]
+const ROWS: usize = 4096; // число строк матрицы
+const COLS: usize = 4096; // число столбцов матрицы
+const THREADS: usize = 2; // количество потоков
+
+const STEPS: usize = 10; // количество шагов эволюции
+
+1  : 25028 ms (checksum=3359996)
+2  : 12691 ms (checksum=3358243)
+4  : 6197 ms (checksum=3362872)
+8  : 4124 ms (checksum=3360288)
+16 : 3599 ms (checksum=3359891)
+
+const STEPS: usize = 1; // количество шагов эволюции
+
+1  : 9596 ms (checksum=4593682)
+2  : 4540 ms (checksum=4595231)
+4  : 2434 ms (checksum=4592151)
+8  : 1350 ms (checksum=4588302)
+16 : 1279 ms (checksum=4589131)
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Вывод программы 2}, label={lst:program_output_2}]
+const COUNT: usize = 1_000_000;
+
+1  : Elapsed time: 3357 ms
+2  : Elapsed time: 3486 ms
+4  : Elapsed time: 3595 ms
+8  : Elapsed time: 5621 ms
+16 : Elapsed time: 9891 ms
+\end{lstlisting}
+
+\addcontentsline{toc}{section}{Вывод}
+\section*{Вывод}\label{Sect::conclusion}
+
+В ходе выполнения лабораторной работы были реализованы две задачи, требующие использования различных механизмов синхронизации потоков. Первая задача, связанная с барьерной синхронизацией, продемонстрировала эффективное распределение вычислений между потоками при моделировании клеточного автомата. Вторая задача, использующая синхронизацию чтения и записи, показала важность правильного управления доступом к общим данным для предотвращения гонок и обеспечения целостности данных. В первом случае полученные результаты замеров времени выполнения программ подтвердили эффективность выбранных подходов к синхронизации в многопоточных приложениях. Однако во втором случае наблюдалось увеличение времени выполнения с ростом количества потоков, что связано с накладными расходами на управление блокировками при использовании RWLock. В целом, работа позволила углубить понимание механизмов синхронизации в параллельном программировании и их влияния на производительность приложений.
+
+\addcontentsline{toc}{section}{Характеристики компьютера}
+\section*{Характеристики компьютера}
+
+\begin{lstlisting}[caption={Характеристики компьютера}, label={lst:computer_specs}]
+> inxi --cpu --memory
+Memory:
+  System RAM: total: 16 GiB available: 14.8 GiB used: 10.48 GiB (70.8%)
+  Array-1: capacity: 64 GiB slots: 4 modules: 4 EC: None
+  Device-1: Channel-A DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-2: Channel-B DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-3: Channel-C DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+  Device-4: Channel-D DIMM 0 type: LPDDR5 size: 4 GiB speed: 6400 MT/s
+CPU:
+  Info: 6-core model: AMD Ryzen 5 7640HS w/ Radeon 760M Graphics bits: 64
+    type: MT MCP cache: L2: 6 MiB
+  Speed (MHz): avg: 1200 min/max: 400/5017 cores: 1: 1390 2: 1100 3: 1100
+    4: 1100 5: 1100 6: 1100 7: 1396 8: 1100 9: 1432 10: 1100 11: 1389 12: 1100
+\end{lstlisting}
+
+\end{document}
