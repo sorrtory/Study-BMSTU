@@ -1,6 +1,10 @@
 # BMSTU the Bin
 
-This repo contains some parts of labs and other IT tasks that I did at university.
+<img align=right src="https://upload.wikimedia.org/wikipedia/ru/0/01/Logo_Color_No-BG%282%29.svg" height="50px" width="50px">
+
+
+This repository contains some labs and IT tasks that I was working on at the BMSTU.
+
 Starting in 2023 and going through 2026.
 
 ---
@@ -13,7 +17,7 @@ Current list of topics I covered
 | Scheme            | Programming basics                    | 1    |
 | Java / C++        | OOP                                   | 2    |
 | Go                | Discrete Math                         | 2    |
-| Go                | Computer Networks, Web development    | 3    |
+| Go                | Computer Networks                     | 3    |
 | x86 Assembly      | Low Level Programming                 | 3    |
 | C                 | OpenBSD / ReactOS drivers development | 4    |
 | Python            | Computer Graphics: OpenGL             | 4    |
@@ -22,5 +26,4 @@ Current list of topics I covered
 | Rust              | Formal Languages and Automata Theory  | 5    |
 | Rust / C++        | Parallel Programming                  | 5    |
 
-My point is to see my progress and keep it here. \
 I'll update this repo after passing next exams.
