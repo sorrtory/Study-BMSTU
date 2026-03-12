@@ -1,6 +1,6 @@
 # BMSTU the Bin
 
-<img align=right src="https://upload.wikimedia.org/wikipedia/ru/0/01/Logo_Color_No-BG%282%29.svg" height="50px" width="50px">
+<img align=right src="https://upload.wikimedia.org/wikipedia/ru/0/01/Logo_Color_No-BG%282%29.svg" height="100px" width="100px">
 
 
 This repository contains some labs and IT tasks that I was working on at the BMSTU.
