@@ -1,0 +1,58 @@
+\usepackage{listings} % библиотека листингов
+\usepackage{color} % подсветка листинга
+
+% Выравнивание подписи листинга слева (срабатывает для caption-пакета)
+\captionsetup[lstlisting]{justification=raggedright,singlelinecheck=false}
+
+% Добавляем язык JavaScript для листингов.
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
+    new, return, this, typeof, var, void, while, with},
+  % Literals, primitive types, and reference types.
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+    Array, Boolean, Date, Math, Number, String, Object},
+  % Built-ins.
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/}, % JavaDoc style comments
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings]
+
+\lstalias[]{ES6}[ECMAScript2015]{JavaScript}
+\lstdefinelanguage[ECMAScript2015]{JavaScript}[]{JavaScript}{
+  morekeywords=[1]{await, async, case, catch, class, const, default, do,
+    enum, export, extends, finally, from, implements, import, instanceof,
+    let, static, super, switch, throw, try},
+  morestring=[b]` % Interpolation strings.
+}
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ % Подробнее про настройку листингов https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+  backgroundcolor=\color{white},        % цвет фона
+  basicstyle=\ttfamily\footnotesize,    % семейсто, размер шрифта
+  breakatwhitespace=true,               % разрыв строк только при пробеле
+  breaklines=true,                      % перенос строк
+  captionpos=b,                         % месторасположение подписи bottom
+  commentstyle=\color{mygreen},         % цвет комментария (не распростроняется на кириллицу)
+  keepspaces=true,                      %
+  keywordstyle=\color{blue},            %
+  showspaces=false,                     % отключена замена пробелов на нижние подчеркивания
+  showstringspaces=false,               % отключена замена пробелов на нижние подчеркивания
+  showtabs=false,                       % отключена замена табуляций на нижние подчеркивания
+  stepnumber=1,                         %
+  stringstyle=\color{mymauve},          % цвет литералов
+  tabsize=4,                            %
+}
+
+% Подписи к листингам на русском языке.
+\renewcommand\lstlistingname{Листинг}
+\renewcommand\lstlistlistingname{Листинги}
+
+
+

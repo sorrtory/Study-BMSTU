@@ -1,0 +1,46 @@
+\begin{table}[H]
+    \centering
+    \caption{Связи между сущностями предметной области}
+    \label{tab:domain-entity-relations}
+
+    \small
+    \renewcommand{\arraystretch}{1.0}
+    
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{2.4cm}|
+        >{\raggedright\arraybackslash}p{2.4cm}|
+        >{\centering\arraybackslash}p{0.9cm}|
+        >{\centering\arraybackslash}p{1cm}|
+        >{\raggedright\arraybackslash}X|
+        }
+        \hline
+        \textbf{Сущность 1} &
+        \textbf{Сущность 2} &
+        \textbf{Тип} &
+        \textbf{Связь} &
+        \textbf{Описание} \\
+        \hline
+
+        Area & Zone & 1:N & M:O &
+        Территория может содержать зоны; зона должна относиться к территории. \\
+        \hline
+
+        Zone & Camera & 1:N & M:O &
+        Зона может содержать камеры; камера должна относиться к зоне. \\
+        \hline
+
+        Zone & Event & 1:N & M:O &
+        Зона может содержать события; событие должно относиться к зоне. \\
+        \hline
+
+        Camera & Event & M:N & O:M &
+        Камера может фиксировать события; событие должно быть зафиксировано
+        одной или несколькими камерами. \\
+        \hline
+
+        Camera & Camera Telemetry & 1:N & M:O &
+        Камера может иметь записи телеметрии; запись телеметрии должна
+        относиться к камере. \\
+        \hline
+    \end{tabularx}
+\end{table}

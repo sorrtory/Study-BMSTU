@@ -1,0 +1,18 @@
+файлы с кодом. импортируются:
+
+\codefromfile {Имя файла} {Язык Программирования}
+
+либо через minted
+
+\begin{minted}{tex}
+\begin{lstlisting}[language=Java, caption=Кириллица в листинге не имеет подсветки]
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello, мир!"); // Коментарий на кириллице
+        for (int i = 0; i < 100; ++i) {
+            System.out.println(i); // Latin comment
+        }
+    }
+}
+\end{lstlisting}
+\end{minted}

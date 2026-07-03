@@ -1,0 +1,8 @@
+interface:
+  display_name: "DB Consistency Check"
+  short_description: "Find schema drift across docs, report, and code"
+  default_prompt: "Use $db-consistency-check to verify database model consistency across src/docs, report, and code."
+
+policy:
+  allow_implicit_invocation: true
+

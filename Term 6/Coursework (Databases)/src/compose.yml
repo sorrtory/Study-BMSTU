@@ -1,0 +1,198 @@
+name: coursework
+
+services:
+  ## Web application
+  client:
+    build:
+      context: ./apps/client
+      args:
+        VITE_API_URL: ${VITE_API_URL}
+    ports:
+      - "${VUE_PORT}:80"
+    depends_on:
+      server:
+        condition: service_started
+
+  server:
+    build:
+      context: ./apps/server
+    env_file:
+      - .env
+    environment:
+      EXPRESS_HOST: 0.0.0.0
+      EXPRESS_PORT: 1234
+      LOADGEN_POSTGRES_URL: http://loadgen-postgres:1111
+      LOADGEN_MONGO_URL: http://loadgen-mongo:1111
+      GRAFANA_URL: http://localhost:3000
+    ports:
+      - "${EXPRESS_PORT}:1234"
+    depends_on:
+      loadgen-postgres:
+        condition: service_healthy
+      loadgen-mongo:
+        condition: service_healthy
+      grafana:
+        condition: service_started
+
+  ## Databases
+  postgres:
+    image: postgres:18
+    env_file:
+      - .env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./db/postgres:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  mongo:
+    image: mongo:7
+    env_file:
+      - .env
+    # mongo 8 doesn't work on modern kernel
+    # environment:
+      # GLIBC_TUNABLES: "glibc.pthread.rseq=1"
+    ports:
+      - "${MONGO_PORT}:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./db/mongo:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --host localhost --port 27017 -u \"$$MONGO_INITDB_ROOT_USERNAME\" -p \"$$MONGO_INITDB_ROOT_PASSWORD\" --authenticationDatabase admin --eval \"db.adminCommand({ ping: 1 }).ok\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  ### Exporters
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:v0.19.1
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?sslmode=disable"
+    ports:
+      - "9187:9187"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  mongodb-exporter:
+    image: percona/mongodb_exporter:0.51.0
+    command:
+      - "--mongodb.uri=mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/${MONGO_INITDB_DATABASE}?authSource=admin"
+      - "--collect-all"
+      - "--compatible-mode"
+    ports:
+      - "9216:9216"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  ## Load generators
+  loadgen-postgres:
+    build:
+      context: ./apps/loadgen
+    env_file:
+      - .env
+    environment:
+      LOADGEN_TARGET_DB: postgres
+      LOADGEN_PORT: 1111
+      POSTGRES_HOST: postgres
+      MONGO_HOST: mongo
+    ports:
+      - "${LOADGEN_POSTGRES_PORT}:1111"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- \"http://127.0.0.1:$$LOADGEN_PORT/health\" >/dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  loadgen-mongo:
+    build:
+      context: ./apps/loadgen
+    env_file:
+      - .env
+    environment:
+      LOADGEN_TARGET_DB: mongo
+      LOADGEN_PORT: 1111
+      POSTGRES_HOST: postgres
+      MONGO_HOST: mongo
+    ports:
+      - "${LOADGEN_MONGO_PORT}:1111"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- \"http://127.0.0.1:$$LOADGEN_PORT/health\" >/dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  ## Prometheus
+  prometheus:
+    image: prom/prometheus:v3.11.3
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      loadgen-postgres:
+        condition: service_healthy
+      loadgen-mongo:
+        condition: service_healthy
+      postgres-exporter:
+        condition: service_started
+      mongodb-exporter:
+        condition: service_started
+
+  ## Grafana
+  grafana:
+    image: grafana/grafana:13.0.1-security-01
+    ports:
+      - "3000:3000"
+    depends_on:
+      prometheus:
+        condition: service_started
+      renderer:
+        condition: service_started
+    env_file:
+      - .env
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    environment:
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_RENDERING_RENDERER_TOKEN: ${GRAFANA_RENDERER_TOKEN}
+  renderer:
+    image: grafana/grafana-image-renderer:v5.8.3
+    environment:
+      AUTH_TOKEN: ${GRAFANA_RENDERER_TOKEN}
+
+  ## cAdvisor
+  cadvisor:
+    image: ghcr.io/google/cadvisor:v0.53.0
+    privileged: true
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+volumes:
+  postgres_data:
+  mongo_data:

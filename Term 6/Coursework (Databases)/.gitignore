@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.oldversions
+misc
+todo*
+diagram.mmd
+diagram.pdf

@@ -1,0 +1,674 @@
+{
+  "uid": "loadgen-experiment",
+  "title": "Loadgen Experiment",
+  "tags": ["coursework", "loadgen", "experiment"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "run_id",
+        "label": "Run ID",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "query": "label_values(loadgen_operation_total, run_id)",
+        "refresh": 1,
+        "sort": 1,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "model",
+        "label": "Model",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "query": "label_values(loadgen_operation_total{run_id=~\"$run_id\"}, model)",
+        "refresh": 1,
+        "sort": 1,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "scenario",
+        "label": "Scenario",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "query": "label_values(loadgen_operation_total{run_id=~\"$run_id\",model=~\"$model\"}, scenario)",
+        "refresh": 1,
+        "sort": 1,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "operation",
+        "label": "Operation",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "query": "label_values(loadgen_operation_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\"}, operation)",
+        "refresh": 1,
+        "sort": 1,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "stage_clients",
+        "label": "Stage Clients",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "query": "label_values(loadgen_operation_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\"}, stage_clients)",
+        "refresh": 1,
+        "sort": 3,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Total Operations",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(loadgen_operation_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__range]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "decimals": 0
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 2,
+      "title": "Error Rate",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "100 * sum(increase(loadgen_operation_total{status=\"error\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__range])) / clamp_min(sum(increase(loadgen_operation_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__range])), 1)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 2,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 5,
+        "y": 0
+      }
+    },
+    {
+      "id": 3,
+      "title": "Avg Throughput",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(loadgen_operation_total{status=\"success\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 10,
+        "y": 0
+      }
+    },
+    {
+      "id": 4,
+      "title": "Data Processed",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(loadgen_operation_bytes_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__range]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 15,
+        "y": 0
+      }
+    },
+    {
+      "id": 5,
+      "title": "Max Active Workers",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(loadgen_active_workers{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",stage_clients=~\"$stage_clients\"})"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "decimals": 0
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      }
+    },
+    {
+      "id": 6,
+      "title": "Latency Percentiles by Model",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "p50 {{model}}",
+          "expr": "histogram_quantile(0.50, sum by (le, model) (rate(loadgen_operation_duration_seconds_bucket{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        },
+        {
+          "refId": "B",
+          "legendFormat": "p95 {{model}}",
+          "expr": "histogram_quantile(0.95, sum by (le, model) (rate(loadgen_operation_duration_seconds_bucket{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        },
+        {
+          "refId": "C",
+          "legendFormat": "p99 {{model}}",
+          "expr": "histogram_quantile(0.99, sum by (le, model) (rate(loadgen_operation_duration_seconds_bucket{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 3
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      }
+    },
+    {
+      "id": 7,
+      "title": "p95 Latency by Operation",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{operation}}",
+          "expr": "histogram_quantile(0.95, sum by (le, model, operation) (rate(loadgen_operation_duration_seconds_bucket{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 3
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 4
+      }
+    },
+    {
+      "id": 8,
+      "title": "Throughput by Model",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}}",
+          "expr": "sum by (model) (rate(loadgen_operation_total{status=\"success\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 12
+      }
+    },
+    {
+      "id": 9,
+      "title": "Throughput by Stage",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} clients={{stage_clients}}",
+          "expr": "sum by (model, stage_clients) (rate(loadgen_operation_total{status=\"success\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 12
+      }
+    },
+    {
+      "id": 10,
+      "title": "Write p95 Latency",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{operation}}",
+          "expr": "histogram_quantile(0.95, sum by (le, model, operation) (rate(loadgen_operation_duration_seconds_bucket{operation=~\"WRITE_COMPLEX_EVENT_BATCH|WRITE_TELEMETRY_STREAM\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 3
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 20
+      }
+    },
+    {
+      "id": 11,
+      "title": "Read and Analytics p95 Latency",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{operation}}",
+          "expr": "histogram_quantile(0.95, sum by (le, model, operation) (rate(loadgen_operation_duration_seconds_bucket{operation=~\"READ_INCIDENT_TIMELINE|AGG_OBJECT_ACTIVITY_BY_AREA|AGG_TELEMETRY_HEALTH_WINDOW\",run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",stage_clients=~\"$stage_clients\"}[$__rate_interval])))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 3
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      }
+    },
+    {
+      "id": 12,
+      "title": "Rows/Documents per Second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{operation}}",
+          "expr": "sum by (model, operation) (rate(loadgen_operation_rows_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "rps",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 28
+      }
+    },
+    {
+      "id": 13,
+      "title": "Bytes per Second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{direction}}",
+          "expr": "sum by (model, direction) (rate(loadgen_operation_bytes_total{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "Bps",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 28
+      }
+    },
+    {
+      "id": 14,
+      "title": "Average Batch Size",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{model}} {{operation}}",
+          "expr": "sum by (model, operation) (rate(loadgen_batch_size_sum{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval])) / sum by (model, operation) (rate(loadgen_batch_size_count{run_id=~\"$run_id\",model=~\"$model\",scenario=~\"$scenario\",operation=~\"$operation\",stage_clients=~\"$stage_clients\"}[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 28
+      }
+    },
+    {
+      "id": 15,
+      "title": "Database Connections",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "postgres",
+          "expr": "sum(pg_stat_database_numbackends{datname=\"coursework_db\"})"
+        },
+        {
+          "refId": "B",
+          "legendFormat": "mongo",
+          "expr": "sum(mongodb_ss_connections{conn_type=\"current\"})"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "decimals": 0
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 36
+      }
+    },
+    {
+      "id": 16,
+      "title": "Database Storage Size",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "postgres database",
+          "expr": "sum(pg_database_size_bytes{datname=\"coursework_db\"})"
+        },
+        {
+          "refId": "B",
+          "legendFormat": "mongo data {{database}}",
+          "expr": "mongodb_dbstats_dataSize{database=~\"coursework_nested|coursework_normalized\"}"
+        },
+        {
+          "refId": "C",
+          "legendFormat": "mongo index {{database}}",
+          "expr": "mongodb_dbstats_indexSize{database=~\"coursework_nested|coursework_normalized\"}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 36
+      }
+    },
+    {
+      "id": 17,
+      "title": "PostgreSQL Transactions",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "commit",
+          "expr": "sum(rate(pg_stat_database_xact_commit[$__rate_interval]))"
+        },
+        {
+          "refId": "B",
+          "legendFormat": "rollback",
+          "expr": "sum(rate(pg_stat_database_xact_rollback[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "tps",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 44
+      }
+    },
+    {
+      "id": 18,
+      "title": "MongoDB Opcounters",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "legendFormat": "{{legacy_op_type}}",
+          "expr": "sum by (legacy_op_type) (rate(mongodb_ss_opcounters[$__rate_interval]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 44
+      }
+    }
+  ]
+}

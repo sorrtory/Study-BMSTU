@@ -1,0 +1,45 @@
+{
+    /// Xelatex
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-shell-escape",
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+
+    /// Hot reload
+    // Rebuild when any dependency changes
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    // Ensure the extension scans tex files recursively for root detection
+    "latex-workshop.latex.search.rootFiles.include": [
+        "**/*.tex"
+    ],
+    // Don't ignore package/class edits (optional but often useful)
+    "latex-workshop.latex.autoBuild.onSave.files.ignore": [],
+    // Only ignore junk folders (keep your chapters/sections visible to watcher)
+    "latex-workshop.latex.watch.files.ignore": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/out/**",
+        "**/build/**"
+    ],
+    // Debounce builds a bit (prevents build storms)
+    "latex-workshop.latex.autoBuild.interval": 1500
+}

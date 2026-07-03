@@ -1,0 +1,77 @@
+# /home/z/Documents/BMSTU-Coursewok-DB/.codex/config.toml
+
+###############################################################################
+# Main behavior
+###############################################################################
+
+
+# - on-request
+# - never
+# Never ask before running commands.
+# If something is allowed by the sandbox, Codex runs it.
+# If something is blocked by the sandbox, Codex fails instead of asking.
+approval_policy = "on-request"
+
+# https://developers.openai.com/codex/agent-approvals-security
+approvals_reviewer = "auto_review"
+
+# Let Codex edit the current project/workspace.
+# It cannot freely write everywhere on your machine.
+sandbox_mode = "workspace-write"
+
+
+###############################################################################
+# Shell environment
+###############################################################################
+
+# Inherit your normal shell environment.
+# This helps Codex see tools initialized by ~/.zshrc or ~/.bashrc,
+# including fnm, node, pnpm, etc.
+[shell_environment_policy]
+inherit = "all"
+experimental_use_profile = true
+
+
+###############################################################################
+# Workspace-write sandbox extras
+###############################################################################
+
+[sandbox_workspace_write]
+
+# Allow network access from commands.
+# Needed for npm/pnpm installs, docker pulls, git fetches, etc.
+network_access = true
+
+# Extra folders Codex may write to outside the project.
+writable_roots = [
+  # fnm installed Node versions
+  "~/.local/share/fnm",
+
+  # fnm per-shell state
+  "~/.local/state/fnm_multishells",
+
+  # temporary files used by build tools
+  "/tmp"
+]
+
+
+###############################################################################
+# Network proxy policy
+###############################################################################
+
+# Enable Codex's network policy layer.
+# This is required for explicitly allowing Unix sockets like Docker.
+[features.network_proxy]
+enabled = true
+
+# Allow normal internet access.
+[features.network_proxy.domains]
+"*" = "allow"
+
+# Allow Docker access.
+# Your docker context showed:
+#   unix:///var/run/docker.sock
+# So the actual socket path is:
+#   /var/run/docker.sock
+[features.network_proxy.unix_sockets]
+"/var/run/docker.sock" = "allow"

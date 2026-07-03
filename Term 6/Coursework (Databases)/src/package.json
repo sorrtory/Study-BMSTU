@@ -1,0 +1,17 @@
+{
+  "name": "coursework",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pnpm -r --parallel --filter './apps/*' dev",
+    "dev:client": "pnpm --filter client dev",
+    "dev:server": "pnpm --filter server dev"
+  },
+  "keywords": [],
+  "author": "sorrtory",
+  "license": "MIT",
+  "packageManager": "pnpm@11.2.2"
+}
