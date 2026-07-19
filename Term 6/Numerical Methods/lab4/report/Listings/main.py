@@ -1,0 +1,1 @@
+/home/z/Documents/BMSTU-Numerical_methods/lab4/solution/main.py

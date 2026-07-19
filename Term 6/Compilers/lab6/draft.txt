@@ -1,0 +1,34 @@
+Ключевые слова:
+`axiom
+`is
+`or
+`end
+`epsilon
+
+Лексическая структура:
+NONTERM = LETTER { LETTER | DIGIT }
+TERM    = '"' { CHAR } '"'
+LETTER  = 'A'..'Z' | 'a'..'z'
+DIGIT   = '0'..'9'
+CHAR    = любой символ, кроме " и конца строки
+COMMENT = '$' { любой символ, кроме конца строки }
+
+Дополнительно:
+- ключевые слова начинаются с символа `
+- пробельные символы вне TERM игнорируются лексическим анализатором
+- после окончания входного текста формируется служебный токен EOF
+- `epsilon` используется только как самостоятельная альтернатива = пустая цепочка.
+
+Грамматика:
+<Start>           ::= <Grammar> EOF
+<Grammar>         ::= <Rule> <GrammarTail>
+<GrammarTail>     ::= <Rule> <GrammarTail> | ε
+<Rule>            ::= <NtermRule> | <AxiomRule>
+<NtermRule>       ::= NONTERM "`is" <Expr> "`end"
+<AxiomRule>       ::= "`axiom" NONTERM "`is" <Expr> "`end"
+<Expr>            ::= <Alternative> <ExprTail>
+<ExprTail>        ::= "`or" <Alternative> <ExprTail> | ε
+<Alternative>     ::= "`epsilon" | <SymbolList>
+<SymbolList>      ::= <Symbol> <SymbolListTail>
+<SymbolListTail>  ::= <Symbol> <SymbolListTail> | ε
+<Symbol>          ::= NONTERM | TERM

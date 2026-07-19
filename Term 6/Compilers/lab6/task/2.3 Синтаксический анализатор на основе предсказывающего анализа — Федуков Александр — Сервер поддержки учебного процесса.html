@@ -1,0 +1,1864 @@
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" xml:lang="" lang="" xmlns="http://www.w3.org/1999/xhtml" style="--darkmode: 0;" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container, div.mc-ip-hide[style*="background: rgb(255, 255, 255) !important"], [style*="color: rgb(0, 0, 1) !important;"] {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style>
+    <title>
+2.3 Синтаксический анализатор на&nbsp;основе предсказывающего 
+анализа&nbsp;— Федуков Александр&nbsp;— Сервер поддержки учебного 
+процесса
+</title>
+    <link rel="stylesheet" href="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/index.css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/polyfill.min-es6.js"></script><meta name="darkreader" content="04f90196cb84466a858b844c4c88e272"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select {
+    --darkreader-bg--form-control-background-color: rgba(22, 22, 22, 0) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+.d2l-twopanelselector-side.d2l-twopanelselector-side-sep {
+    background: var(--darkreader-bg--d2l-color-mica) !important;
+}
+.d2l-le-TreeAccordionItem-anchor::before {
+    background: var(--darkreader-bg--d2l-color-corundum) !important;
+}
+table[class|="moz-header"] {
+    background: none;
+}
+*[style*="color: rgba(0,0,0,"],
+*[style*="color: rgba(0, 0, 0,"],
+*[style*="color:#000"],
+*[style*="color:black"],
+*[style*="color:#282828"],
+*[style*="color:#444"] {
+    color: var(--darkreader-neutral-text) !important;
+}
+*[style*="background:#fff"],
+*[style*="background-color:#fff"] {
+    background: var(--darkreader-neutral-background) !important;
+}
+*[bgcolor="#F5F5F5"],
+*[style*="background-color: #F5F5F5"] {
+    background: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+body[style*="background: rgb(255, 255, 255) !important"] *:not(a),
+.body[style*="background-color: rgb(254, 254, 254) !important"] *:not(a) {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+div[style*="www.gstatic.com/android/"] {
+    background: none !important;
+}
+*[style*="background:#f9f9f9"] {
+    background: var(--darkreader-background-f9f9f9, #1b1e1f) !important;
+}
+body.mediawiki.skin-vector #mw-page-base {
+    background-image: none !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style>
+    <script type="text/javascript" id="MathJax-script" async="true" src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/tex-chtml.js">
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+
+    </script>
+    <meta charset="UTF-8">
+    
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+
+<body>
+    
+    <a name="top"></a>
+    
+
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/set_prev.js"></script>
+<script>
+    const MAX_ALLOWED_SIZE = 163840;
+    const MAX_PICTURES_SIZE = 1048576;
+</script>
+<div class="screen-wrapper">
+    <div class="content-wrapper">
+        <header class="paper header">
+            <div class="header_menu">
+                
+                <div class="header_menu-element">
+                    <a href="https://hw.iu9.bmstu.ru/student?course_id=1457" class="link">
+                        Курсы
+                    </a>
+                </div>
+                
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/mail">
+                    <button class="button">
+                        Сообщения
+                    </button>
+                </a>
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/logout">
+                    <button class="button">
+                        Выход
+                    </button>
+                </a>
+            </div>
+        </header>
+        <div class="paper content">
+            
+            <div>
+                
+                
+                <a href="#variant">промотать до&nbsp;индивидуального варианта</a><br>
+
+
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Коновалов А.&nbsp;В.">
+  <title>Лабораторная работа № 2.3 «Синтаксический анализатор на&nbsp;основе предсказывающего анализа»</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа № 2.3 «Синтаксический анализатор на&nbsp;основе предсказывающего анализа»</h1>
+<p class="author">Коновалов А.&nbsp;В.</p>
+<p class="date">11 апреля 2016</p>
+</header>
+<h2 id="цель-работы">1 Цель работы</h2>
+<p>Целью данной работы является изучение алгоритма построения таблиц предсказывающего анализатора.</p>
+<h2 id="исходные-данные">2 Исходные данные</h2>
+<p>В&nbsp;данной лабораторной работе требуется разработать 
+синтаксический анализатор на&nbsp;основе предсказывающего анализа, 
+который принимая на&nbsp;входе текст на&nbsp;<em>входном языке</em>, на&nbsp;выходе порождает дерево вывода для входного текста.</p>
+<p>В&nbsp;качестве <em>входного языка</em> должен выступать язык 
+представления правил грамматики, варианты лексики и&nbsp;синтаксиса 
+которого можно восстановить из&nbsp;примера в&nbsp;индивидуальном 
+варианте.</p>
+<h3 id="индивидуальный-вариант">2.1&nbsp;Индивидуальный вариант</h3>
+<p><a name="variant"></a></p><pre><a name="variant"><code>$ ключевые слова
+$ начинаются с обратной кавычки
+
+F  `is "n" `or "(" E ")" `end
+T  `is F T1 `end
+T1 `is "*" F T1 `or `epsilon `end
+`axiom E  `is T E1 `end
+E1 `is "+" T E1 `or `epsilon `end</code></a></pre><a name="variant">
+<p></p>
+<h2 id="задание">3 Задание</h2>
+<p>Выполнение лабораторной работы состоит из&nbsp;следующих этапов:</p>
+<ul>
+<li>Составление описаний лексической структуры и&nbsp;грамматики 
+входного языка на&nbsp;основе примера из&nbsp;индивидуального варианта.</li>
+<li>Разработка лексического анализатора для входного языка. Лексический 
+анализ может выполняться любым из&nbsp;ранее изученых способов.</li>
+<li>Составление (вручную) таблицы предсказывающего разбора для входного языка.</li>
+<li>Разработка алгоритма предсказывающего разбора, работающего на&nbsp;основе порождённой таблицы. Реализация этого алгоритма.</li>
+</ul>
+<p>В&nbsp;отчёте по&nbsp;лабораторной работе обязательно должно 
+присутствовать описание синтаксиса входного языка&nbsp;— как 
+неформальное (своими словами), так и&nbsp;формализованное (лексическая 
+структура и&nbsp;грамматика).</p>
+<p>Отметим, что парсер входного языка должен выдавать сообщения 
+об&nbsp;обнаруженных ошибках, включающие координаты ошибки. 
+Восстановление при ошибках, а&nbsp;также выдачу специфических текстовых 
+описаний ошибок реализовывать не&nbsp;нужно.</p>
+<p>В качестве языков реализации разрешается использовать C++, Java/C#, 
+Go, Ruby или Python. Также допустимо использование языков 
+Scheme/Clojure, Scala, Rust и&nbsp;других, при условии, что выбранный 
+язык поддерживает тип данных «массив» с&nbsp;константным временем 
+доступа по&nbsp;индексу.</p>
+<h3 id="отображение-графов-в-graphviz">3.1 Отображение графов в&nbsp;Graphviz</h3>
+<p>Graphviz может менять порядок потомков узла, что неприемлемо для 
+дерева вывода (которое, как мы помним, упорядоченный граф). Для того, 
+чтобы порядок дочерних узлов фиксировать, нужно добавить невидимые связи
+ между ними как в&nbsp;примерах ниже.</p>
+<p>Graphviz может не&nbsp;сохранять порядок дочерних узлов 
+в&nbsp;дереве. Например, для следующего исходника построится 
+неправильный граф:</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 45%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb1"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (7)"</span><span class="ot">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">  </span><span class="va">e2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (10)"</span><span class="ot">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (3)"</span><span class="ot">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">  </span><span class="va">e4</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (5)"</span><span class="ot">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">  </span><span class="va">e5</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (2)"</span><span class="ot">]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">  </span><span class="va">p1</span><span class="co">, </span><span class="va">p2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"−"</span><span class="ot">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">  </span><span class="va">n1</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (10)"</span><span class="ot">]</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">  </span><span class="va">n2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (5)"</span><span class="ot">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co">  </span><span class="va">n3</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (2)"</span><span class="ot">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e2</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p1</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e3</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e4</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p2</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e5</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="co">  </span><span class="va">e2</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n1</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="co">  </span><span class="va">e4</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="co">  </span><span class="va">e5</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n3</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="ot">}</span></span></code></pre></div></td>
+<td><img src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/tree-bad.png"></td>
+</tr>
+</tbody>
+</table>
+<p>Для указания порядка нужно дочерние узлы соединить невидимыми дугами:</p>
+<table>
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb2"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (7)"</span><span class="ot">]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="co">  </span><span class="va">e2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (10)"</span><span class="ot">]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (3)"</span><span class="ot">]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="co">  </span><span class="va">e4</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (5)"</span><span class="ot">]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">  </span><span class="va">e5</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"E (2)"</span><span class="ot">]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="co">  </span><span class="va">p1</span><span class="co">, </span><span class="va">p2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"−"</span><span class="ot">]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="co">  </span><span class="va">n1</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (10)"</span><span class="ot">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="co">  </span><span class="va">n2</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (5)"</span><span class="ot">]</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="co">  </span><span class="va">n3</span><span class="co"> </span><span class="ot">[</span><span class="at">label</span><span class="ot">=</span><span class="st">"n (2)"</span><span class="ot">]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e2</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p1</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="co">  </span><span class="va">e1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e3</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="co">  </span><span class="ot">{</span><span class="co"> </span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span><span class="co"> </span><span class="va">e2</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p1</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e3</span><span class="co"> </span><span class="ot">[</span><span class="at">style</span><span class="ot">=</span><span class="va">invis</span><span class="ot">]</span><span class="co"> </span><span class="ot">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e4</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p2</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a><span class="co">  </span><span class="va">e3</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e5</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a><span class="co">  </span><span class="ot">{</span><span class="co"> </span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span><span class="co"> </span><span class="va">e4</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">p2</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">e5</span><span class="co"> </span><span class="ot">[</span><span class="at">style</span><span class="ot">=</span><span class="va">invis</span><span class="ot">]</span><span class="co"> </span><span class="ot">}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a><span class="co">  </span><span class="va">e2</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n1</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a><span class="co">  </span><span class="va">e4</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n2</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a><span class="co">  </span><span class="va">e5</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">n3</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a><span class="ot">}</span></span></code></pre></div></td>
+<td><img src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/tree-good.png"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="отчёт-по-лабораторной-работе-2.3">4 Отчёт по&nbsp;лабораторной работе №&nbsp;2.3</h2>
+<p>Отчёт выполняется в&nbsp;разметке Markdown по&nbsp;следующему шаблону:</p>
+</a><div class="sourceCode" id="cb3"><a name="variant"></a><pre class="sourceCode markdown"><code>% Лабораторная работа № 2.3 «Синтаксический анализатор на&nbsp;основе
+  предсказывающего анализа»
+% 29 апреля 2026 г.
+% Александр Федуков, ИУ9-62Б
+
+# Цель работы
+…переписываете цель работы из&nbsp;задания…
+
+# Индивидуальный вариант
+…переписываете индивидуальный вариант…
+
+# Реализация
+
+## Неформальное описание синтаксиса входного языка
+…
+
+## Лексическая структура
+…
+
+## Грамматика языка
+…
+
+## Программная реализация
+
+```
+…
+```
+
+# Тестирование
+
+Входные данные
+
+```
+…
+```
+
+Вывод на&nbsp;`stdout`
+
+```
+…
+```
+
+# Вывод
+…пишете, чему научились…</code></pre></div>
+<p>В&nbsp;отчёте приведён лишь необходимый минимум.</p>
+<p><a href="https://hw.iu9.bmstu.ru/static/assets/lab-report-template.txt">Шаблон отчёта</a></p>
+<p>Ваш отчёт будет конвертирован в&nbsp;PDF при помощи pandoc следующей командой:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="ex">pandoc</span> <span class="kw">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  <span class="ex">--pdf-engine</span>=xelatex <span class="kw">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'mainfont:Liberation Serif'</span> <span class="kw">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'monofont:Liberation Mono'</span> <span class="kw">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>  <span class="st">"</span><span class="va">$SOURCE</span><span class="st">"</span> <span class="ex">-o</span> <span class="st">"</span><span class="va">$PDF</span><span class="st">"</span></span></code></pre></div>
+<h2 id="дедлайны">5 Дедлайны</h2>
+<ul>
+<li><p>Работа сдаётся в течение недели после выдачи&nbsp;— 4&nbsp;балла.</p></li>
+<li><p>В&nbsp;конце пары выдачи лабы нужно прислать черновик&nbsp;— без него лабораторная не&nbsp;засчитывается.</p>
+<p>В&nbsp;черновик вносите то, что успели сделать:</p>
+<ul>
+<li>формализация входного языка: лексическая структура и&nbsp;грамматика (минимум),</li>
+<li>LL(1)-грамматика,</li>
+<li>код лексического анализатора,</li>
+<li>таблица предсказывающего анализатора,</li>
+<li>движок предсказывающего анализатора,</li>
+<li>и&nbsp;т.д.</li>
+</ul>
+<p>Для записи черновика рекомендуется пользоваться шаблоном отчёта.</p></li>
+<li><p>Сдача через две недели и&nbsp;позже&nbsp;— 3&nbsp;балла.</p></li>
+</ul>
+
+
+
+                
+                
+                
+                
+            </div>
+            
+            <h3>Отправка новых решений была заблокирована преподавателем</h3><br>
+            
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 06.05.2026 13:24:32<span title="6&nbsp;дней 22&nbsp;часа 15&nbsp;минут 32&nbsp;секунды"><sup>⏱</sup></span>.
+                    Тесты пройдены
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    <p class="test-result_paragraph"><b>Антиплагиат:</b> Похожих посылок не&nbsp;найдено</p>
+                    
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm80322', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm80322">% Лабораторная работа № 2.3 «Синтаксический анализатор на основе предсказывающего анализа»
+% 29 апреля 2026 г.
+% Александр Федуков, ИУ9-62Б
+
+# Цель работы
+
+Целью данной работы является изучение алгоритма построения таблиц предсказывающего анализатора.
+
+# Индивидуальный вариант
+
+```
+$ ключевые слова
+$ начинаются с обратной кавычки
+$ комментарии начинаются с $
+
+F  `is "n" `or "(" E ")" `end
+T  `is F T1 `end
+T1 `is "*" F T1 `or `epsilon `end
+`axiom E  `is T E1 `end
+E1 `is "+" T E1 `or `epsilon `end
+```
+
+# Реализация
+
+## Неформальное описание синтаксиса входного языка
+
+```
+Ключевые слова:
+`axiom
+`is
+`or
+`end
+`epsilon
+
+Комментарии начинаются с символа $
+Правила задаются в виде:
+NONTERM `is &lt;Expr&gt; `end
+или
+`axiom NONTERM `is &lt;Expr&gt; `end
+
+Можно использовать `or для альтернатив
+```
+
+Каждое правило задаёт один нетерминал и список его альтернатив. Левая часть правила - имя нетерминала. Правая
+часть начинается после ключевого слова `is и заканчивается ключевым словом `end. Альтернативы в правой части
+разделяются ключевым словом \`or.
+
+Терминальные символы записываются в двойных кавычках, например "n", "+", "(". Нетерминальные символы
+записываются как идентификаторы, состоящие из букв и цифр и начинающиеся с буквы.
+
+Пустая альтернатива задаётся ключевым словом \`epsilon. Комментарии начинаются с символа $ и продолжаются до
+конца строки. Пробельные символы вне терминальных строк игнорируются.
+
+## Лексическая структура
+
+```
+NONTERM = LETTER { LETTER | DIGIT }
+TERM    = '"' { CHAR } '"'
+LETTER  = 'A'..'Z' | 'a'..'z'
+DIGIT   = '0'..'9'
+CHAR    = любой символ, кроме " и конца строки
+COMMENT = '$' { любой символ, кроме конца строки }
+
+Дополнительно:
+- ключевые слова начинаются с символа `
+- пробельные символы вне TERM игнорируются лексическим анализатором
+- после окончания входного текста формируется служебный токен EOF
+- `epsilon` используется только как самостоятельная альтернатива = пустая цепочка.
+```
+
+## Грамматика языка
+
+```
+&lt;Start&gt;           ::= &lt;Grammar&gt; EOF
+&lt;Grammar&gt;         ::= &lt;Rule&gt; &lt;GrammarTail&gt;
+&lt;GrammarTail&gt;     ::= &lt;Rule&gt; &lt;GrammarTail&gt; | ε
+&lt;Rule&gt;            ::= &lt;NtermRule&gt; | &lt;AxiomRule&gt;
+&lt;NtermRule&gt;       ::= NONTERM "`is" &lt;Expr&gt; "`end"
+&lt;AxiomRule&gt;       ::= "`axiom" NONTERM "`is" &lt;Expr&gt; "`end"
+&lt;Expr&gt;            ::= &lt;Alternative&gt; &lt;ExprTail&gt;
+&lt;ExprTail&gt;        ::= "`or" &lt;Alternative&gt; &lt;ExprTail&gt; | ε
+&lt;Alternative&gt;     ::= "`epsilon" | &lt;SymbolList&gt;
+&lt;SymbolList&gt;      ::= &lt;Symbol&gt; &lt;SymbolListTail&gt;
+&lt;SymbolListTail&gt;  ::= &lt;Symbol&gt; &lt;SymbolListTail&gt; | ε
+&lt;Symbol&gt;          ::= NONTERM | TERM
+```
+
+## Программная реализация
+
+```python
+from dataclasses import dataclass, field
+from enum import Enum, auto
+import os
+from typing import List, Optional, Dict, Tuple, Union
+
+
+# Ошибки лексера
+class LexerError(Exception):
+    pass
+
+
+# Ошибки парсера
+class ParserError(Exception):
+    pass
+
+
+# Типы токенов
+class TokenType(Enum):
+    AXIOM = auto()
+    IS = auto()
+    OR = auto()
+    END = auto()
+    EPSILON = auto()
+    NONTERM = auto()
+    TERM = auto()
+    EOF = auto()
+
+
+KEYWORDS = {
+    "`axiom": TokenType.AXIOM,
+    "`is": TokenType.IS,
+    "`or": TokenType.OR,
+    "`end": TokenType.END,
+    "`epsilon": TokenType.EPSILON,
+}
+
+
+@dataclass
+class Token:
+    type: TokenType
+    value: str
+    line: int
+    column: int
+
+    def __str__(self) -&gt; str:
+        return f"{self.type.name}({self.value!r}) at {self.line}:{self.column}"
+
+
+class Lexer:
+    def __init__(self, text: str):
+        self.text = text
+        self.pos = 0
+        self.line = 1
+        self.column = 1
+
+    def current_char(self) -&gt; Optional[str]:
+        if self.pos &gt;= len(self.text):
+            return None
+        return self.text[self.pos]
+
+    def advance(self) -&gt; None:
+        ch = self.current_char()
+        if ch is None:
+            return
+        if ch == "\n":
+            self.line += 1
+            self.column = 1
+        else:
+            self.column += 1
+        self.pos += 1
+
+    def skip_whitespace_and_comments(self) -&gt; None:
+        while True:
+            ch = self.current_char()
+
+            while ch is not None and ch.isspace():
+                self.advance()
+                ch = self.current_char()
+
+            # Комментарии начинаются с '$'
+            if ch == "$":
+                while self.current_char() is not None and self.current_char() != "\n":
+                    self.advance()
+                continue
+
+            break
+
+    def read_nonterm(self) -&gt; Token:
+        start_line = self.line
+        start_col = self.column
+        chars: List[str] = []
+
+        ch = self.current_char()
+        if ch is None or not ch.isalpha():
+            raise LexerError(f"Expected NONTERM at {start_line}:{start_col}")
+
+        while self.current_char() is not None and self.current_char().isalnum():
+            chars.append(self.current_char())
+            self.advance()
+
+        return Token(TokenType.NONTERM, "".join(chars), start_line, start_col)
+
+    def read_keyword(self) -&gt; Token:
+        start_line = self.line
+        start_col = self.column
+
+        if self.current_char() != "`":
+            raise LexerError(f"Expected keyword at {start_line}:{start_col}")
+
+        # read the keyword
+        chars = ["`"]
+        self.advance()
+
+        if self.current_char() is None or not self.current_char().isalpha():
+            raise LexerError(f"Invalid keyword at {start_line}:{start_col}")
+
+        while self.current_char() is not None and self.current_char().isalpha():
+            chars.append(self.current_char())
+            self.advance()
+
+        value = "".join(chars)
+        token_type = KEYWORDS.get(value)
+        if token_type is None:
+            raise LexerError(f"Unknown keyword {value!r} at {start_line}:{start_col}")
+
+        return Token(token_type, value, start_line, start_col)
+
+    def read_term(self) -&gt; Token:
+        start_line = self.line
+        start_col = self.column
+
+        if self.current_char() != '"':
+            raise LexerError(f"Expected '\"' at {start_line}:{start_col}")
+
+        self.advance()
+        chars: List[str] = []
+
+        while True:
+            ch = self.current_char()
+            if ch is None:
+                raise LexerError(f"Unterminated TERM at {start_line}:{start_col}")
+            if ch == "\n":
+                raise LexerError(f"Newline inside TERM at {self.line}:{self.column}")
+            if ch == '"':
+                self.advance()
+                break
+            chars.append(ch)
+            self.advance()
+
+        return Token(TokenType.TERM, "".join(chars), start_line, start_col)
+
+    def next_token(self) -&gt; Token:
+        self.skip_whitespace_and_comments()
+
+        ch = self.current_char()
+        if ch is None:
+            return Token(TokenType.EOF, "", self.line, self.column)
+
+        if ch == "`":
+            return self.read_keyword()
+        if ch == '"':
+            return self.read_term()
+        if ch.isalpha():
+            return self.read_nonterm()
+
+        raise LexerError(f"Unexpected character {ch!r} at {self.line}:{self.column}")
+
+
+@dataclass
+class ParseNode:
+    label: str
+    children: List["ParseNode"] = field(default_factory=list)
+
+
+Symbol = Union[str, TokenType]
+
+
+# Нетерминалы
+START = "&lt;Start&gt;"
+GRAMMAR = "&lt;Grammar&gt;"
+GRAMMAR_TAIL = "&lt;GrammarTail&gt;"
+RULE = "&lt;Rule&gt;"
+NTERM_RULE = "&lt;NtermRule&gt;"
+AXIOM_RULE = "&lt;AxiomRule&gt;"
+EXPR = "&lt;Expr&gt;"
+EXPR_TAIL = "&lt;ExprTail&gt;"
+ALTERNATIVE = "&lt;Alternative&gt;"
+SYMBOL_LIST = "&lt;SymbolList&gt;"
+SYMBOL_LIST_TAIL = "&lt;SymbolListTail&gt;"
+SYMBOL_NT = "&lt;Symbol&gt;"
+
+NONTERMINALS = {
+    START,
+    GRAMMAR,
+    GRAMMAR_TAIL,
+    RULE,
+    NTERM_RULE,
+    AXIOM_RULE,
+    EXPR,
+    EXPR_TAIL,
+    ALTERNATIVE,
+    SYMBOL_LIST,
+    SYMBOL_LIST_TAIL,
+    SYMBOL_NT,
+}
+
+EPS = "ε"
+
+
+def is_nonterminal(symbol: Symbol) -&gt; bool:
+    return isinstance(symbol, str) and symbol in NONTERMINALS
+
+
+def is_epsilon(symbol: Symbol) -&gt; bool:
+    return symbol == EPS
+
+
+def token_name(t: TokenType) -&gt; str:
+    return t.name
+
+
+class PredictiveParser:
+    def __init__(self, lexer: Lexer):
+        self.lexer = lexer
+        self.current = self.lexer.next_token()
+        self.table: Dict[Tuple[str, TokenType], List[Symbol]] = {}
+        self._build_table()
+
+    def error(self, message: str) -&gt; None:
+        raise ParserError(f"{message} at {self.current.line}:{self.current.column}")
+
+    def _build_table(self) -&gt; None:
+        T = TokenType
+
+        # &lt;Start&gt; ::= &lt;Grammar&gt; EOF
+        for lookahead in (T.AXIOM, T.NONTERM):
+            self.table[(START, lookahead)] = [GRAMMAR, T.EOF]
+
+        # &lt;Grammar&gt; ::= &lt;Rule&gt; &lt;GrammarTail&gt;
+        for lookahead in (T.AXIOM, T.NONTERM):
+            self.table[(GRAMMAR, lookahead)] = [RULE, GRAMMAR_TAIL]
+
+        # &lt;GrammarTail&gt; ::= &lt;Rule&gt; &lt;GrammarTail&gt; | ε
+        for lookahead in (T.AXIOM, T.NONTERM):
+            self.table[(GRAMMAR_TAIL, lookahead)] = [RULE, GRAMMAR_TAIL]
+        self.table[(GRAMMAR_TAIL, T.EOF)] = [EPS]
+
+        # &lt;Rule&gt; ::= &lt;NtermRule&gt; | &lt;AxiomRule&gt;
+        self.table[(RULE, T.NONTERM)] = [NTERM_RULE]
+        self.table[(RULE, T.AXIOM)] = [AXIOM_RULE]
+
+        # &lt;NtermRule&gt; ::= NONTERM `is &lt;Expr&gt; `end
+        self.table[(NTERM_RULE, T.NONTERM)] = [T.NONTERM, T.IS, EXPR, T.END]
+
+        # &lt;AxiomRule&gt; ::= `axiom NONTERM `is &lt;Expr&gt; `end
+        self.table[(AXIOM_RULE, T.AXIOM)] = [T.AXIOM, T.NONTERM, T.IS, EXPR, T.END]
+
+        # &lt;Expr&gt; ::= &lt;Alternative&gt; &lt;ExprTail&gt;
+        for lookahead in (T.EPSILON, T.NONTERM, T.TERM):
+            self.table[(EXPR, lookahead)] = [ALTERNATIVE, EXPR_TAIL]
+
+        # &lt;ExprTail&gt; ::= `or &lt;Alternative&gt; &lt;ExprTail&gt; | ε
+        self.table[(EXPR_TAIL, T.OR)] = [T.OR, ALTERNATIVE, EXPR_TAIL]
+        self.table[(EXPR_TAIL, T.END)] = [EPS]
+
+        # &lt;Alternative&gt; ::= `epsilon | &lt;SymbolList&gt;
+        self.table[(ALTERNATIVE, T.EPSILON)] = [T.EPSILON]
+        self.table[(ALTERNATIVE, T.NONTERM)] = [SYMBOL_LIST]
+        self.table[(ALTERNATIVE, T.TERM)] = [SYMBOL_LIST]
+
+        # &lt;SymbolList&gt; ::= &lt;Symbol&gt; &lt;SymbolListTail&gt;
+        for lookahead in (T.NONTERM, T.TERM):
+            self.table[(SYMBOL_LIST, lookahead)] = [SYMBOL_NT, SYMBOL_LIST_TAIL]
+
+        # &lt;SymbolListTail&gt; ::= &lt;Symbol&gt; &lt;SymbolListTail&gt; | ε
+        for lookahead in (T.NONTERM, T.TERM):
+            self.table[(SYMBOL_LIST_TAIL, lookahead)] = [SYMBOL_NT, SYMBOL_LIST_TAIL]
+        for lookahead in (T.OR, T.END):
+            self.table[(SYMBOL_LIST_TAIL, lookahead)] = [EPS]
+
+        # &lt;Symbol&gt; ::= NONTERM | TERM
+        self.table[(SYMBOL_NT, T.NONTERM)] = [T.NONTERM]
+        self.table[(SYMBOL_NT, T.TERM)] = [T.TERM]
+
+    def _terminal_node_label(self, token: Token) -&gt; str:
+        if token.type == TokenType.NONTERM:
+            return f'NONTERM("{token.value}")'
+        if token.type == TokenType.TERM:
+            return f'TERM("{token.value}")'
+        if token.type == TokenType.EOF:
+            return "EOF"
+        return token.value
+
+    def parse(self) -&gt; ParseNode:
+        root = ParseNode(START)
+        stack: List[Tuple[Symbol, ParseNode]] = [(START, root)]
+
+        while stack:
+            top_symbol, top_node = stack.pop()
+
+            if is_epsilon(top_symbol):
+                top_node.label = EPS
+                continue
+
+            if isinstance(top_symbol, TokenType):
+                if self.current.type != top_symbol:
+                    self.error(
+                        f"Expected {token_name(top_symbol)}, got {token_name(self.current.type)}"
+                    )
+                top_node.label = self._terminal_node_label(self.current)
+                top_node.token = self.current
+                self.current = self.lexer.next_token()
+                continue
+
+            if is_nonterminal(top_symbol):
+                production = self.table.get((top_symbol, self.current.type))
+                if production is None:
+                    self.error(
+                        f"No rule for {top_symbol} with lookahead {token_name(self.current.type)}"
+                    )
+
+                children = [ParseNode(self._symbol_to_label(sym)) for sym in production]
+                top_node.children = children
+
+                for sym, child in reversed(list(zip(production, children))):
+                    stack.append((sym, child))
+                continue
+
+            raise ParserError(f"Internal parser error: unknown symbol {top_symbol!r}")
+
+        if self.current.type != TokenType.EOF:
+            self.error("Extra input after complete parse")
+
+        return root
+
+    @staticmethod
+    def _symbol_to_label(symbol: Symbol) -&gt; str:
+        if symbol == EPS:
+            return EPS
+        if isinstance(symbol, TokenType):
+            if symbol == TokenType.EOF:
+                return "EOF"
+            return symbol.name
+        return symbol
+
+
+class DotExporter:
+    def __init__(self):
+        self.lines: List[str] = []
+        self.counter = 0
+
+    def next_id(self) -&gt; str:
+        self.counter += 1
+        return f"n{self.counter}"
+
+    @staticmethod
+    def escape_label(label: str) -&gt; str:
+        return label.replace("\\", "\\\\").replace('"', '\\"')
+
+    def emit_node_recursive(self, node: ParseNode) -&gt; str:
+        node_id = self.next_id()
+        self.lines.append(f'  {node_id} [label="{self.escape_label(node.label)}"];')
+
+        child_ids: List[str] = []
+        for child in node.children:
+            child_id = self.emit_node_recursive(child)
+            child_ids.append(child_id)
+            self.lines.append(f"  {node_id} -&gt; {child_id};")
+
+        # Невидимые связи для сохранения порядка потомков
+        if len(child_ids) &gt;= 2:
+            chain = " -&gt; ".join(child_ids)
+            self.lines.append(f"  {{ rank=same; {chain} [style=invis]; }}")
+
+        return node_id
+
+    def export(self, root: ParseNode, filename: str) -&gt; None:
+        self.lines.append("digraph ParseTree {")
+        self.lines.append("  rankdir=TB;")
+        self.lines.append("  node [shape=box];")
+        self.lines.append("  edge [arrowhead=normal];")
+        self.emit_node_recursive(root)
+        self.lines.append("}")
+
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(self.lines))
+
+
+def main() -&gt; None:
+    input_filename = "input.txt"
+    output_filename = "output.dot"
+
+    if not os.path.exists(input_filename):
+        input_filename = __file__.replace("main.py", "input.txt")
+        output_filename = __file__.replace("main.py", "output.dot")
+        if not os.path.exists(input_filename):
+            print(f"Error: {input_filename} not found")
+            return
+
+    with open(input_filename, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    lexer = Lexer(text)
+    parser = PredictiveParser(lexer)
+    tree = parser.parse()
+
+    exporter = DotExporter()
+    exporter.export(tree, output_filename)
+
+    print(f"Parse successful. DOT written to {output_filename}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (LexerError, ParserError) as e:
+        print(f"Error: {e}")
+```
+
+# Тестирование
+
+Входные данные
+
+```
+$ This is a comment
+`axiom E `is "n" `end
+```
+
+Вывод на `stdout`
+
+```
+digraph ParseTree {
+  rankdir=TB;
+  node [shape=box];
+  edge [arrowhead=normal];
+  n1 [label="&lt;Start&gt;"];
+  n2 [label="&lt;Grammar&gt;"];
+  n3 [label="&lt;Rule&gt;"];
+  n4 [label="&lt;AxiomRule&gt;"];
+  n5 [label="`axiom"];
+  n4 -&gt; n5;
+  n6 [label="NONTERM(\"E\")"];
+  n4 -&gt; n6;
+  n7 [label="`is"];
+  n4 -&gt; n7;
+  n8 [label="&lt;Expr&gt;"];
+  n9 [label="&lt;Alternative&gt;"];
+  n10 [label="&lt;SymbolList&gt;"];
+  n11 [label="&lt;Symbol&gt;"];
+  n12 [label="TERM(\"n\")"];
+  n11 -&gt; n12;
+  n10 -&gt; n11;
+  n13 [label="&lt;SymbolListTail&gt;"];
+  n14 [label="ε"];
+  n13 -&gt; n14;
+  n10 -&gt; n13;
+  { rank=same; n11 -&gt; n13 [style=invis]; }
+  n9 -&gt; n10;
+  n8 -&gt; n9;
+  n15 [label="&lt;ExprTail&gt;"];
+  n16 [label="ε"];
+  n15 -&gt; n16;
+  n8 -&gt; n15;
+  { rank=same; n9 -&gt; n15 [style=invis]; }
+  n4 -&gt; n8;
+  n17 [label="`end"];
+  n4 -&gt; n17;
+  { rank=same; n5 -&gt; n6 -&gt; n7 -&gt; n8 -&gt; n17 [style=invis]; }
+  n3 -&gt; n4;
+  n2 -&gt; n3;
+  n18 [label="&lt;GrammarTail&gt;"];
+  n19 [label="ε"];
+  n18 -&gt; n19;
+  n2 -&gt; n18;
+  { rank=same; n3 -&gt; n18 [style=invis]; }
+  n1 -&gt; n2;
+  n20 [label="EOF"];
+  n1 -&gt; n20;
+  { rank=same; n2 -&gt; n20 [style=invis]; }
+}
+```
+
+# Вывод
+
+В ходе лабораторной работы был реализован синтаксический анализатор на основе предсказывающего разбора.
+Для входного языка были описаны лексическая структура, грамматика и таблица разбора.
+Также был разработан лексический анализатор и алгоритм построения дерева вывода.
+Программа разбирает входные правила грамматики и формирует дерево вывода в формате DOT.
+
+</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Результаты тестирования</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="test-result_code-block">
+                                <pre><code class="language-plaintext" id="output80322">Wed May  6 01:24:33 PM MSK 2026: Выполняется тест style_check...
+Wed May  6 01:24:33 PM MSK 2026: Выполняется тест markdown_gen...
+lab2.3.pdf вложен в&nbsp;письмо — lab2.3.pdf
+Wed May  6 01:24:35 PM MSK 2026: Автотесты выполнены: 2 успешно, 0 неудачно.
+</code></pre>
+                            </div>
+                            
+                            <p>Прикреплённые файлы:</p>
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://hw.iu9.bmstu.ru/attach/3dcb6028-3079-4f57-8c3e-2f749bf39b4b/lab2.3.pdf">lab2.3.pdf</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                            
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 29.04.2026 15:09:00<span title="1&nbsp;неделю 6&nbsp;дней 23&nbsp;часа 27&nbsp;минут 44&nbsp;секунды"><sup>⏱</sup></span>.
+                    Системное сообщение
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    
+                    <p class="test-result_paragraph">
+                        <b>Комментарий преподавателя:</b>
+                        
+                    </p>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm80161', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm80161">Возможность отправки отчёта разблокирована</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 15.04.2026 15:41:16<span title="1&nbsp;час 18&nbsp;минут 44&nbsp;секунды"><sup>⏱</sup></span>.
+                    Черновик: не&nbsp;проверяется
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    <p class="test-result_paragraph"><b>Антиплагиат:</b> Найдены похожие посылки</p>
+                    
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm79932', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm79932">Ключевые слова:
+`axiom
+`is
+`or
+`end
+`epsilon
+
+Лексическая структура:
+NONTERM = LETTER { LETTER | DIGIT }
+TERM    = '"' { CHAR } '"'
+LETTER  = 'A'..'Z' | 'a'..'z'
+DIGIT   = '0'..'9'
+CHAR    = любой символ, кроме " и конца строки
+
+Грамматика:
+&lt;Grammar&gt;     ::= &lt;Rule&gt; &lt;Grammar&gt; | &lt;Rule&gt;
+&lt;Rule&gt;        ::= &lt;NtermRule&gt; | &lt;AxiomRule&gt;
+&lt;NtermRule&gt;   ::= NONTERM "`is" &lt;Expr&gt; "`end"
+&lt;AxiomRule&gt;   ::= "`axiom" NONTERM "`is" &lt;Expr&gt; "`end"
+&lt;Expr&gt;        ::= &lt;Alternative&gt; &lt;ExprTail&gt;
+&lt;ExprTail&gt;    ::= "`or" &lt;Alternative&gt; &lt;ExprTail&gt; | ε
+&lt;Alternative&gt; ::= "`epsilon" | &lt;SymbolList&gt;
+&lt;SymbolList&gt;  ::= &lt;Symbol&gt; &lt;SymbolList&gt; | &lt;Symbol&gt;
+&lt;Symbol&gt;      ::= NONTERM | TERM
+</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 15.04.2026 14:22:32.
+                    Системное сообщение
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    
+                    <p class="test-result_paragraph">
+                        <b>Комментарий преподавателя:</b>
+                        
+                    </p>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm79916', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm79916">Лабораторная работа выдана, можете выполнять</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <br>
+            <br>
+            <details>
+                <summary>
+                    <h2 id="task-message-section-header">
+                        Переписка по&nbsp;заданию (0&nbsp;сообщений)
+                    </h2>
+                </summary>
+                <div class="chat-container">
+                    <div class="messages-container">
+                        
+                        <h3>
+                            По данному заданию нет сообщений
+                        </h3>
+                        
+                        
+                    </div>
+                    <form action="/mail" method="post" id="message-form">
+                        <select name="reciever_login" hidden="">
+                            
+                            <option value="teacher" selected="selected"></option>
+                            
+                        </select>
+                        <select name="task_ref" hidden="">
+                            <option value="2026/kk/lab2.3" selected="selected"></option>
+                        </select>
+                        <div id="prev_alert"></div>
+                        <br>
+                        <textarea name="content" value="" class="message_content_input" id="message_content_input" placeholder="Напишите сообщение..."></textarea>
+                        <div>Длина сообщения ограничена 1000&nbsp;знаками.</div>
+                        <br>
+                        <br>
+                        <input id="prev" name="prev" value="-1" hidden="">
+                        <div class="form_button-wrapper">
+                            <input id="message-submit-button" type="submit" class="button" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </details>
+        </div>
+        <footer class="paper footer">
+    
+    <p>Web-интерфейс разработан студентами кафедры</p>
+    
+    
+    <fieldset class="toggle-group" id="colorScheme">
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-light" value="0" data-sr="" checked="checked">
+            🌞 
+        </label>
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-dark" value="1" data-sr="">
+            🌛
+        </label>
+    </fieldset>
+</footer>
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/theme.js"></script>
+    </div>
+</div>
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/submission.js" defer="defer"></script>
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/rules.js" defer="defer"></script>
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/highlight_static.js" defer="defer"></script>
+<script src="2.3%20%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%E2%80%94%20%D0%A4%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%D0%B2%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%E2%80%94%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_files/highlight_dynamic.js" defer="defer"></script>
+
+
+
+</body></html>

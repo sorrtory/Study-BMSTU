@@ -1,0 +1,26 @@
+# Ignore extensionless files
+*
+!*.*
+
+# Keep directories
+!*/
+
+# Keep common extensionless source/project files
+!Makefile
+!Dockerfile
+!LICENSE
+!README
+!CMakeLists.txt
+
+
+# C/C++ build outputs
+/build/
+/cmake-build-*/
+*.o
+*.obj
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+*.dll

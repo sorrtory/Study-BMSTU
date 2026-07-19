@@ -1,0 +1,2 @@
+input a, b;
+print "min =", m = a - b ? (a, a, b), "max =", a + b - m, "mean =", (a + b) / 2.

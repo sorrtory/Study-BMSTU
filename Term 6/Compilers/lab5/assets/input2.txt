@@ -1,0 +1,16 @@
+type
+  Age = 1..120;
+  Color = (red, green, blue);
+  IntArray = array 1..10 of integer;
+  CharSet = set of char;
+  NodePtr = ^Age;
+  Person = record
+    name, surname: char;
+    years: Age
+  end;
+
+const
+  MinAge = 1;
+  MaxAge = 120;
+  Pi = 3.14;
+  Neg = -5;

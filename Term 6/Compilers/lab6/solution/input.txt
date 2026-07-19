@@ -1,0 +1,2 @@
+$ This is a comment
+`axiom E `is "n" `end

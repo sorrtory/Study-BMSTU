@@ -1,0 +1,3 @@
+- [OK Den AI](https://github.com/OkDenAl/BMSTU-IU9/tree/main/Optimal%20Code%20Generation)
+- [stewkk](https://github.com/stewkk/iu9-optimal-code-generation)
+- [dima](https://github.com/dm800/Optimal)

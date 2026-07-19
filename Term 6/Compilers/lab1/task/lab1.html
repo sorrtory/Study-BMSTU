@@ -1,0 +1,1406 @@
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" xml:lang="" lang="" xmlns="http://www.w3.org/1999/xhtml" style="--darkmode: 0;" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style>
+    <title>
+1.1 Раскрутка самоприменимого компилятора&nbsp;— Федуков Александр&nbsp;— Сервер поддержки учебного процесса
+</title>
+    <link rel="stylesheet" href="lab1_files/index.css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <script src="lab1_files/polyfill.min-es6.js"></script><meta name="darkreader" content="e7009e19509545f598f4842b5698069e"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select {
+    --darkreader-bg--form-control-background-color: rgba(22, 22, 22, 0) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+.d2l-twopanelselector-side.d2l-twopanelselector-side-sep {
+    background: var(--darkreader-bg--d2l-color-mica) !important;
+}
+.d2l-le-TreeAccordionItem-anchor::before {
+    background: var(--darkreader-bg--d2l-color-corundum) !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style>
+    <script type="text/javascript" id="MathJax-script" async="true" src="lab1_files/tex-chtml.js">
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+
+    </script>
+    <meta charset="UTF-8">
+    
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+
+<body>
+    
+    <a name="top"></a>
+    
+
+<script src="lab1_files/set_prev.js"></script>
+<script>
+    const MAX_ALLOWED_SIZE = 163840;
+    const MAX_PICTURES_SIZE = 1048576;
+</script>
+<div class="screen-wrapper">
+    <div class="content-wrapper">
+        <header class="paper header">
+            <div class="header_menu">
+                
+                <div class="header_menu-element">
+                    <a href="https://hw.iu9.bmstu.ru/student?course_id=1457" class="link">
+                        Курсы
+                    </a>
+                </div>
+                
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/mail">
+                    <button class="button">
+                        Сообщения
+                    </button>
+                </a>
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/logout">
+                    <button class="button">
+                        Выход
+                    </button>
+                </a>
+            </div>
+        </header>
+        <div class="paper content">
+            
+            <div>
+                
+                
+                <a href="#variant">промотать до&nbsp;индивидуального варианта</a><br>
+
+
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Коновалов А.В., Скоробогатов С.Ю.">
+  <title>Лабораторная работа № 1.1. Раскрутка самоприменимого компилятора</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа № 1.1. Раскрутка самоприменимого компилятора</h1>
+<p class="author">Коновалов А.В., Скоробогатов С.Ю.</p>
+<p class="date">29&nbsp;июня 2016</p>
+</header>
+<h2 id="цель-работы">1 Цель работы</h2>
+<p>Целью данной работы является ознакомление с&nbsp;раскруткой самоприменимых компиляторов на&nbsp;примере модельного компилятора.</p>
+<h2 id="исходные-данные">2&nbsp;Исходные данные</h2>
+<h3 id="вариант-p5">Вариант P5</h3>
+<p>В&nbsp;качестве модельного выберем компилятор P5 языка Pascal, разработанный С.&nbsp;Муром<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.
+ Входным языком компилятора является язык Pascal, соответствующий 
+стандарту ISO 7185, а&nbsp;целевым языком&nbsp;— псевдокод, который 
+может быть исполнен специальным интерпретатором.</p>
+<p>Исходный текст компилятора P5 составлен на&nbsp;языке Pascal 
+и&nbsp;удовлетворяет стандарту ISO 7185. Тем самым, компилятор является 
+самоприменимым.</p>
+<p>Исходные данные для выполнения лабораторной работы в операционной системе Linux представлены следующим набором файлов:</p>
+<ul>
+<li><code>pcom.pas</code>&nbsp;— исходный текст компилятора P5;</li>
+<li><code>pcom</code>&nbsp;— исполнимая версия компилятора P5, полученная путём компиляции исходного текста компилятора с&nbsp;помощью <code>gpc</code> (GNU Pascal Compiler);</li>
+<li><code>pint</code>&nbsp;— интерпретатор псевдокода, предназначенный для выполнения программ;</li>
+<li><code>iso7185.pdf</code>&nbsp;— текст стандарта ISO 7185:1990<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>;</li>
+<li><code>hello.pas</code>&nbsp;— программа, предназначенная для проверки работоспособности компилятора.</li>
+</ul>
+<h3 id="вариант-berobero64">Вариант BeRo/BeRo64</h3>
+<p>В&nbsp;качестве модельного выберем компилятор <a href="https://github.com/BeRo1985/berotinypascal">BeRo Tiny Pascal</a>,
+ разработанный Бенжамином Рузо (Benjamin Rosseaux). Входным языком 
+компилятора является язык Pascal, совместимый с&nbsp;диалектами 
+Delphi&nbsp;7 и&nbsp;FreePascal <span class="math inline">≥</span> 3.0, а&nbsp;целевым языком&nbsp;— исполнимый код Win32.</p>
+<p>На&nbsp;кафедре ИУ9 данный компилятор был портирован на&nbsp;платформы <a href="https://github.com/bmstu-iu9/A-Bauman-BTPC-64">Linux x64</a> и&nbsp;<a href="https://github.com/bmstu-iu9/A-Bauman-BTPC-macOS">macOS</a>.</p>
+<p><strong>Внимание!</strong> Исходники надо скачивать не&nbsp;по&nbsp;ссылкам выше, а&nbsp;<a href="#src">отсюда</a>.</p>
+<p>Исходный текст компилятора составлен на&nbsp;языке Pascal, 
+совместимом с&nbsp;подмножеством диалектов Delphi&nbsp;7 
+и&nbsp;FreePascal <span class="math inline">≥</span> 3.0, при этом сам реализован на&nbsp;этом подмножестве. Тем самым, компилятор является самоприменимым.</p>
+<p>Исходные данные для выполнения лабораторной работы в&nbsp;операционной системе Windows представлены следующим набором файлов:</p>
+<ul>
+<li><code>btpc.pas</code>&nbsp;— исходный текст компилятора BeRo Tiny Pascal;</li>
+<li><code>btpc.exe</code>&nbsp;— исполнимая версия компилятора, полученная путём раскрутки;</li>
+<li><code>hello.pas</code>&nbsp;— программа, предназначенная для проверки работоспособности компилятора.</li>
+</ul>
+<p>Исходные данные для выполнения лабораторной работы 
+в&nbsp;операционных системах Linux и&nbsp;macOS представлены следующим 
+набором файлов:</p>
+<ul>
+<li><code>btpc64.pas</code>/<code>btpc64macOS.pas</code>&nbsp;— исходный текст портированного компилятора BeRo Tiny Pascal;</li>
+<li><code>btpc64</code>/<code>btpc64macOS</code>&nbsp;— исполнимая версия компилятора, полученная путём раскрутки;</li>
+<li><code>hello.pas</code>&nbsp;— программа, предназначенная для проверки работоспособности компилятора.</li>
+</ul>
+<p>Доступна также портабельная версия компилятора, формирующая байткод, 
+выполняемый интерпретатором на&nbsp;Си на&nbsp;любой платформе. Данная 
+версия содержит следующие файлы:</p>
+<ul>
+<li><code>btpc.pas</code>&nbsp;— исходный файл компилятора,</li>
+<li><code>btpc.btvm</code>&nbsp;— компилятор, откомпилированный в&nbsp;байткод,</li>
+<li><code>btvm.c</code>&nbsp;— исходный файл интерпретатора байткода,</li>
+<li><code>btdb.c</code>&nbsp;— исходный файл консольного отладчика,</li>
+<li><code>btvm_core.h</code>&nbsp;— общий код интерпретатора и&nbsp;отладчика.</li>
+</ul>
+<p>Детали потрабельной реализации доступны по&nbsp;ссылке <a href="https://github.com/darleet/iu9-btpc" class="uri">https://github.com/darleet/iu9-btpc</a>.</p>
+<h2 id="использование-компилятора">3&nbsp;Использование компилятора</h2>
+<h3 id="использование-pcom-и-pint">Использование <code>pcom</code> и&nbsp;<code>pint</code></h3>
+<p><strong>Внимание!</strong> Исполнимая версия P5 доступна для 
+платформы i386, т.е. для 32-разрядного Linux’а. Для установки 
+32-разрядной среды на&nbsp;64-разрядную Ubuntu используйте следующие 
+команды:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> dpkg --add-architecture i386</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">sudo</span> apt-get install libc6:i386 libstdc++6:i386</span></code></pre></div>
+<p>Исполнимая версия компилятора P5 берёт исходный текст компилируемой 
+программы из&nbsp;стандартного потока ввода и&nbsp;записывает 
+порождаемый псевдокод в&nbsp;файл с&nbsp;именем <code>prr</code>. Тем самым, для компиляции программы <code>hello.pas</code> нужно выполнить команду</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">./pcom</span> <span class="op">&lt;</span>hello.pas</span></code></pre></div>
+<p>Интерпретатор <code>pint</code> считывыет псевдокод из&nbsp;файла с&nbsp;именем <code>prd</code>, поэтому перед его запуском требуется переименовать файл <code>prr</code> в&nbsp;<code>prd</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">mv</span> prr prd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="ex">./pint</span></span></code></pre></div>
+<p>Исполнимую версию компилятора P5 можно применить к&nbsp;его исходному тексту:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="ex">./pcom</span> <span class="op">&lt;</span>pcom.pas</span></code></pre></div>
+<p>После этого для компиляции программы <code>hello.pas</code> можно использовать компилятор P5, представленный в&nbsp;псевдокоде. Для этого нужно запустить компилятор с&nbsp;помощью <code>pint</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="fu">mv</span> prr prd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="ex">./pint</span> <span class="op">&lt;</span>hello.pas</span></code></pre></div>
+<p>Более того, можно ещё раз откомпилировать <code>pcom.pas</code> с&nbsp;помощью компилятора P5, представленного в&nbsp;псевдокоде. Для этого нам потребуется выполнить команду</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">./pint</span> <span class="op">&lt;</span>pcom.pas</span></code></pre></div>
+<p>Отметим, что последняя команда работает достаточно длительное время<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. После её выполнения можно убедиться, что файлы <code>prd</code> и&nbsp;<code>prr</code> совпадают с&nbsp;точностью до&nbsp;пробельных символов. Сравнить их на&nbsp;идентичность можно при помощи комадны</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">diff</span> -uw prd prr</span></code></pre></div>
+<h3 id="использование-btpc-на-windows">Использование Btpc на&nbsp;Windows</h3>
+<p><strong>Внимание!</strong> Компилятор Btpc не&nbsp;работает в&nbsp;PowerShell. Для открытия командной строки запускайте <code>cmd.exe</code>.</p>
+<p>Компилятор берёт исходный текст со&nbsp;стандартного ввода и&nbsp;в 
+случае успешной компиляции записывает порождённый двоичный код 
+в&nbsp;стандартный вывод. Тем самым, для компиляции программы <code>hello.pas</code> нужно выполнить команду:</p>
+<pre class="batch"><code>btpc &lt;hello.pas &gt;hello.exe</code></pre>
+<p>При наличии синтаксической ошибки в&nbsp;коде компилятор записывает 
+в&nbsp;стандартный вывод вместо двоичного кода сообщение об&nbsp;ошибке.
+ Признаком того, что компиляция прошла неудачно является малый размер 
+целевого файла (в&nbsp;данном примере <code>hello.exe</code>)&nbsp;— менее 100&nbsp;байт. Для того, чтобы посмотреть размер файла, можно выполнить команду <code>dir</code>. Для просмотра сообщения об ошибке нужно выполнить команду:</p>
+<pre class="batch"><code>type hello.exe</code></pre>
+<p>Для выполнения одного шага раскрутки используется команда</p>
+<pre class="batch"><code>btpc &lt;btpc.pas &gt;btpc_new.exe</code></pre>
+<p>После её выполнения можно убедиться, что файлы <code>btpc.exe</code> и&nbsp;<code>btpc_new.exe</code> идентичны при помощи команды</p>
+<pre class="batch"><code>fc /b btpc.exe btpc_new.exe</code></pre>
+<h3 id="использование-btpc64-на-linux-и-macos">Использование Btpc64 на&nbsp;Linux и&nbsp;macOS</h3>
+<p>Компилятор берёт исходный текст со&nbsp;стандартного ввода и&nbsp;в 
+случае успешной компиляции записывает порождённый двоичный код 
+в&nbsp;стандартный вывод. Тем самым, для компиляции программы <code>hello.pas</code> нужно выполнить команду:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="ex">./btpc64</span> <span class="op">&lt;</span>hello.pas <span class="op">&gt;</span>hello</span></code></pre></div>
+<p>При наличии синтаксической ошибки в&nbsp;коде компилятор записывает 
+в&nbsp;стандартный вывод вместо двоичного кода сообщение об&nbsp;ошибке.
+ Признаком того, что компиляция прошла неудачно является малый размер 
+целевого файла (в&nbsp;данном примере <code>hello</code>)&nbsp;— менее 100&nbsp;байт. Для того, чтобы посмотреть размер файла, можно выполнить команду <code>ls -l</code>. Для просмотра сообщения об ошибке нужно выполнить команду:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="fu">cat</span> hello</span></code></pre></div>
+<p>Для выполнения одного шага раскрутки используется команда</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="ex">./btpc64</span> <span class="op">&lt;</span>btpc64.pas <span class="op">&gt;</span>btpc64_new</span></code></pre></div>
+<p>После её выполнения можно убедиться, что файлы <code>btpc64</code> и&nbsp;<code>btpc64_new</code> идентичны при помощи команды</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="fu">cmp</span> btpc64 btpc64_new</span></code></pre></div>
+<h3 id="использование-портабельной-версии-btpc">Использование портабельной версии Btpc</h3>
+<p><strong>Внимание!</strong> Компилятор Btpc не&nbsp;работает в&nbsp;PowerShell. Для открытия командной строки запускайте <code>cmd.exe</code>.</p>
+<p>Перед использованием нужно скомпилировать интерпретатор байткода:</p>
+<ul>
+<li><p>На&nbsp;Windows:</p>
+<pre class="batch"><code>gcc -obtvm.exe -std=c99 btvm.c</code></pre></li>
+<li><p>На&nbsp;Linux или macOS:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="fu">gcc</span> -obtvm -std=c99 btvm.c</span></code></pre></div></li>
+</ul>
+<p>Компилятор берёт исходный текст со&nbsp;стандартного ввода и&nbsp;в 
+случае успешной компиляции записывает порождённый двоичный код 
+в&nbsp;стандартный вывод. Тем самым, для компиляции программы <code>hello.pas</code> нужно выполнить команду:</p>
+<ul>
+<li><p>На&nbsp;Windows</p>
+<pre class="batch"><code>btvm.exe btpc.btvm &lt;hello.pas &gt;hello</code></pre></li>
+<li><p>На&nbsp;Linux или macOS:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="ex">./btvm</span> btpc.btvm <span class="op">&lt;</span>hello.pas <span class="op">&gt;</span>hello</span></code></pre></div></li>
+</ul>
+<p>При наличии синтаксической ошибки в&nbsp;коде компилятор записывает 
+в&nbsp;стандартный вывод вместо двоичного кода сообщение об&nbsp;ошибке.
+ Признаком того, что компиляция прошла неудачно является малый размер 
+целевого файла (в&nbsp;данном примере <code>hello</code>)&nbsp;— менее 100&nbsp;байт. Для того, чтобы посмотреть размер файла, можно выполнить команду <code>ls -l</code>. Для просмотра сообщения об ошибке нужно выполнить команду:</p>
+<ul>
+<li><p>На&nbsp;Windows</p>
+<pre class="batch"><code>type hello.exe</code></pre></li>
+<li><p>На&nbsp;Linux или macOS:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="fu">cat</span> hello</span></code></pre></div></li>
+</ul>
+<p>Для выполнения одного шага раскрутки используется команда</p>
+<ul>
+<li><p>На&nbsp;Windows</p>
+<pre class="batch"><code>btvm.exe btpc.btvm &lt;btpc.pas &gt;btpc_new.btvm</code></pre></li>
+<li><p>На&nbsp;Linux или macOS:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="ex">./btvm</span> btpc.btvm <span class="op">&lt;</span>btpc.pas <span class="op">&gt;</span>btpc_new.btvm</span></code></pre></div></li>
+</ul>
+<p>После её выполнения можно убедиться, что файлы <code>btpc.btvm</code> и&nbsp;<code>btpc_new.btvm</code> идентичны при помощи команды</p>
+<ul>
+<li><p>На&nbsp;Windows</p>
+<pre class="batch"><code>fc /b btpc.btvm btpc_new.btvm</code></pre></li>
+<li><p>На&nbsp;Linux или macOS:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="fu">cmp</span> btpc.btvm btpc_new.btvm</span></code></pre></div></li>
+</ul>
+<p>Для отладки можно использовать <code>btdb</code>, инструкция по&nbsp;использованию отладчика доступна по&nbsp;ссылке <a href="https://github.com/darleet/iu9-btpc" class="uri">https://github.com/darleet/iu9-btpc</a>.</p>
+<h2 id="задание">4&nbsp;Задание</h2>
+<p>Выполнение лабораторной работы заключается в&nbsp;осуществлении 
+одного шага раскрутки самоприменимого компилятора и&nbsp;состоит 
+из&nbsp;нескольких этапов:</p>
+<h3 id="src">Исходники компиляторов</h3>
+<ul>
+<li><a href="https://hw.iu9.bmstu.ru/static/assets/lab1.1.zip">Исходники компиляторов P5 и&nbsp;Btpc(64).</a></li>
+</ul>
+<h3 id="вариант-p5-1">Вариант P5</h3>
+<ol type="1">
+<li><p>добавление во входной язык компилятора P5 новых возможностей (см.&nbsp;<a href="#vars">Варианты заданий</a>) путём редактирования его исходного текста, в&nbsp;результате чего должен получиться файл <code>pcom2.pas</code>&nbsp;— следует <strong>сначала</strong> скопировать <code>pcom.pas</code> в&nbsp;<code>pcom2.pas</code>, <strong>а&nbsp;потом</strong> вносить в&nbsp;него правки;</p></li>
+<li><p>компиляция <code>pcom2.pas</code>, которая может осуществляться 
+как бинарной версией компилятора, так и&nbsp;версией, представленной в 
+псевдокоде (бинарная&nbsp;— быстрее);</p></li>
+<li><p>проверка работоспособности <code>pcom2.pas</code> на&nbsp;небольшой программе, в&nbsp;которой обязательно должны использоваться новые возможности языка;</p></li>
+<li><p>внесение изменений в&nbsp;<code>pcom2.pas</code>, связанных с&nbsp;использованием новых возможностей языка, и сохранение новой версии исходного текста компилятора в&nbsp;файле <code>pcom3.pas</code> (<strong>сначала</strong> нужно скопировать <code>pcom2.pas</code> в&nbsp;<code>pcom3.pas</code>, <strong>затем</strong> вносить изменения);</p></li>
+<li><p>завершение шага раскрутки путём компиляции <code>pcom3.pas</code> с&nbsp;помощью полученного на&nbsp;этапе&nbsp;2 псевдокода компилятора;</p></li>
+<li><p>разница между файлами <code>pcom.pas</code> и&nbsp;<code>pcom2.pas</code> должна демонстрировать изменения, внесённые в&nbsp;логику работы компилятора;</p></li>
+<li><p>разница между файлами <code>pcom2.pas</code> и&nbsp;<code>pcom3.pas</code> должна демонстрировать новые возможности языка.</p></li>
+</ol>
+<h3 id="вариант-с-btpcbtpc64">Вариант с&nbsp;Btpc/Btpc64</h3>
+<ol type="1">
+<li><p>добавление во входной язык компилятора <code>btpc</code> новых возможностей (см.&nbsp;<a href="#vars">Варианты заданий</a>) путём редактирования его исходного текста, в&nbsp;результате чего должен получиться файл <code>btpc2.pas</code>&nbsp;— следует <strong>сначала</strong> скопировать <code>btpc.pas</code> в&nbsp;<code>btpc2.pas</code> (на&nbsp;Linux/macOS: <code>btpc64.pas</code> в&nbsp;<code>btpc64-2.pas</code>), <strong>а&nbsp;потом</strong> вносить в&nbsp;него правки;</p></li>
+<li><p>компиляция <code>btpc2.pas</code> (<code>btpc64-2.pas</code>), в результате которой должен получиться файл <code>btpc2.exe</code> (<code>btpc64-2</code>);</p></li>
+<li><p>проверка работоспособности <code>btpc2.exe</code> на&nbsp;небольшой программе, в&nbsp;которой обязательно должны использоваться новые возможности языка;</p></li>
+<li><p>внесение изменений в&nbsp;<code>btpc2.pas</code> (<code>btpc64-2.pas</code>),
+ связанных с&nbsp;использованием новых возможностей языка, 
+и&nbsp;сохранение новой версии исходного текста компилятора в&nbsp;файле
+ <code>btpc3.pas</code> (<code>btpc64-3.pas</code>) (<strong>сначала</strong> нужно скопировать <code>btpc2.pas</code> в&nbsp;<code>btpc3.pas</code>, <strong>затем</strong> вносить изменения);</p></li>
+<li><p>завершение шага раскрутки путём компиляции <code>btpc3.pas</code> (<code>btpc64-3.pas</code>) с&nbsp;помощью полученного на&nbsp;этапе&nbsp;2 файла <code>btpc2.exe</code> (<code>btpc64-3</code>);</p></li>
+<li><p>разница между файлами <code>btpc.pas</code> и&nbsp;<code>btpc2.pas</code> должна демонстрировать изменения, внесённые в&nbsp;логику работы компилятора;</p></li>
+<li><p>разница между файлами <code>btpc2.pas</code> и&nbsp;<code>btpc3.pas</code> должна демонстрировать новые возможности языка.</p></li>
+</ol>
+<h3 id="просмотр-различий-между-файлами">Просмотр различий между файлами</h3>
+<p>На&nbsp;операционной системе Windows для просмотра различий между файлами рекомендуется использовать встроенную утилиту <code>fc</code>:</p>
+<pre class="batch"><code>fc pcom.pas pcom2.pas
+fc btpc.pas btpc2.pas</code></pre>
+<p>На&nbsp;операционных системах Linux и macOS для просмотра различий между файлами рекомендуется использовать встроенную утилиту <code>diff</code> с&nbsp;ключом <code>-u</code>:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="fu">diff</span> -u pcom.pas pcom2.pas</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a><span class="fu">diff</span> -u btpc64.pas btpc64-2.pas</span></code></pre></div>
+<h2 id="vars">5 Индивидуальный вариант</h2>
+<p><a name="variant"></a></p><p><a name="variant">Компилятор <strong>P5</strong>. Заменить операторы <code>div</code> и&nbsp;<code>mod</code> на <code>//</code> и&nbsp;<code>%</code> соответственно.</a></p><a name="variant">
+<p></p>
+<h2 id="отчёт-по-лабораторной-работе-1.1">6 Отчёт по&nbsp;лабораторной работе №&nbsp;1.1</h2>
+<p>Отчёт выполняется в&nbsp;разметке Markdown по&nbsp;следующему шаблону:</p>
+</a><div class="sourceCode" id="cb28"><a name="variant"></a><pre class="sourceCode markdown"><code>% Лабораторная работа № 1.1. Раскрутка самоприменимого компилятора
+% &lt;лабораторная ещё не&nbsp;сдана&gt;
+% Александр Федуков, ИУ9-62Б
+
+# Цель работы
+…переписываете цель работы из&nbsp;задания…
+
+# Индивидуальный вариант
+…переписываете индивидуальный вариант…
+
+
+# Реализация
+
+Различие между файлами `pcom.pas` и&nbsp;`pcom2.pas`:
+
+```diff
+xxxxx
+```
+
+Различие между файлами `pcom2.pas` и&nbsp;`pcom3.pas`:
+
+```diff
+xxxxx
+```
+
+# Тестирование
+
+Тестовый пример:
+
+```pascal
+xxxx
+```
+
+Вывод тестового примера на&nbsp;`stdout`
+
+```
+xxxx
+```
+
+# Вывод
+…пишете, чему научились…</code></pre></div>
+<p>В&nbsp;образце отчёта приведён лишь необходимый минимум. 
+За&nbsp;вдумчивый, интересный, хорошо оформленный и&nbsp;развёрнутый 
+отчёт может быть поощрён дополнительным баллом.</p>
+<p><a href="https://hw.iu9.bmstu.ru/static/assets/lab-report-template.txt">Шаблон отчёта</a></p>
+<p>Ваш отчёт будет конвертирован в&nbsp;PDF при помощи pandoc следующей командой:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="ex">pandoc</span> <span class="kw">\</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true"></a>  <span class="ex">--pdf-engine</span>=xelatex <span class="kw">\</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'mainfont:Liberation Serif'</span> <span class="kw">\</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'monofont:Liberation Mono'</span> <span class="kw">\</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true"></a>  <span class="st">"</span><span class="va">$SOURCE</span><span class="st">"</span> <span class="ex">-o</span> <span class="st">"</span><span class="va">$PDF</span><span class="st">"</span></span></code></pre></div>
+<h2 id="дедлайн">7 Дедлайн</h2>
+<ul>
+<li>На&nbsp;лабораторную работу даётся 1&nbsp;неделя + 1&nbsp;пара после выдачи.</li>
+<li>Если лабораторная не&nbsp;сдана на&nbsp;паре выдачи, 
+то&nbsp;в&nbsp;конце пары (т.е. через полтора часа после выдачи) нужно 
+подвесить черновик&nbsp;— за&nbsp;отсутствие черновика штраф 
+1&nbsp;балл.</li>
+<li>Каждую следующую неделю сгорает по&nbsp;1&nbsp;баллу.</li>
+<li>Ачивка (+1&nbsp;балл)&nbsp;— сдать на&nbsp;паре выдачи.</li>
+<li>После зачётной недели лабораторную можно сдать только на&nbsp;минимум баллов.</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Scott A. Moore. The P5 compiler.&nbsp;– URL: <a href="http://www.moorecad.com/standardpascal/p5.html" class="uri">http://www.moorecad.com/standardpascal/p5.html</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>ISO 7185:1990: Information technology
+ – Programming languages&nbsp;– Pascal.&nbsp;– Geneva, Switzerland: 
+International Organization for Standardization, 1990.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>На&nbsp;кафедре ИУ9 разработана более быстрая реализация интерпретатора псевдокода P5: <a href="https://github.com/bmstu-iu9/P5-Interpreter" class="uri">https://github.com/bmstu-iu9/P5-Interpreter</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+
+                
+                
+                
+                
+            </div>
+            
+            <form method="post" id="submit-form" enctype="multipart/form-data">
+                <input type="hidden" id="machineid" name="machineid" value="237fb273-ae8d-45b1-ab82-068d3ac605ee">
+                <script type="text/javascript">
+                    if (! localStorage.getItem("machineid")) {
+                        localStorage.setItem("machineid", "0c11d9cc-8779-48cd-986f-6ab3c5f3d207");
+                    }
+                    document.getElementById("machineid").value = localStorage.getItem("machineid");
+                </script>
+                <div id="form-wrapper">
+                    <b>Язык реализации:</b>
+                    
+                    <input type="radio" id="lang6" name="lang" value="6" hidden="" checked="checked" onchange="switchColors(this.value);">
+                    <label for="lang6">Markdown</label>
+                    
+                    
+                    
+                    <input type="checkbox" id="draft" name="draft" hidden="" checked="checked">
+                    <b title="Для черновика тесты выполнены не&nbsp;будут">Это черновик!</b>
+                    
+                    
+                    <input type="button" onclick='codeArea.dispatchEvent(new Event("reload"));' value="Перезагрузить раскраску (Alt-R)" style="float: right;" accesskey="r">
+                    <div class="form_code-wrapper">
+                        <div id="code-wrapper">
+                            <div id="num_col" contenteditable="false">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br></div>
+                            <div id="code-area" contenteditable="true" spellcheck="false" class="mathjax_ignore" style="tab-size: 1">hello2.pas
+```bash
+program hello(output);
+
+begin
+   writeln('Hello, world', 7 // 3, 7 % 3)
+end.
+```
+
+```bash
+cp pcom.pas pcom2.pas 
+vi pcom2.pas # change 5348 div to //, mod to %
+# create prr. prr is assembly of pcom2.pass
+./pcom &lt;pcom2.pas
+mv prr prd
+# run prd with hello.pas for stdin = compile hello2.pass with new compiler 
+./pint &lt;hello2.pas
+```
+
+Почему-то выходят ошибки, наверное неверно поправил компилятор
+```bash
+z@z-Standard-PC-Q35-ICH9-2009:~/Downloads/p5$ ./pint &lt;hello2.pas
+P5 Pascal interpreter vs. 1.0
+
+Assembling/loading program
+Running program
+
+P5 Pascal compiler vs. 1.0
+
+
+     1       40 program hello(output); 
+     2       40  
+     3       40 begin 
+     4        3    writeln('Hello, world', 7 // 3, 7 % 3) 
+     4   ****                                 ^58   ^399^6
+     5       16 end. 
+
+Errors in program: 3
+
+Error numbers in listing:
+-------------------------
+  6  Illegal symbol
+ 58  Error in factor
+399  Feature not implemented
+
+```
+</div>
+                            <input id="code" type="hidden" name="submission" hidden="" value="hello2.pas
+```bash
+program hello(output);
+
+begin
+   writeln('Hello, world', 7 // 3, 7 % 3)
+end.
+```
+
+```bash
+cp pcom.pas pcom2.pas 
+vi pcom2.pas # change 5348 div to //, mod to %
+# create prr. prr is assembly of pcom2.pass
+./pcom &lt;pcom2.pas
+mv prr prd
+# run prd with hello.pas for stdin = compile hello2.pass with new compiler 
+./pint &lt;hello2.pas
+```
+
+Почему-то выходят ошибки, наверное неверно поправил компилятор
+```bash
+z@z-Standard-PC-Q35-ICH9-2009:~/Downloads/p5$ ./pint &lt;hello2.pas
+P5 Pascal interpreter vs. 1.0
+
+Assembling/loading program
+Running program
+
+P5 Pascal compiler vs. 1.0
+
+
+     1       40 program hello(output); 
+     2       40  
+     3       40 begin 
+     4        3    writeln('Hello, world', 7 // 3, 7 % 3) 
+     4   ****                                 ^58   ^399^6
+     5       16 end. 
+
+Errors in program: 3
+
+Error numbers in listing:
+-------------------------
+  6  Illegal symbol
+ 58  Error in factor
+399  Feature not implemented
+
+```
+">
+                        </div>
+                    </div>
+                    
+                    <div class="form_code-submit-wrapper">
+                        
+                        <div class="form_button-wrapper">
+                            <input id="file-picker" type="file" accept=".c,.cpp,.java,.go,.md,.scm,.rkt" hidden="">
+                            <label for="file-picker" class="button">
+                                Из файла
+                            </label>
+                        </div>
+                        <div class="form_button-wrapper">
+                            <input id="access-button" type="submit" class="button" value="Отправить">
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+            
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 11.02.2026 17:40:39<span title="1&nbsp;час 29&nbsp;минут 17&nbsp;секунд"><sup>⏱</sup></span>.
+                    Черновик: не&nbsp;проверяется
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    <p class="test-result_paragraph"><b>Антиплагиат:</b> (скрыто)</p>
+                    
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78078', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78078">hello2.pas
+```bash
+program hello(output);
+
+begin
+   writeln('Hello, world', 7 // 3, 7 % 3)
+end.
+```
+
+```bash
+cp pcom.pas pcom2.pas 
+vi pcom2.pas # change 5348 div to //, mod to %
+# create prr. prr is assembly of pcom2.pass
+./pcom &lt;pcom2.pas
+mv prr prd
+# run prd with hello.pas for stdin = compile hello2.pass with new compiler 
+./pint &lt;hello2.pas
+```
+
+Почему-то выходят ошибки, наверное неверно поправил компилятор
+```bash
+z@z-Standard-PC-Q35-ICH9-2009:~/Downloads/p5$ ./pint &lt;hello2.pas
+P5 Pascal interpreter vs. 1.0
+
+Assembling/loading program
+Running program
+
+P5 Pascal compiler vs. 1.0
+
+
+     1       40 program hello(output); 
+     2       40  
+     3       40 begin 
+     4        3    writeln('Hello, world', 7 // 3, 7 % 3) 
+     4   ****                                 ^58   ^399^6
+     5       16 end. 
+
+Errors in program: 3
+
+Error numbers in listing:
+-------------------------
+  6  Illegal symbol
+ 58  Error in factor
+399  Feature not implemented
+
+```
+</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 11.02.2026 16:11:22.
+                    Системное сообщение
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    
+                    <p class="test-result_paragraph">
+                        <b>Комментарий преподавателя:</b>
+                        
+                    </p>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78061', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78061">Лабораторная работа выдана, можете выполнять</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <br>
+            <br>
+            <details>
+                <summary>
+                    <h2 id="task-message-section-header">
+                        Переписка по&nbsp;заданию (0&nbsp;сообщений)
+                    </h2>
+                </summary>
+                <div class="chat-container">
+                    <div class="messages-container">
+                        
+                        <h3>
+                            По данному заданию нет сообщений
+                        </h3>
+                        
+                        
+                    </div>
+                    <form action="/mail" method="post" id="message-form">
+                        <select name="reciever_login" hidden="">
+                            
+                            <option value="teacher" selected="selected"></option>
+                            
+                        </select>
+                        <select name="task_ref" hidden="">
+                            <option value="2026/kk/lab1.1" selected="selected"></option>
+                        </select>
+                        <div id="prev_alert"></div>
+                        <br>
+                        <textarea name="content" value="" class="message_content_input" id="message_content_input" placeholder="Напишите сообщение..."></textarea>
+                        <div>Длина сообщения ограничена 1000&nbsp;знаками.</div>
+                        <br>
+                        <br>
+                        <input id="prev" name="prev" value="-1" hidden="">
+                        <div class="form_button-wrapper">
+                            <input id="message-submit-button" type="submit" class="button" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </details>
+        </div>
+        <footer class="paper footer">
+    
+    <p>Web-интерфейс разработан студентами кафедры</p>
+    
+    
+    <fieldset class="toggle-group" id="colorScheme">
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-light" value="0" data-sr="" checked="checked">
+            🌞 
+        </label>
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-dark" value="1" data-sr="">
+            🌛
+        </label>
+    </fieldset>
+</footer>
+<script src="lab1_files/theme.js"></script>
+    </div>
+</div>
+<script src="lab1_files/submission.js" defer="defer"></script>
+<script src="lab1_files/rules.js" defer="defer"></script>
+<script src="lab1_files/highlight_static.js" defer="defer"></script>
+<script src="lab1_files/highlight_dynamic.js" defer="defer"></script>
+
+
+
+</body></html>

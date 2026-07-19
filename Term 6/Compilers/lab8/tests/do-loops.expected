@@ -1,0 +1,14 @@
+Sub Loops(n%)
+  Do
+    n% = n% - 1
+  Loop
+  Do Until n% = 0
+    n% = n% - 1
+  Loop
+  Do
+    n% = n% - 1
+  Loop While n% > 0
+  Do
+    n% = n% - 1
+  Loop Until n% = 0
+End Sub

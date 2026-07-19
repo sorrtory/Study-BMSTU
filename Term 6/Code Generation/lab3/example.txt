@@ -1,0 +1,15 @@
+a = 12
+b = 4
+result = a / b + 2
+
+if (result == 5) then
+    result = result * 3
+else
+    result = result - 1
+end
+
+while (result > 10) do
+    result = result - 2
+end
+
+return result

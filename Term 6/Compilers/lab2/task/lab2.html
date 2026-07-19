@@ -1,0 +1,1936 @@
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" xml:lang="" lang="" xmlns="http://www.w3.org/1999/xhtml" style="--darkmode: 0;" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style>
+    <title>
+2.1 Синтаксические деревья&nbsp;— Федуков Александр&nbsp;— Сервер поддержки учебного процесса
+</title>
+    <link rel="stylesheet" href="lab2_files/index.css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <script src="lab2_files/polyfill.min-es6.js"></script><meta name="darkreader" content="da7b0d60557d44029079adaabe064268"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select {
+    --darkreader-bg--form-control-background-color: rgba(22, 22, 22, 0) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+.d2l-twopanelselector-side.d2l-twopanelselector-side-sep {
+    background: var(--darkreader-bg--d2l-color-mica) !important;
+}
+.d2l-le-TreeAccordionItem-anchor::before {
+    background: var(--darkreader-bg--d2l-color-corundum) !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style>
+    <script type="text/javascript" id="MathJax-script" async="true" src="lab2_files/tex-chtml.js">
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+
+    </script>
+    <meta charset="UTF-8">
+    
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://hw.iu9.bmstu.ru/static/tex/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+
+<body>
+    
+    <a name="top"></a>
+    
+
+<script src="lab2_files/set_prev.js"></script>
+<script>
+    const MAX_ALLOWED_SIZE = 163840;
+    const MAX_PICTURES_SIZE = 1048576;
+</script>
+<div class="screen-wrapper">
+    <div class="content-wrapper">
+        <header class="paper header">
+            <div class="header_menu">
+                
+                <div class="header_menu-element">
+                    <a href="https://hw.iu9.bmstu.ru/student?course_id=1457" class="link">
+                        Курсы
+                    </a>
+                </div>
+                
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/mail">
+                    <button class="button">
+                        Сообщения
+                    </button>
+                </a>
+            </div>
+            <div class="header_right-menu">
+                <a href="https://hw.iu9.bmstu.ru/logout">
+                    <button class="button">
+                        Выход
+                    </button>
+                </a>
+            </div>
+        </header>
+        <div class="paper content">
+            
+            <div>
+                
+                
+                <a href="#variant">промотать до&nbsp;индивидуального варианта</a><br>
+
+
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Скоробогатов С.Ю.">
+  <title>Лабораторная работа № 2.1. Синтаксические деревья</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа № 2.1. Синтаксические деревья</h1>
+<p class="author">Скоробогатов С.Ю.</p>
+<p class="date">20&nbsp;августа 2013</p>
+</header>
+<h2 id="цель-работы">1 Цель работы</h2>
+<p>Целью данной работы является изучение представления синтаксических 
+деревьев в&nbsp;памяти компилятора и&nbsp;приобретение навыков 
+преобразования синтаксических деревьев.</p>
+<h2 id="исходные-данные">2 Исходные данные</h2>
+<p>В&nbsp;качестве исходного языка и&nbsp;языка реализации программы 
+преобразования синтаксических деревьев выберем язык Go. Пакеты <code>"go/token"</code>, <code>"go/ast"</code> и&nbsp;<code>"go/parser"</code> из&nbsp;стандартной библиотеки этого языка содержат готовый «front-end» компилятора языка Go, а&nbsp;пакет <code>"go/format"</code>
+ восстанавливает исходный текст программы по&nbsp;её синтаксическому 
+дереву. Документацию по&nbsp;этим пакетам можно посмотреть 
+по&nbsp;адресу <a href="http://golang.org/pkg/go/" class="uri">http://golang.org/pkg/go/</a>.</p>
+<p>Построение синтаксического дерева по&nbsp;исходному тексту программы выполянется функцией <code>parser.ParseFile</code>, возвращающей указатель типа <code>*ast.File</code> на&nbsp;корень дерева.</p>
+<p>Синтаксические деревья в&nbsp;памяти представляются значениями структур из&nbsp;пакета <code>"go/ast"</code>. Изучать синтаксические деревья удобно по&nbsp;их листингам, порождаемым функцией <code>ast.Fprint</code>. Небольшая программа <a href="https://hw.iu9.bmstu.ru/static/assets/astprint.go"><code>astprint</code></a>,
+ которая, ко&nbsp;всему прочему, демонстрирует вызов парсера для 
+построения синтаксического дерева программы, представлена на листинге.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode go"><code><span style="-webkit-text-fill-color:blue;">package</span> main
+
+<span style="-webkit-text-fill-color:blue;">import</span> <span style="-webkit-text-fill-color:brown;">(</span>
+    <span style="-webkit-text-fill-color:orange;">"fmt"</span>
+    <span style="-webkit-text-fill-color:orange;">"go/ast"</span>
+    <span style="-webkit-text-fill-color:orange;">"go/parser"</span>
+    <span style="-webkit-text-fill-color:orange;">"go/token"</span>
+    <span style="-webkit-text-fill-color:orange;">"os"</span>
+<span style="-webkit-text-fill-color:brown;">)</span>
+
+<span style="-webkit-text-fill-color:blue;">func</span> main<span style="-webkit-text-fill-color:brown;">(</span><span style="-webkit-text-fill-color:brown;">)</span> <span style="-webkit-text-fill-color:brown;">{</span>
+    <span style="-webkit-text-fill-color:blue;">if</span> len<span style="-webkit-text-fill-color:blue;">(</span>os.Args<span style="-webkit-text-fill-color:blue;">)</span> != <span style="-webkit-text-fill-color:lime;">2</span> <span style="-webkit-text-fill-color:blue;">{</span>
+        fmt.Printf<span style="-webkit-text-fill-color:purple;">(</span><span style="-webkit-text-fill-color:orange;">"usage: astprint &lt;filename.go&gt;\n"</span><span style="-webkit-text-fill-color:purple;">)</span>
+        <span style="-webkit-text-fill-color:blue;">return</span>
+    <span style="-webkit-text-fill-color:blue;">}</span>
+
+    <span style="-webkit-text-fill-color:green;">// Создаём хранилище данных об исходных файлах</span>
+    fset := token.NewFileSet<span style="-webkit-text-fill-color:blue;">(</span><span style="-webkit-text-fill-color:blue;">)</span>
+
+    <span style="-webkit-text-fill-color:green;">// Вызываем парсер</span>
+    <span style="-webkit-text-fill-color:blue;">if</span> file, err := parser.ParseFile<span style="-webkit-text-fill-color:blue;">(</span>
+        fset,                 <span style="-webkit-text-fill-color:green;">// данные об исходниках</span>
+        os.Args<span style="-webkit-text-fill-color:purple;">[</span><span style="-webkit-text-fill-color:lime;">1</span><span style="-webkit-text-fill-color:purple;">]</span>,           <span style="-webkit-text-fill-color:green;">// имя файла с исходником программы</span>
+        nil,                  <span style="-webkit-text-fill-color:green;">// пусть парсер сам загрузит исходник</span>
+        parser.ParseComments, <span style="-webkit-text-fill-color:green;">// приказываем сохранять комментарии</span>
+    <span style="-webkit-text-fill-color:blue;">)</span>; err == nil <span style="-webkit-text-fill-color:blue;">{</span>
+        <span style="-webkit-text-fill-color:green;">// Если парсер отработал без ошибок, печатаем дерево</span>
+        ast.Fprint<span style="-webkit-text-fill-color:purple;">(</span>os.Stdout, fset, file, nil<span style="-webkit-text-fill-color:purple;">)</span>
+    <span style="-webkit-text-fill-color:blue;">}</span> <span style="-webkit-text-fill-color:blue;">else</span> <span style="-webkit-text-fill-color:blue;">{</span>
+        <span style="-webkit-text-fill-color:green;">// в противном случае, выводим сообщение об ошибке</span>
+        fmt.Printf<span style="-webkit-text-fill-color:purple;">(</span><span style="-webkit-text-fill-color:orange;">"Error: %v"</span>, err<span style="-webkit-text-fill-color:purple;">)</span>
+    <span style="-webkit-text-fill-color:blue;">}</span>
+<span style="-webkit-text-fill-color:brown;">}</span></code></pre></div>
+<p>Напомним, что для компиляции программы <code>astprint</code> нужно выполнить команду</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">go</span> build astprint.go</span></code></pre></div>
+<p>Обход синтаксического дерева в глубину реализован в функции <code>ast.Inspect</code>,
+ которая вызывает переданную ей в&nbsp;качестве параметра функцию для 
+каждого посещённого узла дерева. С&nbsp;помощью этой функции удобно 
+осуществлять поиск узлов определённого типа в&nbsp;дереве. Например, 
+представленная на&nbsp;листинге ниже функция <code>insertHello</code> выполняет поиск всех операторов <code>if</code> в&nbsp;дереве и&nbsp;вставляет в&nbsp;начало положительной ветки каждого найденного оператора печать строки <code>"hello"</code>.</p>
+<p>Скачать тестовый пример: <a href="https://hw.iu9.bmstu.ru/static/assets/demo.go"><code>demo.go</code></a>,</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode go"><code><span style="-webkit-text-fill-color:blue;">func</span> insertHello<span style="-webkit-text-fill-color:brown;">(</span>file *ast.File<span style="-webkit-text-fill-color:brown;">)</span> <span style="-webkit-text-fill-color:brown;">{</span>
+    <span style="-webkit-text-fill-color:green;">// Вызываем обход дерева, начиная от корня</span>
+    ast.Inspect<span style="-webkit-text-fill-color:blue;">(</span>file, <span style="-webkit-text-fill-color:blue;">func</span><span style="-webkit-text-fill-color:purple;">(</span>node ast.Node<span style="-webkit-text-fill-color:purple;">)</span> bool <span style="-webkit-text-fill-color:purple;">{</span>
+        <span style="-webkit-text-fill-color:green;">// Для каждого узла дерева</span>
+        <span style="-webkit-text-fill-color:blue;">if</span> ifStmt, ok := node.<span style="-webkit-text-fill-color:brown;">(</span>*ast.IfStmt<span style="-webkit-text-fill-color:brown;">)</span>; ok <span style="-webkit-text-fill-color:brown;">{</span>
+            <span style="-webkit-text-fill-color:green;">// Если этот узел имеет тип *ast.IfStmt,</span>
+            <span style="-webkit-text-fill-color:green;">// добавляем в начало массива операторов</span>
+            <span style="-webkit-text-fill-color:green;">// положительной ветки if'a новый оператор</span>
+            ifStmt.Body.List = append<span style="-webkit-text-fill-color:blue;">(</span>
+                <span style="-webkit-text-fill-color:purple;">[</span><span style="-webkit-text-fill-color:purple;">]</span>ast.Stmt<span style="-webkit-text-fill-color:purple;">{</span>
+                    <span style="-webkit-text-fill-color:green;">// Новый оператор — выражение</span>
+                    &amp;ast.ExprStmt<span style="-webkit-text-fill-color:brown;">{</span>
+                        <span style="-webkit-text-fill-color:green;">// Выражение — вызов функции</span>
+                        X: &amp;ast.CallExpr<span style="-webkit-text-fill-color:blue;">{</span>
+                            <span style="-webkit-text-fill-color:green;">// Функция — "fmt.Printf"</span>
+                            Fun: &amp;ast.SelectorExpr<span style="-webkit-text-fill-color:purple;">{</span>
+                                X:   ast.NewIdent<span style="-webkit-text-fill-color:brown;">(</span><span style="-webkit-text-fill-color:orange;">"fmt"</span><span style="-webkit-text-fill-color:brown;">)</span>,
+                                Sel: ast.NewIdent<span style="-webkit-text-fill-color:brown;">(</span><span style="-webkit-text-fill-color:orange;">"Printf"</span><span style="-webkit-text-fill-color:brown;">)</span>,
+                            <span style="-webkit-text-fill-color:purple;">}</span>,
+                            <span style="-webkit-text-fill-color:green;">// Её параметр — строка "hello"</span>
+                            Args: <span style="-webkit-text-fill-color:purple;">[</span><span style="-webkit-text-fill-color:purple;">]</span>ast.Expr<span style="-webkit-text-fill-color:purple;">{</span>
+                                &amp;ast.BasicLit<span style="-webkit-text-fill-color:brown;">{</span>
+                                    Kind:  token.STRING,
+                                    Value: <span style="-webkit-text-fill-color:orange;">"\"hello\""</span>,
+                                <span style="-webkit-text-fill-color:brown;">}</span>,
+                            <span style="-webkit-text-fill-color:purple;">}</span>,
+                        <span style="-webkit-text-fill-color:blue;">}</span>,
+                    <span style="-webkit-text-fill-color:brown;">}</span>,
+                <span style="-webkit-text-fill-color:purple;">}</span>,
+                ifStmt.Body.List...,
+            <span style="-webkit-text-fill-color:blue;">)</span>
+        <span style="-webkit-text-fill-color:brown;">}</span>
+        <span style="-webkit-text-fill-color:green;">// Возвращая true, мы разрешаем выполнять обход</span>
+        <span style="-webkit-text-fill-color:green;">// дочерних узлов</span>
+        <span style="-webkit-text-fill-color:blue;">return</span> <span style="-webkit-text-fill-color:blue;">true</span>
+    <span style="-webkit-text-fill-color:purple;">}</span><span style="-webkit-text-fill-color:blue;">)</span>
+<span style="-webkit-text-fill-color:brown;">}</span></code></pre></div>
+<p>Восстановление исходного текста программы из&nbsp;синтаксического дерева осуществляется функцией <code>format.Node</code>.
+ Эта функция не&nbsp;обращает внимания на&nbsp;координаты узлов дерева, 
+выполняя полное переформатирование текста программы, поэтому при 
+преобразовании дерева координаты новых узлов прописывать не&nbsp;нужно.</p>
+<h2 id="задание">3 Задание</h2>
+<p>Выполнение лабораторной работы состоит из нескольких этапов:</p>
+<ol type="1">
+<li>подготовка исходного текста демонстрационной программы, которая 
+в&nbsp;дальнейшем будет выступать в&nbsp;роли объекта преобразования 
+(демонстрационная программа должна размещаться в&nbsp;одном файле 
+и&nbsp;содержать функцию <code>main</code>);</li>
+<li>компиляция и&nbsp;запуск программы <code>astprint</code> для изучения структуры синтаксического дерева демонстрационной программы;</li>
+<li>разработка программы, осуществляющей преобразование синтаксического дерева и&nbsp;порождение по&nbsp;нему новой программы;</li>
+<li>тестирование работоспособности разработанной программы на&nbsp;исходном тексте демонстрационной программы.</li>
+</ol>
+<p>Преобразование синтаксического дерева должно вносить 
+в&nbsp;преобразуемую программу дополнительные возможности, указанные 
+в&nbsp;индивидуальном варианте.</p>
+<h2 id="индивидуальный-вариант">4&nbsp;Индивидуальный вариант</h2>
+<p><a name="variant"></a></p><p><a name="variant">Каждое вхождение 
+строкового литерала в&nbsp;текст программы должно быть заменено 
+идентификатором константы, добавленной в&nbsp;начало программы 
+и&nbsp;имеющей соответствующее значение (при этом значения добавляемых 
+констант не&nbsp;должны дублироваться).</a></p><a name="variant">
+<p></p>
+<h2 id="отчёт-по-лабораторной-работе-2.1">5 Отчёт по&nbsp;лабораторной работе №&nbsp;2.1</h2>
+<p>Отчёт выполняется в&nbsp;разметке Markdown по&nbsp;следующему шаблону:</p>
+</a><div class="sourceCode" id="cb4"><a name="variant"></a><pre class="sourceCode markdown"><code>% Лабораторная работа № 2.1. Синтаксические деревья
+% 2 марта 2026 г.
+% Александр Федуков, ИУ9-62Б
+
+# Цель работы
+…переписываете цель работы из&nbsp;задания…
+
+# Индивидуальный вариант
+…переписываете индивидуальный вариант…
+
+# Реализация
+
+Демонстрационная программа:
+
+```go
+xxxxx
+```
+
+Программа, осуществляющая преобразование синтаксического дерева:
+
+```go
+xxxxx
+```
+
+# Тестирование
+
+Результат трансформации демонстрационной программы:
+
+```go
+xxxx
+```
+
+Вывод тестового примера на&nbsp;`stdout` (если необходимо)
+
+```
+xxxx
+```
+
+# Вывод
+…пишете, чему научились…</code></pre></div>
+<p>В&nbsp;отчёте приведён лишь необходимый минимум.</p>
+<p><a href="https://hw.iu9.bmstu.ru/static/assets/lab-report-template.txt">Шаблон отчёта</a></p>
+<p>Ваш отчёт будет конвертирован в&nbsp;PDF при помощи pandoc следующей командой:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">pandoc</span> <span class="kw">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="ex">--pdf-engine</span>=xelatex <span class="kw">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'mainfont:Liberation Serif'</span> <span class="kw">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="ex">-V</span> <span class="st">'monofont:Liberation Mono'</span> <span class="kw">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  <span class="st">"</span><span class="va">$SOURCE</span><span class="st">"</span> <span class="ex">-o</span> <span class="st">"</span><span class="va">$PDF</span><span class="st">"</span></span></code></pre></div>
+<h2 id="дедлайн">6 Дедлайн</h2>
+<ul>
+<li>На&nbsp;лабораторную работу даётся <del>1&nbsp;неделя</del> 2&nbsp;недели после выдачи.</li>
+<li>Если лабораторная не&nbsp;сдана на&nbsp;паре выдачи, 
+то&nbsp;в&nbsp;конце пары (т.е. через полтора часа после выдачи) нужно 
+подвесить черновик&nbsp;— за&nbsp;отсутствие черновика штраф 
+1&nbsp;балл.</li>
+<li>Каждую следующую неделю сгорает по&nbsp;1&nbsp;баллу.</li>
+<li>Ачивка (+1&nbsp;балл)&nbsp;— сдать на&nbsp;паре выдачи.</li>
+<li>После зачётной недели лабораторную можно сдать только на&nbsp;минимум баллов.</li>
+</ul>
+
+
+
+                
+                
+                
+                
+            </div>
+            
+            <h3>Отправка новых решений была заблокирована преподавателем</h3><br>
+            
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 04.03.2026 12:48:41<span title="1&nbsp;день 20&nbsp;часов 51&nbsp;секунду"><sup>⏱</sup></span>.
+                    Тесты пройдены
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    <p class="test-result_paragraph"><b>Антиплагиат:</b> Найдены похожие посылки</p>
+                    
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78629', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78629">% Лабораторная работа № 2.1. Синтаксические деревья
+% 2 марта 2026 г.
+% Александр Федуков, ИУ9-62Б
+
+# Цель работы
+
+Целью данной работы является изучение представления синтаксических деревьев в памяти компилятора и
+приобретение навыков преобразования синтаксических деревьев.
+
+# Индивидуальный вариант
+
+Каждое вхождение строкового литерала в текст программы должно быть заменено идентификатором константы,
+добавленной в начало программы и имеющей соответствующее значение (при этом значения добавляемых констант не
+должны дублироваться).
+
+# Реализация
+
+Демонстрационная программа:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+const (
+	str1 = "Hello, World!"
+	str2 = "Hello, World"
+)
+
+func main() {
+	const str1 = "Hello, World!"
+	const str2 = "Hello, World!"
+	fmt.Println(str1) 			 // one str
+	fmt.Println("Hello, World!") // same str
+	fmt.Println("Hello, World")  // different str
+
+	if true {
+	} else {
+	}
+}
+```
+
+Программа, осуществляющая преобразование синтаксического дерева:
+
+```go
+package main
+
+import (
+	"fmt"
+	"go/ast"
+	"go/format"
+	"go/parser"
+	"go/token"
+	"io"
+	"os"
+	"path/filepath"
+)
+
+const (
+	// Solution to my task
+	SOLUTION_FILE_BEFORE = "../assets/00_solution/before.go"
+	SOLUTION_FILE_AFTER  = "../assets/01_solution/after.go"
+
+	// Demo
+	DEMO_FILE_BEFORE = "../assets/00_demo/before.go"
+	DEMO_FILE_AFTER  = "../assets/01_demo/after.go"
+
+	// For printing AST
+	FILE_PRINT = "../assets/ast.txt"
+)
+
+func process(file_from, file_to string, function func(io.Writer, *token.FileSet, *ast.File)) {
+	file_from, err := filepath.Abs(file_from)
+	if err != nil {
+		fmt.Printf("cannot find file: %v", err)
+		return
+	}
+	file_to, err = filepath.Abs(file_to)
+	if err != nil {
+		fmt.Printf("cannot find file: %v", err)
+		return
+	}
+
+	// Создаём хранилище данных об исходных файлах
+	fset := token.NewFileSet()
+
+	// Вызываем парсер
+	if file, err := parser.ParseFile(
+		fset,                 // данные об исходниках
+		file_from,            // имя файла с исходником программы
+		nil,                  // пусть парсер сам загрузит исходник
+		parser.ParseComments, // приказываем сохранять комментарии
+	); err == nil {
+		// Если парсер отработал без ошибок, вызываем переданную функцию
+		to, err := os.Create(file_to)
+		if err != nil {
+			fmt.Printf("cannot create file: %v", err)
+			return
+		}
+		defer to.Close()
+		function(to, fset, file)
+	} else {
+		// в противном случае, выводим сообщение об ошибке
+		fmt.Printf("Error: %v", err)
+	}
+}
+
+func insertStrConst(file *ast.File) {
+	strs := make(map[string]string) // original string -&gt; const name
+
+	// Collect all string literals in the file
+	ast.Inspect(file, func(node ast.Node) bool {
+		// skip import declarations
+		if genDcl, ok := node.(*ast.GenDecl); ok {
+			if genDcl.Tok == token.IMPORT {
+				return false
+			}
+		}
+
+		// For each node in the AST, check if it's a basic literal
+		if basicLit, ok := node.(*ast.BasicLit); ok {
+			if basicLit.Kind == token.STRING {
+				if _, exists := strs[basicLit.Value]; !exists {
+					strs[basicLit.Value] = fmt.Sprintf("__strConst%d", len(strs)+1)
+				}
+			}
+		}
+		return true
+	})
+
+	// Replace string literals with const identifiers
+	ast.Inspect(file, func(node ast.Node) bool {
+		// skip import declarations
+		if genDcl, ok := node.(*ast.GenDecl); ok {
+			if genDcl.Tok == token.IMPORT {
+				return false
+			}
+		}
+
+		if basicLit, ok := node.(*ast.BasicLit); ok {
+			if basicLit.Kind == token.STRING {
+				if constName, exists := strs[basicLit.Value]; exists {
+					*basicLit = ast.BasicLit{
+						Kind:  token.IDENT,
+						Value: constName,
+					}
+				}
+			}
+		}
+		return true
+	})
+
+	// Declare new consts for each unique string literal
+	var before, after []ast.Decl
+
+	if len(file.Decls) &gt; 0 {
+		hasImport := false
+		if genDecl, ok := file.Decls[0].(*ast.GenDecl); ok {
+			hasImport = genDecl.Tok == token.IMPORT
+		}
+
+		if hasImport {
+			before, after = []ast.Decl{file.Decls[0]}, file.Decls[1:]
+		} else {
+			after = file.Decls
+		}
+	}
+
+	file.Decls = before
+	for str, constName := range strs {
+		file.Decls = append(file.Decls,
+			&amp;ast.GenDecl{
+				Tok: token.CONST,
+				Specs: []ast.Spec{
+					&amp;ast.ValueSpec{
+						Names: []*ast.Ident{ast.NewIdent(constName)},
+						Values: []ast.Expr{
+							&amp;ast.BasicLit{
+								Kind:  token.STRING,
+								Value: str,
+							},
+						},
+					},
+				},
+			},
+		)
+	}
+	file.Decls = append(file.Decls, after...)
+
+	fmt.Println("Replaces:")
+	for str, constName := range strs {
+		fmt.Printf("%s -&gt; %s\n", str, constName)
+	}
+}
+
+func main() {
+	// Run demo
+	process(
+		DEMO_FILE_BEFORE,
+		DEMO_FILE_AFTER,
+		func(w io.Writer, fset *token.FileSet, file *ast.File) {
+			// insertHello(file)
+			// insertIntVar(file, "xxx", 666)
+			insertStrConst(file)
+			err := format.Node(w, fset, file)
+			if err != nil {
+				fmt.Printf("Error formatting file: %v", err)
+			}
+		})
+
+	fmt.Println()
+	// Run solution
+	process(
+		SOLUTION_FILE_BEFORE,
+		SOLUTION_FILE_AFTER,
+		func(w io.Writer, fset *token.FileSet, file *ast.File) {
+			// insertHello(file)
+			// insertIntVar(file, "xxx", 666)
+			insertStrConst(file)
+			err := format.Node(w, fset, file)
+			if err != nil {
+				fmt.Printf("Error formatting file: %v", err)
+			}
+		})
+
+	// Print AST of the solution file
+	process(
+		SOLUTION_FILE_BEFORE,
+		FILE_PRINT,
+		func(w io.Writer, fset *token.FileSet, file *ast.File) {
+			err := ast.Fprint(w, fset, file, nil)
+			if err != nil {
+				fmt.Printf("Error printing AST: %v", err)
+			}
+		})
+
+}
+```
+
+# Тестирование
+
+Результат трансформации демонстрационной программы:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+const __strConst1 = "Hello, World!"
+const __strConst2 = "Hello, World"
+
+const (
+	str1 = __strConst1
+	str2 = __strConst2
+)
+
+func main() {
+	const str1 = __strConst1
+	const str2 = __strConst1
+	fmt.Println(str1)        // one str
+	fmt.Println(__strConst1) // same str
+	fmt.Println(__strConst2) // different str
+
+	if true {
+	} else {
+	}
+}
+```
+
+# Вывод
+
+Я реализовал программу, которая преобразует синтаксическое дерево программы на языке Go, заменяя все строковые
+литералы на константы. Я использовал пакет `go/ast` и `go/parser` для обхода синтаксического дерева и парсинга
+исходного кода и `go/format` и `go/token` для создание результирующего кода. Я протестировал код на
+демонстрационной программе, которая содержит несколько строковых литералов, и убедился, что все литералы были
+заменены на константы, при этом одинаковые литералы были заменены на одну и ту же константу.
+
+</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Результаты тестирования</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="test-result_code-block">
+                                <pre><code class="language-plaintext" id="output78629">Wed Mar  4 12:48:46 PM MSK 2026: Выполняется тест style_check...
+Wed Mar  4 12:48:46 PM MSK 2026: Выполняется тест markdown_gen...
+lab2.1.pdf вложен в&nbsp;письмо — lab2.1.pdf
+Wed Mar  4 12:48:48 PM MSK 2026: Автотесты выполнены: 2 успешно, 0 неудачно.
+</code></pre>
+                            </div>
+                            
+                            <p>Прикреплённые файлы:</p>
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://hw.iu9.bmstu.ru/attach/3349f08d-b5aa-4696-9336-2c800d15add0/lab2.1.pdf">lab2.1.pdf</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                            
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 02.03.2026 16:47:50<span title="1&nbsp;неделю 4&nbsp;дня 23&nbsp;часа 18&nbsp;минут 53&nbsp;секунды"><sup>⏱</sup></span>.
+                    Системное сообщение
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    
+                    <p class="test-result_paragraph">
+                        <b>Комментарий преподавателя:</b>
+                        
+                    </p>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78507', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78507">Возможность отправки отчёта разблокирована</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 18.02.2026 17:28:57<span title="1&nbsp;час 14&nbsp;минут 51&nbsp;секунду"><sup>⏱</sup></span>.
+                    Черновик: не&nbsp;проверяется
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    <p class="test-result_paragraph"><b>Антиплагиат:</b> Найдены похожие посылки</p>
+                    
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78364', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78364">
+Демонтсрационный файл
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// we expect to see two new const strings here
+
+func main() {
+	fmt.Println("Hello, World!") // one str
+	fmt.Println("Hello, World!") // same str
+	fmt.Println("Hello, World")  // different str
+}
+```
+
+Запуск анализатора
+
+```bash
+redmibook :: lab2/src/astprint ‹master*› % go build astprint.go                                                                       
+redmibook :: lab2/src/astprint ‹master*› % ll                                                                                         
+total 2.9M
+-rwxrwxr-x 1 z z 2.9M Feb 18 17:23 astprint
+-rw-rw-r-- 1 z z 1022 Feb 18 17:03 astprint.go
+redmibook :: lab2/src/astprint ‹master*› % ./astprint ../main.go                                    
+ 0  *ast.File {
+ 1  .  Doc: nil
+ 2  .  Package: ../main.go:1:1
+ 3  .  Name: *ast.Ident {
+ 4  .  .  NamePos: ../main.go:1:9
+ 5  .  .  Name: "main"
+ 6  .  .  Obj: nil
+ 7  .  }
+ 8  .  Decls: []ast.Decl (len = 2) {
+ 9  .  .  0: *ast.GenDecl {
+10  .  .  .  Doc: nil
+11  .  .  .  TokPos: ../main.go:3:1
+12  .  .  .  Tok: import
+13  .  .  .  Lparen: ../main.go:3:8
+14  .  .  .  Specs: []ast.Spec (len = 1) {
+15  .  .  .  .  0: *ast.ImportSpec {
+16  .  .  .  .  .  Doc: nil
+17  .  .  .  .  .  Name: nil
+18  .  .  .  .  .  Path: *ast.BasicLit {
+19  .  .  .  .  .  .  ValuePos: ../main.go:4:2
+20  .  .  .  .  .  .  Kind: STRING
+21  .  .  .  .  .  .  Value: "\"fmt\""
+22  .  .  .  .  .  }
+23  .  .  .  .  .  Comment: nil
+24  .  .  .  .  .  EndPos: -
+25  .  .  .  .  }
+26  .  .  .  }
+27  .  .  .  Rparen: ../main.go:5:1
+28  .  .  }
+29  .  .  1: *ast.FuncDecl {
+30  .  .  .  Doc: nil
+31  .  .  .  Recv: nil
+32  .  .  .  Name: *ast.Ident {
+33  .  .  .  .  NamePos: ../main.go:9:6
+34  .  .  .  .  Name: "main"
+35  .  .  .  .  Obj: *ast.Object {
+36  .  .  .  .  .  Kind: func
+37  .  .  .  .  .  Name: "main"
+38  .  .  .  .  .  Decl: *(obj @ 29)
+39  .  .  .  .  .  Data: nil
+40  .  .  .  .  .  Type: nil
+41  .  .  .  .  }
+42  .  .  .  }
+43  .  .  .  Type: *ast.FuncType {
+44  .  .  .  .  Func: ../main.go:9:1
+45  .  .  .  .  TypeParams: nil
+46  .  .  .  .  Params: *ast.FieldList {
+47  .  .  .  .  .  Opening: ../main.go:9:10
+48  .  .  .  .  .  List: nil
+49  .  .  .  .  .  Closing: ../main.go:9:11
+50  .  .  .  .  }
+51  .  .  .  .  Results: nil
+52  .  .  .  }
+53  .  .  .  Body: *ast.BlockStmt {
+54  .  .  .  .  Lbrace: ../main.go:9:13
+55  .  .  .  .  List: []ast.Stmt (len = 3) {
+56  .  .  .  .  .  0: *ast.ExprStmt {
+57  .  .  .  .  .  .  X: *ast.CallExpr {
+58  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+59  .  .  .  .  .  .  .  .  X: *ast.Ident {
+60  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:10:2
+61  .  .  .  .  .  .  .  .  .  Name: "fmt"
+62  .  .  .  .  .  .  .  .  .  Obj: nil
+63  .  .  .  .  .  .  .  .  }
+64  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+65  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:10:6
+66  .  .  .  .  .  .  .  .  .  Name: "Println"
+67  .  .  .  .  .  .  .  .  .  Obj: nil
+68  .  .  .  .  .  .  .  .  }
+69  .  .  .  .  .  .  .  }
+70  .  .  .  .  .  .  .  Lparen: ../main.go:10:13
+71  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+72  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+73  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:10:14
+74  .  .  .  .  .  .  .  .  .  Kind: STRING
+75  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World!\""
+76  .  .  .  .  .  .  .  .  }
+77  .  .  .  .  .  .  .  }
+78  .  .  .  .  .  .  .  Ellipsis: -
+79  .  .  .  .  .  .  .  Rparen: ../main.go:10:29
+80  .  .  .  .  .  .  }
+81  .  .  .  .  .  }
+82  .  .  .  .  .  1: *ast.ExprStmt {
+83  .  .  .  .  .  .  X: *ast.CallExpr {
+84  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+85  .  .  .  .  .  .  .  .  X: *ast.Ident {
+86  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:11:2
+87  .  .  .  .  .  .  .  .  .  Name: "fmt"
+88  .  .  .  .  .  .  .  .  .  Obj: nil
+89  .  .  .  .  .  .  .  .  }
+90  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+91  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:11:6
+92  .  .  .  .  .  .  .  .  .  Name: "Println"
+93  .  .  .  .  .  .  .  .  .  Obj: nil
+94  .  .  .  .  .  .  .  .  }
+95  .  .  .  .  .  .  .  }
+96  .  .  .  .  .  .  .  Lparen: ../main.go:11:13
+97  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+98  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+99  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:11:14
+100  .  .  .  .  .  .  .  .  .  Kind: STRING
+101  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World!\""
+102  .  .  .  .  .  .  .  .  }
+103  .  .  .  .  .  .  .  }
+104  .  .  .  .  .  .  .  Ellipsis: -
+105  .  .  .  .  .  .  .  Rparen: ../main.go:11:29
+106  .  .  .  .  .  .  }
+107  .  .  .  .  .  }
+108  .  .  .  .  .  2: *ast.ExprStmt {
+109  .  .  .  .  .  .  X: *ast.CallExpr {
+110  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+111  .  .  .  .  .  .  .  .  X: *ast.Ident {
+112  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:12:2
+113  .  .  .  .  .  .  .  .  .  Name: "fmt"
+114  .  .  .  .  .  .  .  .  .  Obj: nil
+115  .  .  .  .  .  .  .  .  }
+116  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+117  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:12:6
+118  .  .  .  .  .  .  .  .  .  Name: "Println"
+119  .  .  .  .  .  .  .  .  .  Obj: nil
+120  .  .  .  .  .  .  .  .  }
+121  .  .  .  .  .  .  .  }
+122  .  .  .  .  .  .  .  Lparen: ../main.go:12:13
+123  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+124  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+125  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:12:14
+126  .  .  .  .  .  .  .  .  .  Kind: STRING
+127  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World\""
+128  .  .  .  .  .  .  .  .  }
+129  .  .  .  .  .  .  .  }
+130  .  .  .  .  .  .  .  Ellipsis: -
+131  .  .  .  .  .  .  .  Rparen: ../main.go:12:28
+132  .  .  .  .  .  .  }
+133  .  .  .  .  .  }
+134  .  .  .  .  }
+135  .  .  .  .  Rbrace: ../main.go:13:1
+136  .  .  .  }
+137  .  .  }
+138  .  }
+139  .  FileStart: ../main.go:1:1
+140  .  FileEnd: ../main.go:13:3
+141  .  Scope: *ast.Scope {
+142  .  .  Outer: nil
+143  .  .  Objects: map[string]*ast.Object (len = 1) {
+144  .  .  .  "main": *(obj @ 35)
+145  .  .  }
+146  .  }
+147  .  Imports: []*ast.ImportSpec (len = 1) {
+148  .  .  0: *(obj @ 15)
+149  .  }
+150  .  Unresolved: []*ast.Ident (len = 3) {
+151  .  .  0: *(obj @ 59)
+152  .  .  1: *(obj @ 85)
+153  .  .  2: *(obj @ 111)
+154  .  }
+155  .  Comments: []*ast.CommentGroup (len = 4) {
+156  .  .  0: *ast.CommentGroup {
+157  .  .  .  List: []*ast.Comment (len = 1) {
+158  .  .  .  .  0: *ast.Comment {
+159  .  .  .  .  .  Slash: ../main.go:7:1
+160  .  .  .  .  .  Text: "// we expect to see two new const strings here"
+161  .  .  .  .  }
+162  .  .  .  }
+163  .  .  }
+164  .  .  1: *ast.CommentGroup {
+165  .  .  .  List: []*ast.Comment (len = 1) {
+166  .  .  .  .  0: *ast.Comment {
+167  .  .  .  .  .  Slash: ../main.go:10:31
+168  .  .  .  .  .  Text: "// one str"
+169  .  .  .  .  }
+170  .  .  .  }
+171  .  .  }
+172  .  .  2: *ast.CommentGroup {
+173  .  .  .  List: []*ast.Comment (len = 1) {
+174  .  .  .  .  0: *ast.Comment {
+175  .  .  .  .  .  Slash: ../main.go:11:31
+176  .  .  .  .  .  Text: "// same str"
+177  .  .  .  .  }
+178  .  .  .  }
+179  .  .  }
+180  .  .  3: *ast.CommentGroup {
+181  .  .  .  List: []*ast.Comment (len = 1) {
+182  .  .  .  .  0: *ast.Comment {
+183  .  .  .  .  .  Slash: ../main.go:12:31
+184  .  .  .  .  .  Text: "// different str"
+185  .  .  .  .  }
+186  .  .  .  }
+187  .  .  }
+188  .  }
+189  .  GoVersion: ""
+190  }
+```
+
+Нужно поправить astprint, нужно как-то находить все строки, наверное писать их в map, а потом просто добавлять в началоpackage main
+
+import (
+	"fmt"
+)
+
+// we expect to see two new const strings here
+
+func main() {
+	fmt.Println("Hello, World!") // one str
+	fmt.Println("Hello, World!") // same str
+	fmt.Println("Hello, World")  // different str
+}
+
+---
+
+redmibook :: lab2/src/astprint ‹master*› % go build astprint.go                                                                       
+redmibook :: lab2/src/astprint ‹master*› % ll                                                                                         
+total 2.9M
+-rwxrwxr-x 1 z z 2.9M Feb 18 17:23 astprint
+-rw-rw-r-- 1 z z 1022 Feb 18 17:03 astprint.go
+redmibook :: lab2/src/astprint ‹master*› % ./astprint ../main.go                                    
+ 0  *ast.File {
+ 1  .  Doc: nil
+ 2  .  Package: ../main.go:1:1
+ 3  .  Name: *ast.Ident {
+ 4  .  .  NamePos: ../main.go:1:9
+ 5  .  .  Name: "main"
+ 6  .  .  Obj: nil
+ 7  .  }
+ 8  .  Decls: []ast.Decl (len = 2) {
+ 9  .  .  0: *ast.GenDecl {
+10  .  .  .  Doc: nil
+11  .  .  .  TokPos: ../main.go:3:1
+12  .  .  .  Tok: import
+13  .  .  .  Lparen: ../main.go:3:8
+14  .  .  .  Specs: []ast.Spec (len = 1) {
+15  .  .  .  .  0: *ast.ImportSpec {
+16  .  .  .  .  .  Doc: nil
+17  .  .  .  .  .  Name: nil
+18  .  .  .  .  .  Path: *ast.BasicLit {
+19  .  .  .  .  .  .  ValuePos: ../main.go:4:2
+20  .  .  .  .  .  .  Kind: STRING
+21  .  .  .  .  .  .  Value: "\"fmt\""
+22  .  .  .  .  .  }
+23  .  .  .  .  .  Comment: nil
+24  .  .  .  .  .  EndPos: -
+25  .  .  .  .  }
+26  .  .  .  }
+27  .  .  .  Rparen: ../main.go:5:1
+28  .  .  }
+29  .  .  1: *ast.FuncDecl {
+30  .  .  .  Doc: nil
+31  .  .  .  Recv: nil
+32  .  .  .  Name: *ast.Ident {
+33  .  .  .  .  NamePos: ../main.go:9:6
+34  .  .  .  .  Name: "main"
+35  .  .  .  .  Obj: *ast.Object {
+36  .  .  .  .  .  Kind: func
+37  .  .  .  .  .  Name: "main"
+38  .  .  .  .  .  Decl: *(obj @ 29)
+39  .  .  .  .  .  Data: nil
+40  .  .  .  .  .  Type: nil
+41  .  .  .  .  }
+42  .  .  .  }
+43  .  .  .  Type: *ast.FuncType {
+44  .  .  .  .  Func: ../main.go:9:1
+45  .  .  .  .  TypeParams: nil
+46  .  .  .  .  Params: *ast.FieldList {
+47  .  .  .  .  .  Opening: ../main.go:9:10
+48  .  .  .  .  .  List: nil
+49  .  .  .  .  .  Closing: ../main.go:9:11
+50  .  .  .  .  }
+51  .  .  .  .  Results: nil
+52  .  .  .  }
+53  .  .  .  Body: *ast.BlockStmt {
+54  .  .  .  .  Lbrace: ../main.go:9:13
+55  .  .  .  .  List: []ast.Stmt (len = 3) {
+56  .  .  .  .  .  0: *ast.ExprStmt {
+57  .  .  .  .  .  .  X: *ast.CallExpr {
+58  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+59  .  .  .  .  .  .  .  .  X: *ast.Ident {
+60  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:10:2
+61  .  .  .  .  .  .  .  .  .  Name: "fmt"
+62  .  .  .  .  .  .  .  .  .  Obj: nil
+63  .  .  .  .  .  .  .  .  }
+64  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+65  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:10:6
+66  .  .  .  .  .  .  .  .  .  Name: "Println"
+67  .  .  .  .  .  .  .  .  .  Obj: nil
+68  .  .  .  .  .  .  .  .  }
+69  .  .  .  .  .  .  .  }
+70  .  .  .  .  .  .  .  Lparen: ../main.go:10:13
+71  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+72  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+73  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:10:14
+74  .  .  .  .  .  .  .  .  .  Kind: STRING
+75  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World!\""
+76  .  .  .  .  .  .  .  .  }
+77  .  .  .  .  .  .  .  }
+78  .  .  .  .  .  .  .  Ellipsis: -
+79  .  .  .  .  .  .  .  Rparen: ../main.go:10:29
+80  .  .  .  .  .  .  }
+81  .  .  .  .  .  }
+82  .  .  .  .  .  1: *ast.ExprStmt {
+83  .  .  .  .  .  .  X: *ast.CallExpr {
+84  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+85  .  .  .  .  .  .  .  .  X: *ast.Ident {
+86  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:11:2
+87  .  .  .  .  .  .  .  .  .  Name: "fmt"
+88  .  .  .  .  .  .  .  .  .  Obj: nil
+89  .  .  .  .  .  .  .  .  }
+90  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+91  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:11:6
+92  .  .  .  .  .  .  .  .  .  Name: "Println"
+93  .  .  .  .  .  .  .  .  .  Obj: nil
+94  .  .  .  .  .  .  .  .  }
+95  .  .  .  .  .  .  .  }
+96  .  .  .  .  .  .  .  Lparen: ../main.go:11:13
+97  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+98  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+99  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:11:14
+100  .  .  .  .  .  .  .  .  .  Kind: STRING
+101  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World!\""
+102  .  .  .  .  .  .  .  .  }
+103  .  .  .  .  .  .  .  }
+104  .  .  .  .  .  .  .  Ellipsis: -
+105  .  .  .  .  .  .  .  Rparen: ../main.go:11:29
+106  .  .  .  .  .  .  }
+107  .  .  .  .  .  }
+108  .  .  .  .  .  2: *ast.ExprStmt {
+109  .  .  .  .  .  .  X: *ast.CallExpr {
+110  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+111  .  .  .  .  .  .  .  .  X: *ast.Ident {
+112  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:12:2
+113  .  .  .  .  .  .  .  .  .  Name: "fmt"
+114  .  .  .  .  .  .  .  .  .  Obj: nil
+115  .  .  .  .  .  .  .  .  }
+116  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+117  .  .  .  .  .  .  .  .  .  NamePos: ../main.go:12:6
+118  .  .  .  .  .  .  .  .  .  Name: "Println"
+119  .  .  .  .  .  .  .  .  .  Obj: nil
+120  .  .  .  .  .  .  .  .  }
+121  .  .  .  .  .  .  .  }
+122  .  .  .  .  .  .  .  Lparen: ../main.go:12:13
+123  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+124  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+125  .  .  .  .  .  .  .  .  .  ValuePos: ../main.go:12:14
+126  .  .  .  .  .  .  .  .  .  Kind: STRING
+127  .  .  .  .  .  .  .  .  .  Value: "\"Hello, World\""
+128  .  .  .  .  .  .  .  .  }
+129  .  .  .  .  .  .  .  }
+130  .  .  .  .  .  .  .  Ellipsis: -
+131  .  .  .  .  .  .  .  Rparen: ../main.go:12:28
+132  .  .  .  .  .  .  }
+133  .  .  .  .  .  }
+134  .  .  .  .  }
+135  .  .  .  .  Rbrace: ../main.go:13:1
+136  .  .  .  }
+137  .  .  }
+138  .  }
+139  .  FileStart: ../main.go:1:1
+140  .  FileEnd: ../main.go:13:3
+141  .  Scope: *ast.Scope {
+142  .  .  Outer: nil
+143  .  .  Objects: map[string]*ast.Object (len = 1) {
+144  .  .  .  "main": *(obj @ 35)
+145  .  .  }
+146  .  }
+147  .  Imports: []*ast.ImportSpec (len = 1) {
+148  .  .  0: *(obj @ 15)
+149  .  }
+150  .  Unresolved: []*ast.Ident (len = 3) {
+151  .  .  0: *(obj @ 59)
+152  .  .  1: *(obj @ 85)
+153  .  .  2: *(obj @ 111)
+154  .  }
+155  .  Comments: []*ast.CommentGroup (len = 4) {
+156  .  .  0: *ast.CommentGroup {
+157  .  .  .  List: []*ast.Comment (len = 1) {
+158  .  .  .  .  0: *ast.Comment {
+159  .  .  .  .  .  Slash: ../main.go:7:1
+160  .  .  .  .  .  Text: "// we expect to see two new const strings here"
+161  .  .  .  .  }
+162  .  .  .  }
+163  .  .  }
+164  .  .  1: *ast.CommentGroup {
+165  .  .  .  List: []*ast.Comment (len = 1) {
+166  .  .  .  .  0: *ast.Comment {
+167  .  .  .  .  .  Slash: ../main.go:10:31
+168  .  .  .  .  .  Text: "// one str"
+169  .  .  .  .  }
+170  .  .  .  }
+171  .  .  }
+172  .  .  2: *ast.CommentGroup {
+173  .  .  .  List: []*ast.Comment (len = 1) {
+174  .  .  .  .  0: *ast.Comment {
+175  .  .  .  .  .  Slash: ../main.go:11:31
+176  .  .  .  .  .  Text: "// same str"
+177  .  .  .  .  }
+178  .  .  .  }
+179  .  .  }
+180  .  .  3: *ast.CommentGroup {
+181  .  .  .  List: []*ast.Comment (len = 1) {
+182  .  .  .  .  0: *ast.Comment {
+183  .  .  .  .  .  Slash: ../main.go:12:31
+184  .  .  .  .  .  Text: "// different str"
+185  .  .  .  .  }
+186  .  .  .  }
+187  .  .  }
+188  .  }
+189  .  GoVersion: ""
+190  }
+
+
+Нужно поправить astprint, находить все строки писать их в map. А потом просто добавлять в началоЛабораторная работа выдана, можете выполнять</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <details class="test-result_details">
+                <summary>
+                    Попытка 18.02.2026 16:14:06.
+                    Системное сообщение
+                </summary>
+                <div class="test-result_wrapper">
+                    <p class="test-result_paragraph"><b>Язык реализации:</b> Markdown</p>
+                    
+                    
+                    <p class="test-result_paragraph">
+                        <b>Комментарий преподавателя:</b>
+                        
+                    </p>
+                    
+                    <details class="test-result_paragraph">
+                        <summary>Код решения</summary>
+                        
+                        <div id="form-wrapper">
+                            <div class="form_code-submit-wrapper">
+                                <input type="button" class="button" value="Скопировать" onclick="copyToCodeArea('subm78350', 6)">
+                            </div>
+                            <div class="test-result_code-block">
+                                <pre><code class="language-markdown" id="subm78350">Лабораторная работа выдана, можете выполнять</code></pre>
+                            </div>
+                        </div>
+                        
+                    </details>
+                    
+                </div>
+            </details>
+            
+            <br>
+            <br>
+            <details>
+                <summary>
+                    <h2 id="task-message-section-header">
+                        Переписка по&nbsp;заданию (0&nbsp;сообщений)
+                    </h2>
+                </summary>
+                <div class="chat-container">
+                    <div class="messages-container">
+                        
+                        <h3>
+                            По данному заданию нет сообщений
+                        </h3>
+                        
+                        
+                    </div>
+                    <form action="/mail" method="post" id="message-form">
+                        <select name="reciever_login" hidden="">
+                            
+                            <option value="teacher" selected="selected"></option>
+                            
+                        </select>
+                        <select name="task_ref" hidden="">
+                            <option value="2026/kk/lab2.1" selected="selected"></option>
+                        </select>
+                        <div id="prev_alert"></div>
+                        <br>
+                        <textarea name="content" value="" class="message_content_input" id="message_content_input" placeholder="Напишите сообщение..."></textarea>
+                        <div>Длина сообщения ограничена 1000&nbsp;знаками.</div>
+                        <br>
+                        <br>
+                        <input id="prev" name="prev" value="-1" hidden="">
+                        <div class="form_button-wrapper">
+                            <input id="message-submit-button" type="submit" class="button" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </details>
+        </div>
+        <footer class="paper footer">
+    
+    <p>Web-интерфейс разработан студентами кафедры</p>
+    
+    
+    <fieldset class="toggle-group" id="colorScheme">
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-light" value="0" data-sr="" checked="checked">
+            🌞 
+        </label>
+        <label>
+            <input type="radio" name="color-scheme" id="color-scheme-dark" value="1" data-sr="">
+            🌛
+        </label>
+    </fieldset>
+</footer>
+<script src="lab2_files/theme.js"></script>
+    </div>
+</div>
+<script src="lab2_files/submission.js" defer="defer"></script>
+<script src="lab2_files/rules.js" defer="defer"></script>
+<script src="lab2_files/highlight_static.js" defer="defer"></script>
+<script src="lab2_files/highlight_dynamic.js" defer="defer"></script>
+
+
+
+</body></html>

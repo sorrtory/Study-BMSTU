@@ -1,0 +1,14 @@
+$ Грамматика входного языка генератора, записанная на самом входном языке
+
+`axiom Start `is Grammar "EOF" `end
+Grammar `is Rule GrammarTail `end
+GrammarTail `is Rule GrammarTail `or `epsilon `end
+Rule `is NtermRule `or AxiomRule `end
+NtermRule `is "NONTERM" "IS" Expr "END" `end
+AxiomRule `is "AXIOM" "NONTERM" "IS" Expr "END" `end
+Expr `is Alternative ExprTail `end
+ExprTail `is "OR" Alternative ExprTail `or `epsilon `end
+Alternative `is "EPSILON" `or SymbolList `end
+SymbolList `is Symbol SymbolListTail `end
+SymbolListTail `is Symbol SymbolListTail `or `epsilon `end
+Symbol `is "NONTERM" `or "TERM" `end
