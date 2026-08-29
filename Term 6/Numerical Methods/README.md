@@ -1,5 +1,8 @@
 # Numeric methods
 
+<img align=right src="https://static.vecteezy.com/system/resources/previews/025/361/649/large_2x/mathematics-matrix-concept-thin-line-icon-or-sign-vector.jpg" height="100px" width="100px">
+
+
 Implementations of numerical algorithms from the course [textbook](./info/методичка.pdf).
 
 1. [Lab 1](./lab1/) - Cubic spline interpolation

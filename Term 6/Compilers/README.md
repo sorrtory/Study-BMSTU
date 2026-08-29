@@ -1,6 +1,8 @@
 # Compilers construction
 
-[Tasks](https://hw.iu9.bmstu.ru/student)
+<img align=right src="https://upload.wikimedia.org/wikipedia/en/a/a3/Purple_dragon_book_b.jpg" height="100px" width="75px">
+
+<!-- [Tasks](https://hw.iu9.bmstu.ru/student) -->
 
 0. [Lab 0](./lab0/) - Introduction to program compilation
 1. [Lab 1](./lab1/) - Self-hosting compiler bootstrapping

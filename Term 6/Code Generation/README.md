@@ -1,5 +1,7 @@
 # Генерация оптимального кода
 
+<img align=right src="https://llvm.org/img/LLVMWyvernSmall.png" height="100px" width="100px">
+
 Лабораторные работы по внутренним представлениям и оптимизациям в GCC и LLVM.
 
 - [Lab 1](./lab1/) - GCC-плагин для вывода GIMPLE IR.
